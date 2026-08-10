@@ -1,0 +1,52 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "pb_varta",
+        "Name": "Бойові розробки Долгу",
+        "Icon": "",
+        "SortOrder": 3,
+        "Factions": [
+            "duty"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "pb_varta_osnovy",
+            "Name": "Основи спорядження",
+            "Description": "Догляд і підгонка спорядження.",
+            "Icon": "",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_field_t1",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "pb_varta_bronia",
+            "Name": "Бронювання",
+            "Description": "Підсилення бронезахисту групи.",
+            "Icon": "",
+            "Tier": 2,
+            "Parents": [
+                "pb_varta_osnovy"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_field_t1",
+                    "Amount": 5
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        }
+    ]
+}

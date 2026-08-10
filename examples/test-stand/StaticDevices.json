@@ -1,0 +1,159 @@
+{
+    "ConfigVersion": 1,
+    "Entries": [
+        {
+            "Id": "zps_lab_terminal_eco",
+            "Classname": "ZP_LabComputer",
+            "Pos": [
+                13092.658203125,
+                6.033815383911133,
+                10237.8291015625
+            ],
+            "Yaw": -131.44384765625,
+            "Notes": "термінал фракції: тут здають заготовки і відкривають дерево"
+        },
+        {
+            "Id": "zps_lab_terminal_sky",
+            "Classname": "ZP_ChemBench",
+            "Pos": [
+                13090.994140625,
+                6.040347099304199,
+                10239.1455078125
+            ],
+            "Yaw": 116.10131072998047,
+            "Notes": "термінал фракції: тут здають заготовки і відкривають дерево"
+        },
+        {
+            "Id": "zps_lab_eco_pack_anom",
+            "Classname": "ZP_Eco_Pack_Anom",
+            "Pos": [
+                13064.0,
+                6.093317031860352,
+                10238.0
+            ],
+            "Yaw": 0.0,
+            "Notes": "пакувальник"
+        },
+        {
+            "Id": "zps_lab_eco_pack_bio",
+            "Classname": "ZP_Eco_Pack_Bio",
+            "Pos": [
+                13056.0,
+                6.002335071563721,
+                10238.0
+            ],
+            "Yaw": 0.0,
+            "Notes": "пакувальник"
+        },
+        {
+            "Id": "zps_lab_eco_pack_electro",
+            "Classname": "ZP_Eco_Pack_Electro",
+            "Pos": [
+                13072.0,
+                6.009659767150879,
+                10238.0
+            ],
+            "Yaw": 0.0,
+            "Notes": "пакувальник"
+        },
+        {
+            "Id": "zps_lab_eco_proc_anom",
+            "Classname": "ZP_Eco_Proc_Anom",
+            "Pos": [
+                13068.0,
+                6.485020160675049,
+                10238.0
+            ],
+            "Yaw": 0.0,
+            "Notes": "аналізатор"
+        },
+        {
+            "Id": "zps_lab_eco_proc_bio",
+            "Classname": "ZP_Eco_Proc_Bio",
+            "Pos": [
+                13060.0,
+                6.007095813751221,
+                10238.0
+            ],
+            "Yaw": 0.0,
+            "Notes": "аналізатор"
+        },
+        {
+            "Id": "zps_lab_eco_proc_electro",
+            "Classname": "ZP_Eco_Proc_Electro",
+            "Pos": [
+                13076.0,
+                5.998676776885986,
+                10238.0
+            ],
+            "Yaw": 0.0,
+            "Notes": "аналізатор"
+        },
+        {
+            "Id": "zps_lab_sky_pack_anom",
+            "Classname": "ZP_Sky_Pack_Anom",
+            "Pos": [
+                13064.0,
+                5.983972072601318,
+                10244.0
+            ],
+            "Yaw": 180.0,
+            "Notes": "пакувальник"
+        },
+        {
+            "Id": "zps_lab_sky_pack_bio",
+            "Classname": "ZP_Sky_Pack_Bio",
+            "Pos": [
+                13056.0,
+                6.60691499710083,
+                10244.0
+            ],
+            "Yaw": 180.0,
+            "Notes": "пакувальник"
+        },
+        {
+            "Id": "zps_lab_sky_pack_electro",
+            "Classname": "ZP_Sky_Pack_Electro",
+            "Pos": [
+                13072.0,
+                6.402932167053223,
+                10244.0
+            ],
+            "Yaw": 180.0,
+            "Notes": "пакувальник"
+        },
+        {
+            "Id": "zps_lab_sky_proc_anom",
+            "Classname": "ZP_Sky_Proc_Anom",
+            "Pos": [
+                13068.0,
+                5.994883060455322,
+                10244.0
+            ],
+            "Yaw": 180.0,
+            "Notes": "аналізатор"
+        },
+        {
+            "Id": "zps_lab_sky_proc_bio",
+            "Classname": "ZP_Sky_Proc_Bio",
+            "Pos": [
+                13060.0,
+                5.984261989593506,
+                10244.0
+            ],
+            "Yaw": 180.0,
+            "Notes": "аналізатор"
+        },
+        {
+            "Id": "zps_lab_sky_proc_electro",
+            "Classname": "ZP_Sky_Proc_Electro",
+            "Pos": [
+                13076.0,
+                6.40517520904541,
+                10244.0
+            ],
+            "Yaw": 180.0,
+            "Notes": "аналізатор"
+        }
+    ]
+}

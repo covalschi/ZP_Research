@@ -56,13 +56,24 @@ from pathlib import Path
 from typing import Iterable, Iterator
 
 # ---------------------------------------------------------------------------------------
-# Reuse the PBO header parser + LZSS decompressor instead of reimplementing them (per
-# task brief). This script lives outside webeditor/, so English comments are fine here
-# (the Ukrainian/English-only rule is scoped to webeditor/ per CLAUDE.md).
+# Reuse the PBO header parser + LZSS decompressor instead of reimplementing them.
+# NOTE: that helper belongs to the author's private tooling and is NOT part of this
+# repository, so this script runs only in the development tree. Everyone else should use
+# the editor's built-in importer, which does the same job in the browser.
 # ---------------------------------------------------------------------------------------
 _SKILL_SCRIPTS = Path(__file__).resolve().parent.parent / ".claude" / "skills" / "dayz-modding" / "scripts"
 sys.path.insert(0, str(_SKILL_SCRIPTS))
-import extract_pbo as ep  # noqa: E402  (read_asciiz, lzss_decompress)
+try:
+    import extract_pbo as ep  # noqa: E402  (read_asciiz, lzss_decompress)
+except ModuleNotFoundError:  # pragma: no cover - environment guard
+    sys.exit(
+        "extract_pbo.py not found (looked in %s).\n"
+        "It is part of the author's private tooling and is not shipped here.\n\n"
+        "To rebuild the class index for your own modpack, use the editor instead:\n"
+        "open webeditor/dist/index.html, press the class-import button and pick your\n"
+        "!Workshop folder. It reads the PBOs in the browser - no Python, no game install -\n"
+        "and produces the same index (parity covered by unit tests)." % _SKILL_SCRIPTS
+    )
 
 DEFAULT_DAYZ_ROOT = Path(r"E:\Programs\Steam\steamapps\common\DayZ")
 DEFAULT_WORKSHOP_DIRNAME = "!Workshop"

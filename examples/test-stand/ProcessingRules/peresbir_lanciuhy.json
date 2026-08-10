@@ -1,0 +1,127 @@
+{
+    "ConfigVersion": 1,
+    "Rules": [
+        {
+            "Id": "pb_pak_bio",
+            "Enabled": 1,
+            "Device": "ZP_SampleFridge",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Apple",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.4000000059604645,
+            "BasePurityMax": 0.800000011920929,
+            "TimeSec": 10.0,
+            "Consumables": [
+                {
+                    "Classname": "Rag",
+                    "Quantity": 1,
+                    "Content": ""
+                }
+            ],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "Apple"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": ""
+        },
+        {
+            "Id": "pb_pak_teh",
+            "Enabled": 1,
+            "Device": "ZP_SampleFridge",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Rag",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 10.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "zapys_detektora"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": ""
+        },
+        {
+            "Id": "pb_analiz_bio",
+            "Enabled": 1,
+            "Device": "ZP_Microscope",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_01",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "Apple"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 15.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": ""
+        },
+        {
+            "Id": "pb_analiz_teh",
+            "Enabled": 1,
+            "Device": "ZP_Microscope",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_17",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "zapys_detektora"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 15.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_61",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "pb_osnovy",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": ""
+        }
+    ]
+}

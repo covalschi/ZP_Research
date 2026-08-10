@@ -1,0 +1,52 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "example",
+        "Name": "Приклад",
+        "Icon": "",
+        "SortOrder": 1,
+        "Factions": [
+            "ecolog"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "ex_basics",
+            "Name": "Основи",
+            "Description": "Перший вузол: коштує 3 бали.",
+            "Icon": "",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "ex_advanced",
+            "Name": "Поглиблення",
+            "Description": "Відкривається після 'Основи'.",
+            "Icon": "",
+            "Tier": 2,
+            "Parents": [
+                "ex_basics"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 6
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        }
+    ]
+}

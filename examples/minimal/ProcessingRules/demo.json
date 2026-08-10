@@ -1,0 +1,63 @@
+{
+    "ConfigVersion": 1,
+    "Rules": [
+        {
+            "Id": "ex_pack_apple",
+            "Enabled": 1,
+            "Device": "ZP_SampleFridge",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Apple",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 10.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "apple"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "крок 1: яблуко з карго холодильника -> зразок із міткою вмісту 'apple'"
+        },
+        {
+            "Id": "ex_analyze_apple",
+            "Enabled": 1,
+            "Device": "ZP_Microscope",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_01",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "apple"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 10.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "крок 2: зразок 'apple' з карго мікроскопа -> заготовка даних (її здають на терміналі)"
+        }
+    ]
+}

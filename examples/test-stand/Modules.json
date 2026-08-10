@@ -1,0 +1,41 @@
+{
+    "ConfigVersion": 1,
+    "Modules": [
+        {
+            "Classname": "ZP_Tool_Optics",
+            "PurityBonus": 0.20000000298023225,
+            "Devices": [
+                "ZP_Microscope",
+                "ZP_Eco_Pack_Bio",
+                "ZP_Eco_Pack_Anom",
+                "ZP_Eco_Pack_Electro"
+            ],
+            "Notes": "оптика: рівніший зріз, менше сміття в пробі"
+        },
+        {
+            "Classname": "ZP_Tool_Centrifuge",
+            "PurityBonus": 0.30000001192092898,
+            "Devices": [
+                "ZP_SampleFridge",
+                "ZP_Eco_Pack_Bio",
+                "ZP_Eco_Pack_Anom",
+                "ZP_Eco_Pack_Electro",
+                "ZP_Sky_Pack_Bio",
+                "ZP_Sky_Pack_Anom",
+                "ZP_Sky_Pack_Electro"
+            ],
+            "Notes": "центрифуга: відділяє фракції"
+        },
+        {
+            "Classname": "ZP_Tool_Reagents",
+            "PurityBonus": 0.25,
+            "Devices": [
+                "ZP_ChemBench",
+                "ZP_Sky_Pack_Bio",
+                "ZP_Sky_Pack_Anom",
+                "ZP_Sky_Pack_Electro"
+            ],
+            "Notes": "реагенти: стабілізують матеріал"
+        }
+    ]
+}

@@ -1,0 +1,1121 @@
+{
+    "ConfigVersion": 1,
+    "Rules": [
+        {
+            "Id": "stend_eco_pak_bio_t1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "BandageDressing",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Вчених, тир 1. Сировина — перевʼязка з біоматеріалом (BandageDressing, nominal 40 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_eco_analiz_bio_t1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_01",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_bio_t1"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_02",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Вчених, тир 1. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_02 дає лише bio_lab_t1."
+        },
+        {
+            "Id": "stend_eco_pak_bio_t2",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "TetracyclineAntibiotics",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t2"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Вчених, тир 2. Сировина — тетрациклін (TetracyclineAntibiotics, nominal 20 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_eco_analiz_bio_t2",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_01",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_bio_t2"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_04",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Вчених, тир 2. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_04 дає лише bio_lab_t2."
+        },
+        {
+            "Id": "stend_eco_pak_bio_t3",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "BloodTestKit",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Вчених, тир 3. Сировина — набір аналізу крові (BloodTestKit, nominal 10 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_eco_analiz_bio_t3",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_01",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_bio_t3"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_05",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Вчених, тир 3. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_05 дає лише bio_lab_t3."
+        },
+        {
+            "Id": "stend_eco_pak_anom_t1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Chemlight_Green",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anom_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Вчених, тир 1. Сировина — хімічне світло (Chemlight_Green, nominal 35 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_eco_analiz_anom_t1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_03",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_anom_t1"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_32",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Вчених, тир 1. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_32 дає лише anomaly_lab_t1."
+        },
+        {
+            "Id": "stend_eco_pak_anom_t2",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "LargeGasCanister",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anom_t2"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Вчених, тир 2. Сировина — великий газовий балон (LargeGasCanister, nominal 18 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_eco_analiz_anom_t2",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_03",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_anom_t2"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_34",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Вчених, тир 2. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_34 дає лише anomaly_lab_t2."
+        },
+        {
+            "Id": "stend_eco_pak_anom_t3",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "NBCGlovesGray",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anom_t3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Вчених, тир 3. Сировина — рукавиці захисного костюма (NBCGlovesGray, nominal 2 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_eco_analiz_anom_t3",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_03",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_anom_t3"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_35",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Вчених, тир 3. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_35 дає лише anomaly_lab_t3."
+        },
+        {
+            "Id": "stend_eco_pak_elektro_t1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Battery9V",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electro_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Вчених, тир 1. Сировина — батарейка 9V (Battery9V, nominal 100 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_eco_analiz_elektro_t1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_17",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_electro_t1"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_62",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Вчених, тир 1. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_62 дає лише electronics_lab_t1."
+        },
+        {
+            "Id": "stend_eco_pak_elektro_t2",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "GPSReceiver",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electro_t2"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Вчених, тир 2. Сировина — GPS-приймач (GPSReceiver, nominal 25 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_eco_analiz_elektro_t2",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_17",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_electro_t2"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_64",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Вчених, тир 2. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_64 дає лише electronics_lab_t2."
+        },
+        {
+            "Id": "stend_eco_pak_elektro_t3",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "NVGoggles",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electro_t3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Вчених, тир 3. Сировина — прилад нічного бачення (NVGoggles, nominal 5 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_eco_analiz_elektro_t3",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_17",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_electro_t3"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_65",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Вчених, тир 3. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_65 дає лише electronics_lab_t3."
+        },
+        {
+            "Id": "stend_sky_pak_bio_t1",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "BandageDressing",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_11",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Чистого неба, тир 1. Сировина — перевʼязка з біоматеріалом (BandageDressing, nominal 40 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_sky_analiz_bio_t1",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Proc_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_11",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "sky_bio_t1"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Чистого неба, тир 1. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_03 дає лише bio_lab_t1."
+        },
+        {
+            "Id": "stend_sky_pak_bio_t2",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "TetracyclineAntibiotics",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_11",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_bio_t2"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Чистого неба, тир 2. Сировина — тетрациклін (TetracyclineAntibiotics, nominal 20 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_sky_analiz_bio_t2",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Proc_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_11",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "sky_bio_t2"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Чистого неба, тир 2. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_06 дає лише bio_lab_t2."
+        },
+        {
+            "Id": "stend_sky_pak_bio_t3",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "BloodTestKit",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_11",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_bio_t3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Чистого неба, тир 3. Сировина — набір аналізу крові (BloodTestKit, nominal 10 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_sky_analiz_bio_t3",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Proc_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_11",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "sky_bio_t3"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Чистого неба, тир 3. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_07 дає лише bio_lab_t3."
+        },
+        {
+            "Id": "stend_sky_pak_anom_t1",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Chemlight_Green",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_21",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_anom_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Чистого неба, тир 1. Сировина — хімічне світло (Chemlight_Green, nominal 35 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_sky_analiz_anom_t1",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Proc_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_21",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "sky_anom_t1"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_33",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Чистого неба, тир 1. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_33 дає лише anomaly_lab_t1."
+        },
+        {
+            "Id": "stend_sky_pak_anom_t2",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "LargeGasCanister",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_21",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_anom_t2"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Чистого неба, тир 2. Сировина — великий газовий балон (LargeGasCanister, nominal 18 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_sky_analiz_anom_t2",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Proc_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_21",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "sky_anom_t2"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_36",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Чистого неба, тир 2. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_36 дає лише anomaly_lab_t2."
+        },
+        {
+            "Id": "stend_sky_pak_anom_t3",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "NBCGlovesGray",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_21",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_anom_t3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Чистого неба, тир 3. Сировина — рукавиці захисного костюма (NBCGlovesGray, nominal 2 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_sky_analiz_anom_t3",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Proc_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_21",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "sky_anom_t3"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_37",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Чистого неба, тир 3. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_37 дає лише anomaly_lab_t3."
+        },
+        {
+            "Id": "stend_sky_pak_elektro_t1",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Battery9V",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_26",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_electro_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Чистого неба, тир 1. Сировина — батарейка 9V (Battery9V, nominal 100 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_sky_analiz_elektro_t1",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Proc_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_26",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "sky_electro_t1"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_63",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Чистого неба, тир 1. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_63 дає лише electronics_lab_t1."
+        },
+        {
+            "Id": "stend_sky_pak_elektro_t2",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "GPSReceiver",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_26",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_electro_t2"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Чистого неба, тир 2. Сировина — GPS-приймач (GPSReceiver, nominal 25 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_sky_analiz_elektro_t2",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Proc_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_26",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "sky_electro_t2"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_66",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Чистого неба, тир 2. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_66 дає лише electronics_lab_t2."
+        },
+        {
+            "Id": "stend_sky_pak_elektro_t3",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "NVGoggles",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.800000011920929,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_26",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_electro_t3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: пакувальник Чистого неба, тир 3. Сировина — прилад нічного бачення (NVGoggles, nominal 5 у types.xml): тир ланцюга задає саме рідкісність сировини, а не довжина ланцюга."
+        },
+        {
+            "Id": "stend_sky_analiz_elektro_t3",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Proc_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_26",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "sky_electro_t3"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_67",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Стенд: аналізатор Чистого неба, тир 3. Шанс виходу множиться на чистоту зразка, тому частина циклів законно порожня. Заготовка ZP_Data_67 дає лише electronics_lab_t3."
+        }
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "ConfigVersion": 1,
+    "Factions": [
+        {
+            "Id": "ecolog",
+            "DisplayName": "Вчені",
+            "Supertype": "science",
+            "Armbands": [
+                "Ex_Shevrons_Science1",
+                "Ex_Shevrons_Science2",
+                "Ex_Shevrons_Science3",
+                "Ex_Shevrons_NII1",
+                "armband_ecologist",
+                "Armband_White"
+            ],
+            "TerminalClasses": [
+                "ZP_LabComputer"
+            ],
+            "DeviceClasses": [
+                "ZP_Microscope",
+                "ZP_LabComputer",
+                "ZP_SampleFridge",
+                "ZP_Eco_Pack_Bio",
+                "ZP_Eco_Proc_Bio",
+                "ZP_Eco_Pack_Anom",
+                "ZP_Eco_Proc_Anom",
+                "ZP_Eco_Pack_Electro",
+                "ZP_Eco_Proc_Electro"
+            ]
+        },
+        {
+            "Id": "clearsky",
+            "DisplayName": "Чисте небо",
+            "Supertype": "science",
+            "Armbands": [
+                "Ex_Shevrons_CS1",
+                "Ex_Shevrons_CS2",
+                "Ex_Shevrons_CS3",
+                "armband_clearsky",
+                "Armband_Blue"
+            ],
+            "TerminalClasses": [
+                "ZP_ChemBench"
+            ],
+            "DeviceClasses": [
+                "ZP_ChemBench",
+                "ZP_Sky_Pack_Bio",
+                "ZP_Sky_Proc_Bio",
+                "ZP_Sky_Pack_Anom",
+                "ZP_Sky_Proc_Anom",
+                "ZP_Sky_Pack_Electro",
+                "ZP_Sky_Proc_Electro"
+            ]
+        },
+        {
+            "Id": "duty",
+            "DisplayName": "Долг",
+            "Supertype": "combat",
+            "Armbands": [
+                "Ex_Shevrons_Dolg1",
+                "Ex_Shevrons_Dolg2",
+                "Ex_Shevrons_Dolg3",
+                "armband_duty",
+                "Armband_Red"
+            ],
+            "TerminalClasses": [
+                "ZP_ServerRack"
+            ],
+            "DeviceClasses": [
+                "ZP_ServerRack"
+            ]
+        },
+        {
+            "Id": "freedom",
+            "DisplayName": "Воля",
+            "Supertype": "combat",
+            "Armbands": [
+                "Ex_Shevrons_Freedom1",
+                "Ex_Shevrons_Freedom2",
+                "Ex_Shevrons_Freedom3",
+                "armband_freedom",
+                "Armband_Green"
+            ],
+            "TerminalClasses": [],
+            "DeviceClasses": []
+        },
+        {
+            "Id": "sop",
+            "DisplayName": "СОП",
+            "Supertype": "combat",
+            "Armbands": [
+                "Ex_Shevrons_SOP1",
+                "Ex_Shevrons_SOP2",
+                "Ex_Shevrons_SOP3",
+                "Ex_Shevrons_sop_ua",
+                "Armband_Yellow"
+            ],
+            "TerminalClasses": [],
+            "DeviceClasses": []
+        },
+        {
+            "Id": "bandit",
+            "DisplayName": "Бандити",
+            "Supertype": "stalker",
+            "Armbands": [
+                "Ex_Shevrons_bratva1",
+                "Ex_Shevrons_bratva2",
+                "Ex_Shevrons_bratva3",
+                "armband_bandit",
+                "Armband_Black"
+            ],
+            "TerminalClasses": [],
+            "DeviceClasses": []
+        },
+        {
+            "Id": "loner",
+            "DisplayName": "Нейтрали",
+            "Supertype": "stalker",
+            "Armbands": [
+                "Ex_Shevrons_Neutral1",
+                "Ex_Shevrons_Neutral2",
+                "Ex_Shevrons_Neutral3",
+                "armband_loner",
+                "Armband_Orange"
+            ],
+            "TerminalClasses": [],
+            "DeviceClasses": []
+        }
+    ]
+}

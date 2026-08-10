@@ -113,17 +113,21 @@ function Build-ZpMod {
         throw ("FAIL: stale PBO $Name — старіший за " + $newestSrc.Name + " (запущений сервер тримає файл?)")
     }
 
+    # Публічний ключ кладемо ЗАВЖДИ, а не лише при підписуванні: admin-guide каже адмінам
+    # брати його з `@ZP_Research\keys\`, а при непідписаній збірці цієї теки просто не
+    # існувало — інструкція вела в порожнечу (знайдено ревізією 2026-08-10).
+    if ($pubKey) {
+        $modKeys = Join-Path $ModDir 'keys'
+        New-Item -ItemType Directory -Force $modKeys | Out-Null
+        Copy-Item $pubKey $modKeys -Force
+    }
+
     if ($privKey -and (Test-Path $signer)) {
         Get-ChildItem "$outDir\$Name.pbo.*.bisign" -ErrorAction SilentlyContinue | Remove-Item -Force
         & $signer $privKey $pbo | Write-Output
-        if ($pubKey) {
-            $modKeys = Join-Path $ModDir 'keys'
-            New-Item -ItemType Directory -Force $modKeys | Out-Null
-            Copy-Item $pubKey $modKeys -Force
-        }
         if (-not (Get-ChildItem "$outDir\$Name.pbo.*.bisign" -ErrorAction SilentlyContinue)) { throw "FAIL: підпис $Name не створено" }
     } else {
-        Write-Warning "приватного ключа в $keysDir немає — $Name не підписано (для локального тесту це нормально)"
+        Write-Warning "приватного ключа в $keysDir немає — $Name не підписано: серверу потрібен verifySignatures = 0 (або зробіть свій ключ, див. README)"
     }
     Write-Output ("OK: {0} ({1} bytes)" -f $pbo, (Get-Item $pbo).Length)
 }

@@ -71,9 +71,11 @@ ZP_Research/        the mod: config.cpp, Enforce scripts, stringtable, types
 ZP_Research_VPP/    optional add-on: admin permission via VPPAdminTools
 webeditor/          the config editor (Vite + React + TS); dist/index.html is the build
 build/              PBO build + signing, script compile check, class generators
+testenv/            local test server: config, launchers, profile
+examples/           ready-made content packs (the mod itself ships none)
 scripts/            class-index generator (reads modpack PBOs)
 keys/               public .bikey for signature verification
-docs/               admin guide, test cheat-sheet, tech-tree design
+docs/               setup + testing guide, admin guide, cheat-sheet, tech-tree design
 ```
 
 ## Building the mod
@@ -137,15 +139,31 @@ npm run build   # produces the single-file dist/index.html
 ### Class index
 
 Live-search dropdowns are backed by `webeditor/src/data/classindex.json` — a snapshot of
-every class in a modpack. The bundled one reflects the author's server. Regenerate it for
-your own modpack either **in the browser** (the editor's "import classes" panel reads PBOs
-locally, no install needed) or on the command line:
+every class in a modpack (33 000+ classes from 22 mods on the author's server). To make one
+for **your** modpack, open the editor and use its **class importer**: pick your `!Workshop`
+folder and it reads the PBOs in the browser — no Python, no game installation, a few seconds
+with caching.
 
-```bash
-python scripts/gen-classindex.py --scratch /tmp/idx --out webeditor/src/data/classindex.json --summary
+(`scripts/gen-classindex.py` does the same on the command line, but depends on a helper from
+the author's private tooling that is not shipped here; it tells you so if you run it.)
+
+## Running it locally
+
+The repository has everything needed to stand up a local test server:
+
+```powershell
+.\testenv\prepare-testenv.ps1 -Example minimal
+.\build\build.ps1
+.\testenv\run-server.ps1
+.\testenv\run-client.ps1 -Name Tester
 ```
 
-Pass `--dayz-root` / `--workshop-root` / `--own-mod` if your paths differ from the defaults.
+Full walkthrough — installs, the traps that fail *silently*, and a checkpoint for every
+stage: **[docs/testing-on-another-machine.md](docs/testing-on-another-machine.md)**.
+
+Since the mod ships no content, two ready-made content packs live in
+[`examples/`](examples/): `minimal` (shortest complete loop, zero-warning boot) and
+`test-stand` (the author's full test bed — 12 devices, 18 chains, three tree branches).
 
 ## Requirements
 

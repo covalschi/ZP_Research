@@ -1,0 +1,102 @@
+{
+    "ConfigVersion": 1,
+    "Rules": [
+        {
+            "Id": "pb_mikro_varta",
+            "Enabled": 1,
+            "Device": "ZP_ServerRack",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Rag",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "Paper",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "duty"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": ""
+        },
+        {
+            "Id": "pb_mikro_deshevo",
+            "Enabled": 1,
+            "Device": "ZP_Microscope",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Rag",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "Paper",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog",
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": ""
+        },
+        {
+            "Id": "pb_mikro_tsinno",
+            "Enabled": 1,
+            "Device": "ZP_Microscope",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Apple",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 90.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "Paper",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog",
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [
+                "ZP_Tool_Optics"
+            ],
+            "Notes": ""
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+# Line endings are not cosmetic in this repository — two file kinds break outright if they
+# are wrong, and a fresh clone gets whatever `core.autocrlf` the cloner happens to have.
+# So every kind is pinned explicitly.
+
+# DayZ's stringtable parser terminates rows on CRLF. With plain LF the whole file reads as
+# one unterminated header row, not a single key is found, and the game shows raw #str_*
+# keys instead of text. This one MUST be CRLF, on every platform.
+*.csv text eol=crlf
+
+# Engine sources kept exactly as they are on disk, so bracket-balance checks and diffs are
+# not noise. PowerShell files must also keep their UTF-8 BOM (Windows PowerShell 5.1 reads
+# a BOM-less script in the system codepage and mangles non-ASCII).
+*.cpp    text eol=crlf
+*.hpp    text eol=crlf
+*.c      text eol=crlf
+*.layout text eol=crlf
+*.ps1    text eol=crlf
+
+*.md   text
+*.json text
+
+# XML: the engine parses it regardless of line endings, but mixed endings drifted between
+# machines before this was pinned. LF is what the index holds.
+*.xml  text eol=lf
+
+# Example content packs are in the ENGINE'S canonical byte format: UTF-8 without BOM, LF,
+# 4-space indent, no trailing newline. "*.json text" above plus core.autocrlf=true would
+# hand a fresh clone CRLF files, and they would no longer be byte-identical to what the
+# engine itself writes (the editor's writeback check would report every one as changed).
+examples/**/*.json text eol=lf
+
+# (webeditor/tests/fixtures/ has its own rule: those bytes were captured from the engine
+#  and git must not touch them at all.)
+
+# Binaries: no normalisation, no diff attempts
+*.pbo    binary
+*.bisign binary
+*.bikey  binary
+*.paa    binary
+*.edds   binary
+*.p3d    binary

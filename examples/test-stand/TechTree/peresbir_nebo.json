@@ -1,0 +1,58 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "pb_nebo",
+        "Name": "Метеорологія Чистого неба",
+        "Icon": "",
+        "SortOrder": 2,
+        "Factions": [
+            "clearsky"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "pb_nebo_sposter",
+            "Name": "Метеоспостереження",
+            "Description": "Спостереження за фронтами викидів.",
+            "Icon": "",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_field_t1",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "pb_nebo_ukryttia",
+            "Name": "Укриття від викиду",
+            "Description": "Розрахунок стійкості укриттів.",
+            "Icon": "",
+            "Tier": 2,
+            "Parents": [
+                "pb_nebo_sposter"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_field_t1",
+                    "Amount": 5
+                }
+            ],
+            "ItemCost": [
+                {
+                    "Classname": "Rag",
+                    "Quantity": 3,
+                    "Content": ""
+                }
+            ],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        }
+    ]
+}

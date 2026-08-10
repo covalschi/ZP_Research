@@ -1,0 +1,17 @@
+{
+    "ConfigVersion": 1,
+    "Items": [
+        {
+            "Id": "ZP_Data_01",
+            "Enabled": 1,
+            "Name": "Біологічні дані (лаб. 1 тир)",
+            "Description": "Здайте на терміналі своєї фракції.",
+            "Points": [
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 3
+                }
+            ]
+        }
+    ]
+}

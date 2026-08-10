@@ -1,0 +1,35 @@
+{
+    "ConfigVersion": 1,
+    "Factions": [
+        {
+            "Id": "ecolog",
+            "DisplayName": "Вчені",
+            "Supertype": "science",
+            "Armbands": [
+                "Armband_White"
+            ],
+            "TerminalClasses": [],
+            "DeviceClasses": []
+        },
+        {
+            "Id": "clearsky",
+            "DisplayName": "Чисте небо",
+            "Supertype": "science",
+            "Armbands": [
+                "Armband_Blue"
+            ],
+            "TerminalClasses": [],
+            "DeviceClasses": []
+        },
+        {
+            "Id": "duty",
+            "DisplayName": "Долг",
+            "Supertype": "combat",
+            "Armbands": [
+                "Armband_Red"
+            ],
+            "TerminalClasses": [],
+            "DeviceClasses": []
+        }
+    ]
+}

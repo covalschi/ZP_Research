@@ -26,3 +26,13 @@ Thumbs.db
 
 # temporary profile folder created by build/client-compile-check.ps1
 .compile-check-profile/
+
+# testenv: generated locally, never committed
+testenv/serverDZ.cfg
+testenv/profiles/
+testenv/clientprofile/
+testenv/server_pid.txt
+
+# python
+__pycache__/
+*.pyc

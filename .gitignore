@@ -23,3 +23,6 @@ webeditor/coverage/
 Thumbs.db
 .vscode/
 .idea/
+
+# temporary profile folder created by build/client-compile-check.ps1
+.compile-check-profile/

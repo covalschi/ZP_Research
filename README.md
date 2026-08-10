@@ -76,25 +76,76 @@ keys/               public .bikey for signature verification
 docs/               admin guide, test cheat-sheet, tech-tree design
 ```
 
-## Building
+## Building the mod
 
-Requires DayZ Tools (FileBank, DSUtils) on Windows.
+**Prerequisites:** Windows, and **DayZ Tools** installed from Steam (Library → Tools →
+*DayZ Tools*). The scripts locate it automatically via the Steam registry entry and the
+Steam library folders; override with `-ToolsRoot` or the `DAYZ_TOOLS` environment variable
+if it lives somewhere unusual.
 
 ```powershell
+git clone https://github.com/covalschi/ZP_Research.git
+cd ZP_Research
 .\build\build.ps1
 ```
 
-Produces a signed `@ZP_Research`. To verify scripts compile without launching the game:
+This produces two mod folders next to the repo:
+
+- `@ZP_Research` — the mod itself;
+- `@ZP_Research_VPP` — the optional VPPAdminTools tab (load it **only** together with VPP;
+  it hard-depends on VPP scripts and the game refuses to start without them).
+
+### Signing
+
+The build signs the PBOs **only if a private key is present** in `keys/`. That key is not
+in this repository and never will be — it belongs to the original author. Without it the
+build succeeds and simply prints a warning; unsigned PBOs are fine for a local test server.
+
+To publish your own build, make your own key pair and put both files in `keys/`:
 
 ```powershell
-.\build\client-compile-check.ps1
+& "$env:ProgramFiles(x86)\Steam\steamapps\common\DayZ Tools\Bin\DsUtils\DSCreateKey.exe" MyMod
 ```
 
-The editor is built with:
+Servers verifying signatures need the **public** `.bikey` in their `keys/` folder; the
+`.biprivatekey` must stay on your machine only.
+
+### Checking that scripts compile
+
+DayZ compiles client-only code (menus, GUI) that a headless server never touches, so a
+clean server boot does not prove the whole mod compiles. This runs the diagnostic
+executable, waits, and greps the log:
+
+```powershell
+.\build\client-compile-check.ps1            # prints CLIENT_COMPILE_OK / _FAIL
+```
+
+It needs `@CF` and `@VPPAdminTools` present in the game's `!Workshop` folder, because the
+editor tab compiles only when VPP is loaded.
+
+## Building the editor
 
 ```bash
-cd webeditor && npm install && npm run build
+cd webeditor
+npm install
+npm test        # 1119 unit tests
+npm run build   # produces the single-file dist/index.html
 ```
+
+`dist/index.html` is committed, so you can also just open it without building anything.
+
+### Class index
+
+Live-search dropdowns are backed by `webeditor/src/data/classindex.json` — a snapshot of
+every class in a modpack. The bundled one reflects the author's server. Regenerate it for
+your own modpack either **in the browser** (the editor's "import classes" panel reads PBOs
+locally, no install needed) or on the command line:
+
+```bash
+python scripts/gen-classindex.py --scratch /tmp/idx --out webeditor/src/data/classindex.json --summary
+```
+
+Pass `--dayz-root` / `--workshop-root` / `--own-mod` if your paths differ from the defaults.
 
 ## Requirements
 

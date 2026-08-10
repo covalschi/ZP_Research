@@ -1,0 +1,25 @@
+# --- build output -------------------------------------------------------------
+# Signed mod folders produced by build/build.ps1
+/@ZP_Research/
+/@ZP_Research_VPP/
+*.pbo
+*.pbo.*.bisign
+
+# Private signing key MUST NEVER be committed (only the public .bikey is tracked)
+*.biprivatekey
+*.pfx
+
+# --- web editor ---------------------------------------------------------------
+webeditor/node_modules/
+webeditor/.vite/
+webeditor/coverage/
+# webeditor/dist/index.html IS tracked on purpose: it is the shippable single-file build
+
+# --- local / tooling ----------------------------------------------------------
+*.log
+*.rpt
+*.RPT
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

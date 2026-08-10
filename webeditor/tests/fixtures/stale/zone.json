@@ -1,0 +1,305 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "zone",
+        "Name": "Дослідження Зони",
+        "Icon": "",
+        "SortOrder": 1,
+        "Factions": [
+            "ecolog"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "z_basics",
+            "Name": "Основи польових досліджень",
+            "Description": "Спільний корінь: методики збору, маркування та зберігання зразків у польових умовах. Відкриває три напрямки — біологію, аномалії та техніку.",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_field_t1",
+                    "Amount": 5
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:gear"
+        },
+        {
+            "Id": "bio_sampling",
+            "Name": "Відбір біозразків",
+            "Description": "Напрямок біологія. Правильний забір тканин мутантів без псування матеріалу.",
+            "Tier": 2,
+            "Parents": [
+                "z_basics"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_field_t1",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [
+                {
+                    "Classname": "Paper",
+                    "Quantity": 2
+                }
+            ],
+            "ResearchTimeSec": 0,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:iconBacteria"
+        },
+        {
+            "Id": "bio_anatomy",
+            "Name": "Анатомія мутантів",
+            "Description": "Систематизація будови тканин. Дає доступ до глибшої переробки органів.",
+            "Tier": 3,
+            "Parents": [
+                "bio_sampling"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_field_t2",
+                    "Amount": 10
+                },
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:iconSkull"
+        },
+        {
+            "Id": "bio_mutagen",
+            "Name": "Мутагенні сполуки",
+            "Description": "Виділення активних сполук із тканин. Верхівка біологічної гілки.",
+            "Tier": 4,
+            "Parents": [
+                "bio_anatomy"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t2",
+                    "Amount": 15
+                },
+                {
+                    "Type": "bio_lab_t3",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 120,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:iconPill"
+        },
+        {
+            "Id": "ano_detection",
+            "Name": "Детекція аномалій",
+            "Description": "Напрямок аномалії. Калібрування детекторів під поля Зони.",
+            "Tier": 2,
+            "Parents": [
+                "z_basics"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_field_t1",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:icon_refresh"
+        },
+        {
+            "Id": "ano_artifacts",
+            "Name": "Природа артефактів",
+            "Description": "Класифікація артефактів за типом породжуючої аномалії.",
+            "Tier": 3,
+            "Parents": [
+                "ano_detection"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_field_t2",
+                    "Amount": 12
+                },
+                {
+                    "Type": "anomaly_lab_t1",
+                    "Amount": 5
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 45,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:iconSkull"
+        },
+        {
+            "Id": "ano_stabilize",
+            "Name": "Стабілізація артефактів",
+            "Description": "Безпечне транспортування нестабільних артефактів.",
+            "Tier": 4,
+            "Parents": [
+                "ano_artifacts"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t2",
+                    "Amount": 14
+                },
+                {
+                    "Type": "anomaly_lab_t3",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:iconPill"
+        },
+        {
+            "Id": "tech_electronics",
+            "Name": "Польова електроніка",
+            "Description": "Напрямок техніка. Ремонт і калібрування наукових приладів.",
+            "Tier": 2,
+            "Parents": [
+                "z_basics"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "electronics_field_t1",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:icon_hammer"
+        },
+        {
+            "Id": "tech_datastorage",
+            "Name": "Обробка даних",
+            "Description": "Серверне зберігання й аналіз накопичених вимірів.",
+            "Tier": 3,
+            "Parents": [
+                "tech_electronics"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "electronics_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:gear"
+        },
+        {
+            "Id": "cross_biolab",
+            "Name": "Біохімічна лабораторія",
+            "Description": "Перехресний вузол: потребує І анатомії мутантів, І обробки даних. Відкриває промислову переробку органіки.",
+            "Tier": 4,
+            "Parents": [
+                "bio_anatomy",
+                "tech_datastorage"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t2",
+                    "Amount": 20
+                },
+                {
+                    "Type": "electronics_lab_t2",
+                    "Amount": 6
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 180,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:iconBacteria"
+        },
+        {
+            "Id": "cross_scanner",
+            "Name": "Універсальний сканер",
+            "Description": "Перехресний вузол з режимом ANY: досить будь-якого з двох напрямків — аномалій АБО техніки.",
+            "Tier": 4,
+            "Parents": [
+                "ano_artifacts",
+                "tech_datastorage"
+            ],
+            "ParentsMode": "any",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t2",
+                    "Amount": 12
+                },
+                {
+                    "Type": "electronics_lab_t1",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:icon_refresh"
+        },
+        {
+            "Id": "final_zoneprotocol",
+            "Name": "Протокол Зони",
+            "Description": "Фінальний вузол: вимагає обидві перехресні технології та мутагени. Мета всієї фракційної програми.",
+            "Tier": 5,
+            "Parents": [
+                "cross_biolab",
+                "cross_scanner",
+                "bio_mutagen"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t3",
+                    "Amount": 6
+                },
+                {
+                    "Type": "anomaly_lab_t3",
+                    "Amount": 6
+                },
+                {
+                    "Type": "electronics_lab_t3",
+                    "Amount": 6
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 300,
+            "ResearchDevice": "",
+            "RequiredFactions": [],
+            "Icon": "set:dayz_gui image:iconSkull"
+        }
+    ]
+}

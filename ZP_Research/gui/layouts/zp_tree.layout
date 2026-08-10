@@ -1,0 +1,843 @@
+FrameWidgetClass ZP_TreeRoot {
+ visible 1
+ ignorepointer 1
+ position 0 0
+ size 1 1
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ priority 998
+ {
+  PanelWidgetClass Backdrop {
+   visible 1
+   ignorepointer 1
+   color 0 0 0 0.6
+   position 0 0
+   size 1 1
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   priority 1
+   style rover_sim_colorable
+  }
+  PanelWidgetClass Dialog {
+   visible 1
+   ignorepointer 1
+   clipchildren 1
+   color 0.06 0.07 0.08 0.98
+   halign center_ref
+   valign center_ref
+   position 0 0
+   size 1280 720
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   priority 2
+   style rover_sim_colorable
+   {
+    PanelWidgetClass HeaderBar {
+     visible 1
+     ignorepointer 1
+     color 0.11 0.14 0.17 1
+     position 0 0
+     size 1280 56
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 1
+     style rover_sim_colorable
+    }
+    TextWidgetClass Title {
+     visible 1
+     ignorepointer 1
+     color 0.6 0.85 1 1
+     position 24 16
+     size 460 26
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 2
+     text "#str_zp_ui_tree_title"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 20
+    }
+    TextWidgetClass PoolLine {
+     visible 1
+     ignorepointer 1
+     color 0.72 0.85 0.72 1
+     position 500 20
+     size 620 22
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 2
+     text ""
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnClose {
+     visible 1
+     ignorepointer 0
+     color 0.42 0.14 0.14 1
+     position 1160 14
+     size 100 28
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 10
+     style Colorable
+     text "#str_zp_ui_btn_close"
+     text_proportion 0.55
+     font "gui/fonts/sdf_MetronBook24"
+    }
+    TextWidgetClass LegendLine {
+     visible 1
+     ignorepointer 1
+     color 0.65 0.70 0.76 1
+     position 24 66
+     size 900 20
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 3
+     text ""
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 13
+    }
+    PanelWidgetClass TabBar {
+     visible 1
+     ignorepointer 1
+     color 0.09 0.11 0.13 1
+     position 0 56
+     size 1280 40
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 1
+     style rover_sim_colorable
+    }
+    PanelWidgetClass PointsPanel {
+     visible 1
+     ignorepointer 1
+     color 0.10 0.12 0.14 1
+     position 12 108
+     size 196 560
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 3
+     style rover_sim_colorable
+     {
+      TextWidgetClass PointsTitle {
+       visible 1
+       ignorepointer 1
+       color 0.60 0.85 1 1
+       position 12 10
+       size 172 22
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text "#str_zp_ui_points_title"
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 14
+      }
+      TextWidgetClass PointLine0 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 38
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine1 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 59
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine2 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 80
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine3 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 101
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine4 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 122
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine5 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 143
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine6 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 164
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine7 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 185
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine8 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 206
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine9 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 227
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine10 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 248
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine11 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 269
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine12 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 290
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine13 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 311
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine14 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 332
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine15 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 353
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine16 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 374
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine17 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 395
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine18 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 416
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine19 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 437
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine20 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 458
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine21 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 479
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine22 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 500
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      TextWidgetClass PointLine23 {
+       visible 0
+       ignorepointer 1
+       color 0.86 0.86 0.90 1
+       position 12 521
+       size 172 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 12
+      }
+     }
+    }
+    PanelWidgetClass TreeBackPanel {
+     visible 1
+     ignorepointer 1
+     color 0.08 0.09 0.11 1
+     position 214 108
+     size 700 560
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 1
+     style rover_sim_colorable
+    }
+    ImageWidgetClass TreeBgImage {
+     visible 0
+     ignorepointer 1
+     position 214 108
+     size 700 560
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 2
+     // УВАГА: це значення на картинку НЕ впливає (перевірено живцем разом із SetColor і
+     // SetAlpha з коду) — рушій малює її повністю непрозорою. Лишаємо як було.
+     color 1 1 1 0.30
+     "stretch mode" stretch_w_h
+     "src alpha" 1
+    }
+    ScrollWidgetClass TreeScroll {
+     visible 1
+     ignorepointer 0
+     position 214 108
+     size 700 560
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 3
+     clipchildren 1
+     "Scrollbar V" 1
+     {
+      PanelWidgetClass TreeContent {
+       visible 1
+       ignorepointer 1
+       color 0.08 0.09 0.11 0
+       position 0 0
+       size 700 2000
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 1
+       style rover_sim_colorable
+       {
+        CanvasWidgetClass TreeCanvas {
+         visible 1
+         ignorepointer 1
+         position 0 0
+         size 700 2000
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         priority 1
+        }
+       }
+      }
+     }
+    }
+    PanelWidgetClass DetailPanel {
+     visible 1
+     ignorepointer 1
+     color 0.10 0.12 0.14 1
+     position 932 108
+     size 332 560
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 3
+     style rover_sim_colorable
+     {
+      TextWidgetClass NodeName {
+       visible 1
+       ignorepointer 1
+       color 0.92 0.94 0.98 1
+       position 16 14
+       size 300 26
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 15
+      }
+      TextWidgetClass NodeDesc0 {
+       visible 1
+       ignorepointer 1
+       color 0.74 0.76 0.80 1
+       position 14 46
+       size 304 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 13
+      }
+      TextWidgetClass NodeDesc1 {
+       visible 1
+       ignorepointer 1
+       color 0.74 0.76 0.80 1
+       position 14 67
+       size 304 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 13
+      }
+      TextWidgetClass NodeDesc2 {
+       visible 1
+       ignorepointer 1
+       color 0.74 0.76 0.80 1
+       position 14 88
+       size 304 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 13
+      }
+      TextWidgetClass NodeDesc3 {
+       visible 1
+       ignorepointer 1
+       color 0.74 0.76 0.80 1
+       position 14 109
+       size 304 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 13
+      }
+      TextWidgetClass NodeDesc4 {
+       visible 1
+       ignorepointer 1
+       color 0.74 0.76 0.80 1
+       position 14 130
+       size 304 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 13
+      }
+      TextWidgetClass NodeDesc5 {
+       visible 1
+       ignorepointer 1
+       color 0.74 0.76 0.80 1
+       position 14 151
+       size 304 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 13
+      }
+      TextWidgetClass NodeDesc6 {
+       visible 1
+       ignorepointer 1
+       color 0.74 0.76 0.80 1
+       position 14 172
+       size 304 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 13
+      }
+      TextWidgetClass NodeCostTitle {
+       visible 1
+       ignorepointer 1
+       color 0.80 0.82 0.86 1
+       position 16 206
+       size 300 20
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text "#str_zp_ui_cost_label"
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 14
+      }
+      MultilineTextWidgetClass NodeCost {
+       visible 1
+       ignorepointer 1
+       clipchildren 1
+       color 0.86 0.78 0.56 1
+       position 14 230
+       size 304 136
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 13
+      }
+      TextWidgetClass NodeStatus {
+       visible 1
+       ignorepointer 1
+       color 0.72 0.88 0.72 1
+       position 16 374
+       size 300 24
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 15
+      }
+     }
+    }
+    ButtonWidgetClass BtnResearch {
+     visible 1
+     ignorepointer 0
+     color 0.16 0.36 0.20 1
+     position 948 618
+     size 300 36
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 11
+     style Colorable
+     text "#str_zp_ui_btn_research"
+     text_proportion 0.5
+     font "gui/fonts/sdf_MetronBook24"
+    }
+    TextWidgetClass StatusLine {
+     visible 1
+     ignorepointer 1
+     color 0.90 0.82 0.55 1
+     position 20 682
+     size 1240 24
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 2
+     text ""
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 14
+    }
+   }
+  }
+ }
+}

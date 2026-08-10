@@ -1,0 +1,34 @@
+{
+    "ConfigVersion": 1,
+    "Rules": [
+        {
+            "Id": "demo_pack_apple",
+            "Enabled": 1,
+            "Device": "ZP_SampleFridge",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Apple",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 10.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "demo_apple"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "демо-пакувальник: яблуко з карго -> зразок із вмістом demo_apple; замініть своїм контентом. Бали дає не прилад, а здача заготовки на терміналі"
+        }
+    ]
+}

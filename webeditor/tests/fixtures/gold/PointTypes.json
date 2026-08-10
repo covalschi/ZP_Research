@@ -1,0 +1,214 @@
+{
+    "ConfigVersion": 1,
+    "PointTypes": [
+        {
+            "Id": "bio_field_t1",
+            "Name": "Польове дослідження біології 1 тиру",
+            "Icon": "",
+            "Color": "#7CB342",
+            "SortOrder": 1,
+            "Category": "bio",
+            "Kind": "field",
+            "Tier": 1
+        },
+        {
+            "Id": "bio_field_t2",
+            "Name": "Польове дослідження біології 2 тиру",
+            "Icon": "",
+            "Color": "#7CB342",
+            "SortOrder": 2,
+            "Category": "bio",
+            "Kind": "field",
+            "Tier": 2
+        },
+        {
+            "Id": "bio_field_t3",
+            "Name": "Польове дослідження біології 3 тиру",
+            "Icon": "",
+            "Color": "#7CB342",
+            "SortOrder": 3,
+            "Category": "bio",
+            "Kind": "field",
+            "Tier": 3
+        },
+        {
+            "Id": "bio_lab_t1",
+            "Name": "Лабораторне дослідження біології 1 тиру",
+            "Icon": "",
+            "Color": "#7CB342",
+            "SortOrder": 4,
+            "Category": "bio",
+            "Kind": "lab",
+            "Tier": 1
+        },
+        {
+            "Id": "bio_lab_t2",
+            "Name": "Лабораторне дослідження біології 2 тиру",
+            "Icon": "",
+            "Color": "#7CB342",
+            "SortOrder": 5,
+            "Category": "bio",
+            "Kind": "lab",
+            "Tier": 2
+        },
+        {
+            "Id": "bio_lab_t3",
+            "Name": "Лабораторне дослідження біології 3 тиру",
+            "Icon": "",
+            "Color": "#7CB342",
+            "SortOrder": 6,
+            "Category": "bio",
+            "Kind": "lab",
+            "Tier": 3
+        },
+        {
+            "Id": "anomaly_field_t1",
+            "Name": "Польове дослідження аномалій 1 тиру",
+            "Icon": "",
+            "Color": "#AB47BC",
+            "SortOrder": 7,
+            "Category": "anomaly",
+            "Kind": "field",
+            "Tier": 1
+        },
+        {
+            "Id": "anomaly_field_t2",
+            "Name": "Польове дослідження аномалій 2 тиру",
+            "Icon": "",
+            "Color": "#AB47BC",
+            "SortOrder": 8,
+            "Category": "anomaly",
+            "Kind": "field",
+            "Tier": 2
+        },
+        {
+            "Id": "anomaly_field_t3",
+            "Name": "Польове дослідження аномалій 3 тиру",
+            "Icon": "",
+            "Color": "#AB47BC",
+            "SortOrder": 9,
+            "Category": "anomaly",
+            "Kind": "field",
+            "Tier": 3
+        },
+        {
+            "Id": "anomaly_lab_t1",
+            "Name": "Лабораторне дослідження аномалій 1 тиру",
+            "Icon": "",
+            "Color": "#AB47BC",
+            "SortOrder": 10,
+            "Category": "anomaly",
+            "Kind": "lab",
+            "Tier": 1
+        },
+        {
+            "Id": "anomaly_lab_t2",
+            "Name": "Лабораторне дослідження аномалій 2 тиру",
+            "Icon": "",
+            "Color": "#AB47BC",
+            "SortOrder": 11,
+            "Category": "anomaly",
+            "Kind": "lab",
+            "Tier": 2
+        },
+        {
+            "Id": "anomaly_lab_t3",
+            "Name": "Лабораторне дослідження аномалій 3 тиру",
+            "Icon": "",
+            "Color": "#AB47BC",
+            "SortOrder": 12,
+            "Category": "anomaly",
+            "Kind": "lab",
+            "Tier": 3
+        },
+        {
+            "Id": "electronics_field_t1",
+            "Name": "Польове дослідження електроніки 1 тиру",
+            "Icon": "",
+            "Color": "#29B6F6",
+            "SortOrder": 13,
+            "Category": "electronics",
+            "Kind": "field",
+            "Tier": 1
+        },
+        {
+            "Id": "electronics_field_t2",
+            "Name": "Польове дослідження електроніки 2 тиру",
+            "Icon": "",
+            "Color": "#29B6F6",
+            "SortOrder": 14,
+            "Category": "electronics",
+            "Kind": "field",
+            "Tier": 2
+        },
+        {
+            "Id": "electronics_field_t3",
+            "Name": "Польове дослідження електроніки 3 тиру",
+            "Icon": "",
+            "Color": "#29B6F6",
+            "SortOrder": 15,
+            "Category": "electronics",
+            "Kind": "field",
+            "Tier": 3
+        },
+        {
+            "Id": "electronics_lab_t1",
+            "Name": "Лабораторне дослідження електроніки 1 тиру",
+            "Icon": "",
+            "Color": "#29B6F6",
+            "SortOrder": 16,
+            "Category": "electronics",
+            "Kind": "lab",
+            "Tier": 1
+        },
+        {
+            "Id": "electronics_lab_t2",
+            "Name": "Лабораторне дослідження електроніки 2 тиру",
+            "Icon": "",
+            "Color": "#29B6F6",
+            "SortOrder": 17,
+            "Category": "electronics",
+            "Kind": "lab",
+            "Tier": 2
+        },
+        {
+            "Id": "electronics_lab_t3",
+            "Name": "Лабораторне дослідження електроніки 3 тиру",
+            "Icon": "",
+            "Color": "#29B6F6",
+            "SortOrder": 18,
+            "Category": "electronics",
+            "Kind": "lab",
+            "Tier": 3
+        }
+    ],
+    "Categories": [
+        {
+            "Id": "bio",
+            "Name": "Біологія",
+            "SortOrder": 1
+        },
+        {
+            "Id": "anomaly",
+            "Name": "Аномалії",
+            "SortOrder": 2
+        },
+        {
+            "Id": "electronics",
+            "Name": "Електроніка",
+            "SortOrder": 3
+        }
+    ],
+    "Kinds": [
+        {
+            "Id": "field",
+            "Name": "польові",
+            "SortOrder": 1
+        },
+        {
+            "Id": "lab",
+            "Name": "лабораторні",
+            "SortOrder": 2
+        }
+    ]
+}

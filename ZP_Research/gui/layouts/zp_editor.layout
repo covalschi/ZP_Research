@@ -1,0 +1,493 @@
+FrameWidgetClass ZP_EditorRoot {
+ position 0 0
+ size 1 1
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ priority 999
+ {
+  PanelWidgetClass Backdrop {
+   visible 1
+   ignorepointer 1
+   position 0 0
+   size 1 1
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   priority 1
+   color 0 0 0 0.6
+   style rover_sim_colorable
+  }
+  PanelWidgetClass Dialog {
+   visible 1
+   ignorepointer 1
+   clipchildren 1
+   halign center_ref
+   valign center_ref
+   position 0 0
+   hexactpos 1
+   vexactpos 1
+   size 1100 640
+   hexactsize 1
+   vexactsize 1
+   priority 2
+   color 0.06 0.07 0.08 0.98
+   style rover_sim_colorable
+   {
+    TextWidgetClass Title {
+     position 20 12
+     hexactpos 1
+     vexactpos 1
+     size 700 26
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_editor_title"
+     "exact text" 1
+     "exact text size" 18
+     "bold text" 1
+     color 0.85 0.9 0.95 1
+    }
+    ButtonWidgetClass BtnSecRules {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 20 46
+     hexactpos 1
+     vexactpos 1
+     size 128 28
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_sec_rules"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnSecNodes {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 156 46
+     hexactpos 1
+     vexactpos 1
+     size 128 28
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_sec_nodes"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnSecTypes {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 292 46
+     hexactpos 1
+     vexactpos 1
+     size 128 28
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_sec_pointtypes"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnSecSettings {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 428 46
+     hexactpos 1
+     vexactpos 1
+     size 128 28
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_sec_settings"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnSecFactions {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 564 46
+     hexactpos 1
+     vexactpos 1
+     size 128 28
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_sec_factions"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnSecData {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 700 46
+     hexactpos 1
+     vexactpos 1
+     size 128 28
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_sec_dataitems"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnSecModules {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 836 46
+     hexactpos 1
+     vexactpos 1
+     size 128 28
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_sec_modules"
+     "exact text" 1
+     "exact text size" 14
+    }
+    TextListboxWidgetClass ItemList {
+     position 20 84
+     hexactpos 1
+     vexactpos 1
+     size 330 460
+     hexactsize 1
+     vexactsize 1
+     colums "Item;100"
+     color 0.12 0.13 0.15 1
+     // "lines" — СКІЛЬКИ РЯДКІВ ВМІЩУЄ ВІКОНЦЕ, а не скільки їх є. Саме звідси береться
+     // висота рядка (висота списку / lines), а з неї — кегль. Без цього ключа рушій бере
+     // своє мале умовчання, і на 460 пікселях виходили рядки під 55 пікселів: у грі це
+     // мало вигляд велетенського тексту, обрізаного на пів слова. Ключ ставлять і ванільні
+     // списки, і сам VPP (vppnotificationdebug.layout:79).
+     lines 20
+     font "gui/fonts/sdf_MetronBook24"
+    }
+    ButtonWidgetClass BtnNew {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 20 552
+     hexactpos 1
+     vexactpos 1
+     size 160 30
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_btn_new"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnDelete {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 190 552
+     hexactpos 1
+     vexactpos 1
+     size 160 30
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_btn_delete"
+     "exact text" 1
+     "exact text size" 14
+    }
+    TextWidgetClass MetaLabel {
+     position 370 84
+     hexactpos 1
+     vexactpos 1
+     size 710 20
+     hexactsize 1
+     vexactsize 1
+     text ""
+     "exact text" 1
+     "exact text size" 13
+     color 0.6 0.75 0.6 1
+    }
+    MultilineEditBoxWidgetClass JsonEdit {
+     visible 0
+     position 370 110
+     hexactpos 1
+     vexactpos 1
+     size 710 430
+     hexactsize 1
+     vexactsize 1
+     text ""
+     "exact text" 1
+     "exact text size" 13
+     color 0.85 0.85 0.8 1
+    }
+    // ФОРМА. Полотно всередині прокрутки: рядки розставляє код, тому висота полотна
+    // задається в рантаймі, а не тут.
+    ScrollWidgetClass FormScroll {
+     position 370 110
+     hexactpos 1
+     vexactpos 1
+     size 710 430
+     hexactsize 1
+     vexactsize 1
+     // Ключ зветься саме "Scrollbar V" (так у всіх ванільних розмітках); вигаданого
+     // "vertical scroll" рушій не знає, і смуга не з'являлась.
+     "Scrollbar V" 1
+     "Scrollbar H" 0
+     {
+      // СІТКА В ОДНУ КОЛОНКУ, а не панель. Висоту вмісту прокрутка бере з дитини, а
+      // панелі її задавали ми самі — і SetSize по висоті не спрацьовував, тож вміст
+      // назавжди лишався 100 одиниць: прокручувати не було чого, а рядки нижче просто
+      // виходили за вікно. Сітка рахує свою висоту сама (Size To Content V).
+      // Саме WrapSpacer тут не годиться: із «Size To Content H» він розширюється під
+      // вміст і поставив би рядки в один ряд по горизонталі.
+      GridSpacerWidgetClass FormContent {
+       position 0 0
+       hexactpos 1
+       vexactpos 1
+       size 700 100
+       hexactsize 1
+       vexactsize 0
+       Padding 0
+       Margin 0
+       Columns 1
+       "Size To Content V" 1
+      }
+     }
+    }
+    ButtonWidgetClass BtnJson {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 1000 80
+     hexactpos 1
+     vexactpos 1
+     size 80 22
+     hexactsize 1
+     vexactsize 1
+     text "JSON"
+     "exact text" 1
+     "exact text size" 13
+    }
+    // ВИБІР КЛАСУ — панель ВСЕРЕДИНІ цього ж вікна, схована до виклику.
+    // Ані окреме вікно, ані діалог: VPPDialogBox ставить своєму кореню SetSort(1024)
+    // і вже одного разу зробив інтерфейс глухим, опинившись невидимим поверх нашого
+    // повноекранного кореня. Панель усередині нічого не перехоплює.
+    PanelWidgetClass PickerPanel {
+     visible 0
+     ignorepointer 0
+     priority 50
+     halign center_ref
+     valign center_ref
+     position 0 0
+     hexactpos 1
+     vexactpos 1
+     size 520 460
+     hexactsize 1
+     vexactsize 1
+     color 0.08 0.09 0.11 1
+     style rover_sim_colorable
+     {
+      TextWidgetClass PickerTitle {
+       position 16 12
+       hexactpos 1
+       vexactpos 1
+       size 480 22
+       hexactsize 1
+       vexactsize 1
+       text "#str_zp_ui_pick_title"
+       "exact text" 1
+       "exact text size" 15
+       "bold text" 1
+       color 0.85 0.9 0.95 1
+      }
+      // Підкладка під поле пошуку: без неї EditBoxWidget зі стилем Default на темному тлі
+      // не видно ЗОВСІМ, поки в ньому немає фокуса — порожнє місце замість поля вводу.
+      PanelWidgetClass PickerFilterBg {
+       position 14 42
+       hexactpos 1
+       vexactpos 1
+       size 384 28
+       hexactsize 1
+       vexactsize 1
+       color 0.13 0.15 0.17 1
+       style rover_sim_colorable
+      }
+      EditBoxWidgetClass PickerFilter {
+       position 16 44
+       hexactpos 1
+       vexactpos 1
+       size 380 24
+       hexactsize 1
+       vexactsize 1
+       style Default
+       text ""
+       "exact text" 1
+       "exact text size" 13
+       color 0.9 0.9 0.86 1
+      }
+      ButtonWidgetClass PickerFind {
+       position 404 44
+       hexactpos 1
+       vexactpos 1
+       size 100 24
+       hexactsize 1
+       vexactsize 1
+       style Colorable
+       color 0.16 0.20 0.24 1
+       text "#str_zp_ui_pick_find"
+       "exact text" 1
+       "exact text size" 13
+      }
+      TextListboxWidgetClass PickerList {
+       position 16 78
+       hexactpos 1
+       vexactpos 1
+       size 488 330
+       hexactsize 1
+       vexactsize 1
+       colums "Class;100"
+       color 0.12 0.13 0.15 1
+       lines 22
+       font "gui/fonts/sdf_MetronBook24"
+      }
+      ButtonWidgetClass PickerOk {
+       position 16 420
+       hexactpos 1
+       vexactpos 1
+       size 200 26
+       hexactsize 1
+       vexactsize 1
+       style Colorable
+       color 0.16 0.26 0.18 1
+       text "#str_zp_ui_pick_ok"
+       "exact text" 1
+       "exact text size" 13
+      }
+      ButtonWidgetClass PickerCancel {
+       position 304 420
+       hexactpos 1
+       vexactpos 1
+       size 200 26
+       hexactsize 1
+       vexactsize 1
+       style Colorable
+       color 0.20 0.16 0.16 1
+       text "#str_zp_ui_pick_cancel"
+       "exact text" 1
+       "exact text size" 13
+      }
+     }
+    }
+    ButtonWidgetClass BtnApply {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 370 552
+     hexactpos 1
+     vexactpos 1
+     size 130 30
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_btn_apply"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnToggle {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 510 552
+     hexactpos 1
+     vexactpos 1
+     size 130 30
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_btn_toggle"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnRefresh {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 650 552
+     hexactpos 1
+     vexactpos 1
+     size 130 30
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_btn_refresh"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnReload {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 790 552
+     hexactpos 1
+     vexactpos 1
+     size 160 30
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_btn_reload"
+     "exact text" 1
+     "exact text size" 14
+    }
+    ButtonWidgetClass BtnClose {
+     visible 1
+     ignorepointer 0
+     priority 10
+     style Colorable
+     color 0.16 0.20 0.24 1
+     position 960 552
+     hexactpos 1
+     vexactpos 1
+     size 120 30
+     hexactsize 1
+     vexactsize 1
+     text "#str_zp_ui_btn_close"
+     "exact text" 1
+     "exact text size" 14
+    }
+    TextWidgetClass StatusLine {
+     position 20 596
+     hexactpos 1
+     vexactpos 1
+     size 1060 26
+     hexactsize 1
+     vexactsize 1
+     text ""
+     "exact text" 1
+     "exact text size" 13
+     color 0.9 0.8 0.5 1
+    }
+   }
+  }
+ }
+}

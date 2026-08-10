@@ -1,0 +1,121 @@
+{
+    "ConfigVersion": 1,
+    "Rules": [
+        {
+            "Id": "chain_pack_chimera",
+            "Enabled": 1,
+            "Device": "ZP_SampleFridge",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Apple",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.4000000059604645,
+            "BasePurityMax": 0.800000011920929,
+            "TimeSec": 10.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "chimera_claw"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "ПАКУВАЛЬНИК (станція): сировина з карго -> зразок із вмістом chimera_claw"
+        },
+        {
+            "Id": "chain_pack_bloodsucker",
+            "Enabled": 1,
+            "Device": "ZP_SampleFridge",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Rag",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 10.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bloodsucker_gland"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "другий пакувальник: інша сировина -> інший вміст того самого класу зразка"
+        },
+        {
+            "Id": "chain_analyze_chimera",
+            "Enabled": 1,
+            "Device": "ZP_Microscope",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "chimera_claw"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 15.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "АНАЛІЗ: бере ЛИШЕ зразок із вмістом chimera_claw -> наукова заготовка"
+        },
+        {
+            "Id": "chain_analyze_bloodsucker",
+            "Enabled": 1,
+            "Device": "ZP_Microscope",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "bloodsucker_gland"
+            },
+            "BasePurityMin": 0.5,
+            "BasePurityMax": 0.5,
+            "TimeSec": 15.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Data_61",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": ""
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "той самий прилад і той самий КЛАС входу — різниця лише у вмісті зразка"
+        }
+    ]
+}

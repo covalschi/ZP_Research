@@ -1,0 +1,97 @@
+ButtonWidgetClass NodeBtn {
+ visible 1
+ ignorepointer 0
+ color 0.55 0.58 0.62 1
+ position 0 0
+ size 210 92
+ hexactpos 1
+ vexactpos 1
+ hexactsize 1
+ vexactsize 1
+ priority 5
+ style Colorable
+ {
+  PanelWidgetClass NodeInner {
+   visible 1
+   ignorepointer 1
+   color 0.16 0.18 0.21 1
+   position 0.008 0.02
+   size 0.984 0.96
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   priority 1
+   style rover_sim_colorable
+  }
+  PanelWidgetClass NodeIconFrame {
+   visible 1
+   ignorepointer 1
+   color 0.27 0.30 0.34 1
+   position 0.026 0.09
+   size 0.30 0.82
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   priority 2
+   style rover_sim_colorable
+  }
+  ImageWidgetClass NodeIcon {
+   visible 0
+   ignorepointer 1
+   position 0.036 0.115
+   size 0.28 0.77
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   priority 3
+   "stretch mode" stretch_w_h
+   "src alpha" 1
+  }
+  // ОДИН переносимий віджет замість двох рядків уручну. Перенос вмикає код
+  // (SetLineBreakingOverride), і рушій сам вирішує, де ламати назву — тому підпис більше
+  // не залежить від того, чи вгадали ми ширину при вимірюванні. Два фіксовані рядки
+  // різали все довше двох: «Мутагенні сполуки» ставало «Мутагенн сполуки».
+  MultilineTextWidgetClass NodeName {
+   visible 1
+   ignorepointer 1
+   color 0.97 0.97 0.97 1
+   position 0.35 0.08
+   size 0.62 0.56
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   priority 4
+   text ""
+   font "gui/fonts/sdf_MetronBook24"
+   "exact text" 1
+   "exact text size" 12
+   "bold text" 1
+   // ПЕРЕНОС ВМИКАЄ САМЕ ЦЕЙ КЛЮЧ. Одного SetLineBreakingOverride із коду мало: без
+   // «wrap 1» віджет лишається однорядковим і просто обрізає назву — що й було видно
+   // («Основи польове» замість «Основи польових досліджень»). Ключ стоїть у всіх
+   // ванільних переносимих написах.
+   wrap 1
+   "text valign" top
+  }
+  TextWidgetClass NodeSub {
+   visible 1
+   ignorepointer 1
+   color 0.88 0.88 0.88 1
+   position 0.35 0.68
+   size 0.60 0.25
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   priority 4
+   text ""
+   font "gui/fonts/sdf_MetronBook24"
+   "exact text" 1
+   "exact text size" 12
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+    "ConfigVersion": 1,
+    "Items": [
+        {
+            "Id": "ZP_Data_01",
+            "Enabled": 1,
+            "Name": "Зразок хімерної тканини",
+            "Description": "Генетичний матеріал, здобутий після аналізу зразка химери.",
+            "Points": [
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 5
+                }
+            ]
+        }
+    ]
+}

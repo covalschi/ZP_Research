@@ -1,0 +1,13 @@
+{
+    "ConfigVersion": 1,
+    "DebugMode": 1,
+    "AdminIds": [
+        "76561190000000000"
+    ],
+    "DefaultFaction": "default",
+    "TreeTerminalClasses": [
+        "ZP_LabComputer"
+    ],
+    "TreeVisibilityDepth": 2,
+    "TreeBackgroundImage": "gui/textures/dlc_panel_livonia.edds"
+}

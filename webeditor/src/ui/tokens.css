@@ -1,0 +1,114 @@
+/* Дизайн-токени «Мнемосхема пульта» — джерело істини: webeditor/DESIGN.md.
+   Палітра: 6 іменованих значень (§3) + похідні відтінки. Семантична дисципліна:
+   лампи (ok/warn/alarm) — ТІЛЬКИ стан; інтерактив — ТІЛЬКИ чорнило; штриховка
+   .hazard — ТІЛЬКИ розрив ланцюга (підпис-елемент, §6). */
+
+:root {
+  /* Палітра — іменовані */
+  --panel: #e2e4d8; /* Емаль: фон пульта */
+  --ink: #222820; /* Гравіювання: текст, провідники графа */
+  --accent: #4a3f8f; /* Чорнило: інтерактив, вибір, фокус, «змінено» */
+  --lamp-ok: #2f6b46; /* Лампа НОРМА */
+  --lamp-warn: #9a6210; /* Лампа УВАГА */
+  --lamp-alarm: #a83226; /* Лампа АВАРІЯ (замість колишнього hardcoded #c0392b) */
+
+  /* Похідні відтінки */
+  --paper: #f2f3eb; /* аркуш: картки, таблиця, поля */
+  --paper-bright: #ffffff; /* підсвітка натиску/ховеру клавіш */
+  --housing: #39413a; /* темний корпус приладу: смуга шапки */
+  --housing-ink: #e9ebe0; /* напис на корпусі */
+  --ink-muted: #5d6459; /* вицвілий напис */
+  --line: #c6cbba; /* риска на панелі */
+  --line-strong: #99a08d; /* контур клавіш, рамка шильдика */
+  --accent-deep: #38306e; /* натиснуте чорнило */
+  --accent-wash: rgba(74, 63, 143, 0.08); /* підсвітка вибраного рядка */
+  --alarm-wash: rgba(168, 50, 38, 0.07); /* фон картки-привида (T5) */
+
+  /* Типографіка за ролями (DESIGN.md §4). Bahnschrift: повне українське покриття
+     перевірено програмно (GlyphTypeface), вбудований шрифт не потрібен. */
+  --font-label: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Segoe UI', sans-serif;
+  --font-body: 'Segoe UI', system-ui, Roboto, sans-serif;
+  --font-data: 'Cascadia Mono', Consolas, 'DejaVu Sans Mono', monospace;
+
+  /* Кроки (4px-база) і радіус («верстатне» скруглення) */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --r: 2px;
+
+  /* Рецепт «скла» індикаторної лампи — єдине джерело для .lamp і будь-яких
+     лампоподібних маркерів (напр. ul.warnings li::before в index.css). */
+  --lamp-glass-shadow:
+    inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(34, 40, 32, 0.2);
+
+  /* Токени графа ланцюгів для T5 (мнемосхема, DESIGN.md §6) */
+  --chain-link: var(--ink); /* цілий провідник, 2px */
+  --chain-break: var(--lamp-alarm); /* обірвані кінці, лампа, «РОЗРИВ» */
+  --grid-minor: rgba(34, 40, 32, 0.05); /* клітинка міліметрівки 8px */
+  --grid-major: rgba(34, 40, 32, 0.09); /* головна лінія кожні 40px */
+}
+
+/* Роль «шильдик»: гравійований підпис приладу — капс, розріджений, напівстиснутий. */
+.label {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  font-stretch: 92.5%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Індикаторна лампа. Колір задають модифікатори; сама лампа — кругла, з легким
+   склом (inset) і тонким обідком. Стала, без анімації. */
+.lamp {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  vertical-align: -1px;
+  box-shadow: var(--lamp-glass-shadow);
+}
+
+.lamp-ok {
+  background: var(--lamp-ok);
+}
+
+.lamp-warn {
+  background: var(--lamp-warn);
+}
+
+.lamp-alarm {
+  background: var(--lamp-alarm);
+}
+
+/* Аварійна штриховка — ВИКЛЮЧНО для розриву ланцюга (T5): картка-привид
+   відсутнього вузла. Більше ніде на сторінці не застосовувати. */
+.hazard {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(168, 50, 38, 0.12) 0,
+    rgba(168, 50, 38, 0.12) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+/* Полотно-міліметрівка для графа ланцюгів і дерева (T5): аркуш із сіткою 8px,
+   головна лінія кожні 40px. */
+.mm-canvas {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+    linear-gradient(var(--grid-minor) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
+  background-size:
+    40px 40px,
+    40px 40px,
+    8px 8px,
+    8px 8px;
+}

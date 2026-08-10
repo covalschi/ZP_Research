@@ -1,0 +1,29 @@
+{
+    "ConfigVersion": 1,
+    "Modules": [
+        {
+            "Classname": "ZP_Tool_Optics",
+            "PurityBonus": 0.20000000298023225,
+            "Devices": [
+                "ZP_Microscope"
+            ],
+            "Notes": "оптика: тільки мікроскоп"
+        },
+        {
+            "Classname": "ZP_Tool_Centrifuge",
+            "PurityBonus": 0.30000001192092898,
+            "Devices": [
+                "ZP_SampleFridge"
+            ],
+            "Notes": "центрифуга: тільки холодильник зразків"
+        },
+        {
+            "Classname": "ZP_Tool_Reagents",
+            "PurityBonus": 0.25,
+            "Devices": [
+                "ZP_ChemBench"
+            ],
+            "Notes": "реагенти: тільки хімічний стенд"
+        }
+    ]
+}

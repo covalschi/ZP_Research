@@ -1,0 +1,19 @@
+{
+    "ConfigVersion": 1,
+    "Items": [
+        {
+            "Id": "ZP_Data_01",
+            "Enabled": 1,
+            "Name": "Перший запис (сервер видалить)",
+            "Description": "d1",
+            "Points": []
+        },
+        {
+            "Id": "ZP_Data_01",
+            "Enabled": 1,
+            "Name": "Останній запис (виживе)",
+            "Description": "d2",
+            "Points": []
+        }
+    ]
+}

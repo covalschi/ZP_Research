@@ -1,0 +1,150 @@
+// ОДИН шаблон на всі види рядка форми. Зайве ховається кодом: шість окремих шаблонів
+// розійшлися б у стилі першою ж правкою, а тут вирівнювання й кеглі задані один раз.
+//
+// XComboBoxWidget тут НЕМАЄ навмисно. Штатний випадний список рушія не вміє шукати, а
+// переліків на сотні значень (класи предметів) у нас більшість — гортати їх нестерпно.
+// Замість нього BtnValue: кнопка з поточним значенням, яка відкриває список із живим
+// пошуком. Один механізм на класи, вузли, типи балів і фракції — і виглядає однаково.
+//
+// Кожен віджет ОБОВ'ЯЗКОВО оголошує hexactpos/vexactpos/hexactsize/vexactsize: без
+// котрогось із прапорців рушій мовчки дає нульовий розмір, і рядок не малюється зовсім.
+// clipchildren 0 ОБОВ'ЯЗКОВИЙ. Позиції й розміри дітей рушій масштабує (оголошені 40x22
+// дали на екрані 59x33 при масштабі 1.48), а от ПРЯМОКУТНИК ОБРІЗАННЯ бере оголошений
+// розмір як є: усе, що далі 700 ПІКСЕЛІВ від лівого краю рядка, зникало. Підкладка
+// значення обривалась рівно на цій межі, а кнопки «+»/«-» не малювались зовсім — і при
+// цьому чесно повідомляли visible=true та правильні екранні координати, тобто на місці
+// це виглядало як «віджет є, але його немає».
+PanelWidgetClass ZP_FormRow {
+ position 0 0
+ size 700 24
+ hexactpos 1
+ vexactpos 1
+ hexactsize 1
+ vexactsize 1
+ clipchildren 0
+ color 0 0 0 0
+ {
+  TextWidgetClass Lbl {
+   position 0 4
+   size 230 18
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   text ""
+   "exact text" 1
+   "exact text size" 13
+   color 0.70 0.76 0.72 1
+  }
+  // Підкладка поля: без неї рядок читається як суцільний текст без меж, і незрозуміло,
+  // де взагалі можна щось увести.
+  PanelWidgetClass ValueBg {
+   position 236 1
+   size 360 22
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   color 0.13 0.15 0.17 1
+   style rover_sim_colorable
+  }
+  EditBoxWidgetClass Edit {
+   position 240 2
+   size 352 20
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   text ""
+   "exact text" 1
+   "exact text size" 13
+   color 0.92 0.92 0.88 1
+  }
+  // Багаторядкове поле для довгих текстів (опис вузла). Однорядковий EditBox для них
+  // не годиться: опис вузла — це два-три речення, і в 20 пікселів висоти адмін бачив
+  // лише хвіст того, що набирає.
+  MultilineEditBoxWidgetClass EditBig {
+   visible 0
+   position 240 2
+   size 352 90
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   text ""
+   "exact text" 1
+   "exact text size" 13
+   color 0.92 0.92 0.88 1
+  }
+  // Поле вибору: кнопка БЕЗ тексту, а значення малює ValueTxt поверх неї. Причина проста —
+  // ButtonWidget центрує свій підпис, і поруч із полями вводу, де текст притиснутий ліворуч,
+  // це читалось як два різні інтерфейси в одному вікні.
+  ButtonWidgetClass BtnValue {
+   visible 0
+   position 236 1
+   size 360 22
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Colorable
+   color 0.17 0.21 0.26 1
+   text ""
+  }
+  // Оголошений ПІСЛЯ кнопки — тобто малюється поверх неї. ignorepointer, щоб клік
+  // проходив крізь текст до кнопки під ним.
+  TextWidgetClass ValueTxt {
+   visible 0
+   ignorepointer 1
+   position 244 4
+   size 344 18
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   text ""
+   "exact text" 1
+   "exact text size" 13
+   color 0.92 0.94 0.90 1
+  }
+  CheckBoxWidgetClass Check {
+   visible 0
+   position 240 2
+   size 20 20
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+  }
+  ButtonWidgetClass BtnAdd {
+   visible 0
+   position 604 1
+   size 40 22
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Colorable
+   color 0.16 0.28 0.18 1
+   text "+"
+   "exact text" 1
+   "exact text size" 13
+  }
+  ButtonWidgetClass BtnDel {
+   visible 0
+   position 650 1
+   size 40 22
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Colorable
+   color 0.30 0.16 0.16 1
+   text "-"
+   "exact text" 1
+   "exact text size" 13
+  }
+ }
+}

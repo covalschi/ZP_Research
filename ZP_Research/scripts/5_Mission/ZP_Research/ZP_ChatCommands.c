@@ -29,10 +29,15 @@ class ZP_ChatCommands
 
         string cmd = tokens[1];
         cmd.ToLower();
+        // КОРОТКІ АЛІАСИ. Рядок чату DayZ обрізається на ~43 символах (зміряно на стенді
+        // 2026-08-23: «!zp fillstation ChernarusMap 1 ZP_Bnd_Pack_Trail» дійшов як
+        // «…ZP_Bnd_Pack_T»), тож довгі класи приладів і мітки зразків у повну команду не
+        // влазять. fs = fillstation, fsm = fillsample, ss = startstation, col = collect.
+        cmd = ShortAlias(cmd);
 
         if (cmd == "help")
         {
-            Reply(sender, "!zp tree/pool/faction/research <вузол> (візуальне дерево — дія F на науковому комп'ютері); адмін: editor/treeui/static*/set/pointtype/reload/spawn*/start|fill|cancelstation/probe/collect/grantpool/completenode/resetfaction/upsertnode/deletenode/deleterule/datalist/sample/sampleinfo/fillsample/modules/deposit");
+            Reply(sender, "!zp tree/pool/faction/research <вузол> (візуальне дерево — дія F на науковому комп'ютері); адмін: editor/treeui/static*/set/pointtype/reload/spawn*/wear/start|fill|cancelstation/probe/collect/grantpool/completenode/resetfaction/upsertnode/deletenode/deleterule/datalist/sample/sampleinfo/fillsample/modules/deposit");
             Reply(sender, "зразки: !zp sample [клас] <вміст> [чистота] | !zp fillsample [клас] <вміст> [чистота] [к-сть] [прилад]; клас — із родини ZP_Sample_Base (ZP_Sample_01..30), без нього береться сумісний ZP_Sample, якого не бере жодне правило стенду");
             return;
         }
@@ -43,7 +48,9 @@ class ZP_ChatCommands
         }
         if (cmd == "pool")
         {
-            Reply(sender, "пул " + ZP_Factions.GetFactionClass(sender) + ": " + ZP_FactionDB.Get().DescribePool(ZP_Factions.GetFactionClass(sender)));
+            // окремим рядком — пастка компілятора, розписана в ZP_MissionServer.InvokeOnConnect
+            string poolFaction = ZP_Factions.GetFactionClass(sender);
+            Reply(sender, "пул " + poolFaction + ": " + ZP_FactionDB.Get().DescribePool(poolFaction));
             return;
         }
         if (cmd == "faction")
@@ -153,6 +160,11 @@ class ZP_ChatCommands
         if (cmd == "spawnhands")
         {
             CmdSpawnHands(sender, tokens);
+            return;
+        }
+        if (cmd == "wear")
+        {
+            CmdWear(sender, tokens);
             return;
         }
         if (cmd == "startstation")
@@ -311,6 +323,11 @@ class ZP_ChatCommands
             CmdSample(sender, tokens);
             return;
         }
+        if (cmd == "carrier")
+        {
+            CmdCarrier(sender, tokens);
+            return;
+        }
         if (cmd == "sampleinfo")
         {
             CmdSampleInfo(sender);
@@ -428,6 +445,56 @@ class ZP_ChatCommands
 
     // Зразок із проставленими прихованими полями. Це діагностичний шлях: штатно зразок
     // створює правило-пакувальник (наступний підкрок).
+    // Носій дослідження в інвентар (тест здачі/визначення): !zp carrier <science|combat|stalker> <тип балів> <кількість>
+    protected static void CmdCarrier(PlayerBase sender, TStringArray tokens)
+    {
+        if (tokens.Count() < 5)
+        {
+            Reply(sender, "використання: !zp carrier <science|combat|stalker> <Id типу балів> <кількість>");
+            Reply(sender, "напр.: !zp carrier science bio_lab_t1 3");
+            return;
+        }
+        string supertype = tokens[2];   // не "super": зарезервоване слово Enforce (спіймано бутом 2026-08-23)
+        supertype.ToLower();
+        string cls = "";
+        if (supertype == "science")
+            cls = "ZP_Carrier_Science";
+        else if (supertype == "combat")
+            cls = "ZP_Carrier_Combat";
+        else if (supertype == "stalker")
+            cls = "ZP_Carrier_Stalker";
+        if (cls == "")
+        {
+            Reply(sender, "супертип має бути science, combat або stalker");
+            return;
+        }
+        string state = ZP_CarrierState.Make(tokens[3], tokens[4].ToInt());
+        string ptId;
+        int amount;
+        if (!ZP_CarrierState.Parse(state, ptId, amount))
+        {
+            Reply(sender, "кількість має бути цілим числом 1.." + ZP_CarrierState.MAX_AMOUNT);
+            return;
+        }
+        if (!ZP_ConfigService.Get().GetPointTypes().Find(ptId))
+            Reply(sender, "увага: типу балів '" + ptId + "' немає в PointTypes.json — термінал такий носій не прийме");
+        // Спершу В РУКИ: обидві дії термінала (визначити/здати) беруть предмет із рук, і
+        // тест без перетягування в інвентарі інакше неможливий (мосту бракує «взяти в руки»).
+        EntityAI created = sender.GetHumanInventory().CreateInHands(cls);
+        if (!created)
+            created = sender.CreateInInventory(cls);
+        if (!created)
+            created = sender.SpawnEntityOnGroundOnCursorDir(cls, 0.5);
+        ZP_Carrier_Base carrier = ZP_Carrier_Base.Cast(created);
+        if (!carrier)
+        {
+            Reply(sender, "не вдалося створити " + cls);
+            return;
+        }
+        carrier.ZP_SetState(state);
+        Reply(sender, "OK: " + cls + " стан '" + state + "'");
+    }
+
     protected static void CmdSample(PlayerBase sender, TStringArray tokens)
     {
         string cls;
@@ -719,6 +786,36 @@ class ZP_ChatCommands
         Reply(sender, "OK: заспавнено " + spawned + " x " + cls);
     }
 
+    // одягнути нашивку: !zp wear <клас>. Фракція гравця = нашивка в слоті Armband, а
+    // перетягнути її в слот через міст MCP нема чим — ця команда ставить предмет одразу
+    // в слот (стару нашивку видаляє). Без неї станки чужих фракцій живцем не перевірити.
+    protected static void CmdWear(PlayerBase sender, TStringArray tokens)
+    {
+        if (tokens.Count() < 3)
+        {
+            Reply(sender, "використання: !zp wear <клас нашивки> (напр. Armband_Black)");
+            return;
+        }
+        string cls = tokens[2];
+        if (!ZP_ProcessingRules.ClassExists(cls))
+        {
+            Reply(sender, "невідомий клас: '" + cls + "'");
+            return;
+        }
+        EntityAI old = sender.FindAttachmentBySlotName("Armband");
+        if (old)
+            GetGame().ObjectDelete(old);
+        EntityAI worn = sender.GetInventory().CreateAttachmentEx(cls, InventorySlots.GetSlotIdFromString("Armband"));
+        if (!worn)
+        {
+            Reply(sender, "не вдалося одягнути '" + cls + "' у слот Armband (клас не нашивка?)");
+            return;
+        }
+        // резолв фракції — окремим рядком (пастка X.Get().M(a, ScriptFn(b)), див. ZP_MissionServer)
+        string wearFc = ZP_Factions.GetFactionClass(sender);
+        Reply(sender, "OK: одягнено " + cls + "; фракція тепер: " + ZP_Factions.GetDisplayName(wearFc) + " [" + wearFc + "]");
+    }
+
     protected static void CmdSpawnGround(PlayerBase sender, TStringArray tokens)
     {
         if (tokens.Count() < 3)
@@ -819,6 +916,32 @@ class ZP_ChatCommands
             Reply(sender, "для вашої фракції вузлів немає");
     }
 
+    protected static string ShortAlias(string cmd)
+    {
+        if (cmd == "fs")
+            return "fillstation";
+        if (cmd == "fsm")
+            return "fillsample";
+        if (cmd == "ss")
+            return "startstation";
+        if (cmd == "col")
+            return "collect";
+        return cmd;
+    }
+
+    // Фільтр приладу: клас (IsKindOf / |1 — як у правилах) АБО підрядок імені без урахування
+    // регістру («pack_trail», «Proc_Khabar») — через ту саму межу ~43 символів у чаті.
+    protected static bool DeviceMatchesFilter(string devType, string devFilter)
+    {
+        if (ZP_ProcessingRules.MatchClass(devType, devFilter))
+            return true;
+        string typeLower = devType;
+        typeLower.ToLower();
+        string filterLower = devFilter;
+        filterLower.ToLower();
+        return typeLower.IndexOf(filterLower) > -1;
+    }
+
     protected static ZP_Device_Base FindNearestStation(PlayerBase sender, string devFilter = "")
     {
         array<Object> objects = new array<Object>();
@@ -829,7 +952,7 @@ class ZP_ChatCommands
             ZP_Device_Base dev = ZP_Device_Base.Cast(obj);
             if (!dev)
                 continue;
-            if (devFilter != "" && !ZP_ProcessingRules.MatchClass(dev.GetType(), devFilter))
+            if (devFilter != "" && !DeviceMatchesFilter(dev.GetType(), devFilter))
                 continue;
             return dev;
         }

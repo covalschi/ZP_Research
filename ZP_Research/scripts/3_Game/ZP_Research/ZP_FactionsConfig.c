@@ -29,6 +29,12 @@ class ZP_FactionDef
     // ні обробки з рук. Гейт правила (RequiredFactions) лишається, але він про ІНШЕ:
     // хто може виконати конкретну переробку, а не кому належить сам прилад.
     ref array<string> DeviceClasses = new array<string>();
+    // ЗАДНИК ВІКНА ДЕРЕВА ЦІЄЇ ФРАКЦІЇ (рішення власника 2026-08-23). Порожньо = береться
+    // загальний Settings.TreeBackgroundImage, тобто старі конфіги працюють як працювали.
+    // Шлях — усередині PBO: "ZP_Research/gui/textures/tree/tree_bg_<фракція>.paa".
+    // Картинку рушій НЕ приглушує (ні color розмітки, ні SetColor/SetAlpha на неї не діють),
+    // тож файл має бути темним сам по собі — інакше підписи вузлів на ньому потонуть.
+    string TreeBackgroundImage = "";
 }
 
 class ZP_FactionsConfig

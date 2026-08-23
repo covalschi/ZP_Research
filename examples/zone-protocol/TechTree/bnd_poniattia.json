@@ -1,0 +1,203 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "bnd_poniattia",
+        "Name": "Поняття братви",
+        "Icon": "",
+        "SortOrder": 3,
+        "Factions": [
+            "bandit"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "bnd_poniattia",
+            "Name": "Поняття братви",
+            "Description": "Корінь: хто кому платить за хабар і хто ходить стежками. Відкриває пакувальники й аналізатори 1 тиру обох ліній.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "khabar_lab_t1",
+                    "Amount": 4
+                },
+                {
+                    "Type": "trails_lab_t1",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "bnd_skupka",
+            "Name": "Скупка хабару",
+            "Description": "Своя скупка з нормальними вагами: рідкісні артефакти вже не йдуть за безцінь. RequiredNode для пакування хабару 2 тиру.",
+            "Icon": "set:dayz_gui image:icon_refresh",
+            "Tier": 2,
+            "Parents": [
+                "bnd_poniattia"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "khabar_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "bnd_navodka",
+            "Name": "Навідка",
+            "Description": "Хто куди ходить і що несе: маркери, зламані КПК, карти. RequiredNode для пакування стежок 2 тиру.",
+            "Icon": "set:dayz_gui image:icon_hammer",
+            "Tier": 2,
+            "Parents": [
+                "bnd_poniattia"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "trails_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "bnd_kontrabanda",
+            "Name": "Контрабандні канали",
+            "Description": "Легендарний хабар за Периметр. Перехресна вартість — наукові anomaly_lab_t1: без довідки Вчених «Компас» не продати. RequiredNode для пакування хабару 3 тиру.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "bnd_skupka"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "khabar_lab_t2",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "bnd_reket",
+            "Name": "Рекет на стежках",
+            "Description": "Контроль проходів: чипи детекторів, карти доступу, планшети. RequiredNode для пакування стежок 3 тиру.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "bnd_navodka"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "trails_lab_t2",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 45,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "bnd_oblava",
+            "Name": "Облава на схрони",
+            "Description": "Скупка плюс навідка: знаємо, де схрон, і знаємо, що в ньому. Перехресна — бойові ballistics_lab_t1 (зброя для облави).",
+            "Icon": "set:dayz_gui image:iconBacteria",
+            "Tier": 3,
+            "Parents": [
+                "bnd_skupka",
+                "bnd_navodka"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "khabar_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "trails_lab_t2",
+                    "Amount": 4
+                },
+                {
+                    "Type": "ballistics_lab_t1",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 45,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "bnd_chornyi_rynok",
+            "Name": "Чорний ринок",
+            "Description": "Глибина лінії хабару: власні ціни на артефакти 3 тиру.",
+            "Icon": "set:dayz_gui image:iconPill",
+            "Tier": 4,
+            "Parents": [
+                "bnd_kontrabanda"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "khabar_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "khabar_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "anomaly_lab_t1",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "bnd_avtorytet",
+            "Name": "Авторитет",
+            "Description": "Капстоун: братва тримає і ринок, і стежки. Перехресна — бойові protection_lab_t2 (броня для охорони каналу).",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 5,
+            "Parents": [
+                "bnd_chornyi_rynok",
+                "bnd_reket",
+                "bnd_oblava"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "khabar_lab_t3",
+                    "Amount": 6
+                },
+                {
+                    "Type": "trails_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "protection_lab_t2",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 120,
+            "RequiredFactions": []
+        }
+    ]
+}

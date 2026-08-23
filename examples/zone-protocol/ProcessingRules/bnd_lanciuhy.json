@@ -1,0 +1,3052 @@
+{
+    "ConfigVersion": 1,
+    "Rules": [
+        {
+            "Id": "bnd_analiz_khabar_t1",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Proc_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_06",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "bnd_khabar_t1"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Stalker",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "khabar_lab_t1:3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Бандитів, хабару, тир 1: зразок із міткою bnd_khabar_t1 → носій сталкерів зі станом khabar_lab_t1:3. Chance 1.0 — стенд."
+        },
+        {
+            "Id": "bnd_analiz_khabar_t2",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Proc_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_06",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "bnd_khabar_t2"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Stalker",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "khabar_lab_t2:2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Бандитів, хабару, тир 2: зразок із міткою bnd_khabar_t2 → носій сталкерів зі станом khabar_lab_t2:2. Chance 1.0 — стенд."
+        },
+        {
+            "Id": "bnd_analiz_khabar_t3",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Proc_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_06",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "bnd_khabar_t3"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Stalker",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "khabar_lab_t3:1"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Бандитів, хабару, тир 3: зразок із міткою bnd_khabar_t3 → носій сталкерів зі станом khabar_lab_t3:1. Chance 1.0 — стенд."
+        },
+        {
+            "Id": "bnd_analiz_trails_t1",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Proc_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_07",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "bnd_trails_t1"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Stalker",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "trails_lab_t1:3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Бандитів, стежок, тир 1: зразок із міткою bnd_trails_t1 → носій сталкерів зі станом trails_lab_t1:3. Chance 1.0 — стенд."
+        },
+        {
+            "Id": "bnd_analiz_trails_t2",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Proc_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_07",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "bnd_trails_t2"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Stalker",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "trails_lab_t2:2"
+                }
+            ],
+            "RequiredNode": "bnd_navodka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Бандитів, стежок, тир 2: зразок із міткою bnd_trails_t2 → носій сталкерів зі станом trails_lab_t2:2. Chance 1.0 — стенд."
+        },
+        {
+            "Id": "bnd_analiz_trails_t3",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Proc_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_07",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "bnd_trails_t3"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Stalker",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "trails_lab_t3:1"
+                }
+            ],
+            "RequiredNode": "bnd_reket",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Бандитів, стежок, тир 3: зразок із міткою bnd_trails_t3 → носій сталкерів зі станом trails_lab_t3:1. Chance 1.0 — стенд."
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_compass",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Compass",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Сировина — артефакт «Компас»; рідкість з опису: «Артефакт-легенда.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_heart_chornobyl",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Heart_Chornobyl",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Сировина — артефакт «Серце Чорнобиля»; рідкість з опису: «Легендарний та рідкісний артефакт.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_alpha",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Alpha|1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Сировина — артефакт «Альфа-артефакт»; рівня рідкості в описі нема; t3 за унікальністю — «Найперший у світі артефакт. Отриманий у 1995 р. під час Першого Карибського експерименту». Класнейм із суфіксом |1 (точний збіг), щоб зужитий ON_Art_Alpha_Dead (нащадок ON_Art_Alpha) лишався в catch-all t1."
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_gipercub",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_GiperCub",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Сировина — артефакт «Гіперкуб»; рідкість з опису: «Артефакт-легенда.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_grz_yag",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Grz_Yag",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Сировина — артефакт «Грозова ягода»; рідкість з опису: «Артефакт-легенда.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_zhidkiy_kamen",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Zhidkiy_Kamen",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Сировина — артефакт «Рідкий камінь»; рідкість з опису: «Артефакт-легенда.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_weird_bolt",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Weird_Bolt",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Сировина — артефакт «Дивний болт»; рідкість з опису: «Один із легендарних „змінених предметів“, про які сталкери базікають біля вогнища.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_weird_gajka",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Weird_Gajka",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Сировина — артефакт «Дивна гайка»; рідкість з опису: «Один із легендарних „змінених предметів“, про які сталкери базікають біля вогнища.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_sfp_oskolok_monolit",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Oskolok_monolit",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Сировина — уламок Моноліту (SFP); рідкість: лорний t3; SFP на сервері не верифіковано. (SFP)"
+        },
+        {
+            "Id": "bnd_pak_khabar_t3_sfp_himera_uho",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_himera_uho",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t3"
+                }
+            ],
+            "RequiredNode": "bnd_kontrabanda",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 3. Трофей на продаж: вухо химери (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_magma",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Magma",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Магма»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_goldfish",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Goldfish",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Золота рибка»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_korona",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Korona",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Корона»; рідкість з опису: «Артефакт трапляється в Зоні нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_arfa",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Arfa",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Арфа»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_bakedbolts",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_BakedBolts",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Брак»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_bitiy_kamen",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Bitiy_Kamen",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Битий камінь»; рідкість з опису: «Артефакт трапляється в Зоні нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_devils_mushroom",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Devils_Mushroom",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Чортів гриб»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_fakel",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Fakel",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Факел»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_flytrap",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Flytrap",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Мухоловка»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_greben",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Greben",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Гребінь»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_jumper",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Jumper",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Стрибунець»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_lamp",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Lamp",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Ліхтар»; рідкість з опису: «Артефакт трапляється нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_mertvaya_guba",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Mertvaya_Guba",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Мертва губка»; рівня рідкості в описі нема — це єдиний опис іншого шаблону; t2 за прямо названою цінністю: «має унікальну властивість: він здатний поглинати хімічну шкоду, що робить його цінним для виживання в небезпечних умовах»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_morskaya_zvezda",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Morskaya_Zvezda",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Морська зірка»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_myas_zapal",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Myas_Zapal",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Мʼясна запальничка»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_plazma",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Plazma",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Плазма»; рідкість з опису: «Артефакт трапляється в Зоні нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_rubiks_cube",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Rubiks_Cube",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Кубик Рубіка»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_urok_truda",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Urok_Truda",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Урок праці»; рідкість з опису: «Артефакт трапляється нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_zavtrak_turista",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Zavtrak_Turista",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Сировина — артефакт «Сніданок туриста»; рідкість з опису: «Артефакт трапляється в Зоні нечасто.»"
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_mutant_aod_pdog_tail",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Pdog_Tail",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Трофей на продаж: хвіст псевдособаки (AoD, protocol). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_sfp_psedog_hvost",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Psedog_hvost",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Трофей на продаж: хвіст псевдособаки (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_satoshi_skinning_psydog_tail",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_PsyDog_Tail",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Трофей на продаж: хвіст псі-пса (@Radio). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_mutant_aod_snork_leg",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Snork_Leg",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Трофей на продаж: ступня снорка у військовому берці (AoD, protocol). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_sfp_snork_otrezano_botinok",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Snork_Otrezano_botinok",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Трофей на продаж: черевик снорка (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_mutant_aod_tark_horn",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Tark_Horn",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Трофей на продаж: роги тарка (AoD Map). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t2_sfp_bloodsucker_otrezano_head",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Bloodsucker_Otrezano_Head",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t2"
+                }
+            ],
+            "RequiredNode": "bnd_skupka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 2. Трофей на продаж: голова кровососа (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_mutant_aod_dog_tail",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Dog_Tail",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: хвіст сліпого пса (AoD, protocol). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_sfp_slepo_hvost",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_slepo_hvost",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: хвіст сліпого пса (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_mutant_aod_tushkano_head",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Tushkano_Head",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: голова тушкана (AoD, protocol). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_sfp_tushkano_head",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_tushkano_head",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: голова тушкана (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_satoshi_skinning_tushkan_head",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_Tushkan_Head",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: голова тушкана (@Radio). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_satoshi_skinning_blinddog_head",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_BlindDog_Head",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: голова сліпого пса (@Radio). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_satoshi_skinning_bullterrier_head",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_Bullterrier_Head",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: голова бультер'єра (@Radio). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_sfp_dikodog_uho",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_DikoDog_Uho",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: вухо дикого пса (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_sfp_nezdan_uho",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Nezdan_uho",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: вухо шниря (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_sfp_mozgotras_ear",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_MozgoTras_ear",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: вухо мозкотряха (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_sfp_mozgotrasred_ear",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_MozgoTrasRed_ear",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Трофей на продаж: вухо червоного мозкотряха (SFP). Суха зовнішня частина туші — її не несуть у лабораторію, її бере бармен готівкою; це не наукова проба."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_alpha_dead",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Alpha_Dead",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Мертвий Альфа-артефакт»: зужита сировина: за описом артефакт «втратив свої властивості та перестав виявляти аномальні ефекти. Тепер це просто камінь» — найдешевший тир. Точний збіг ON_Art_Alpha|1 у t3 лишається, щоб зужитий артефакт не потрапив у t3."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_bifshteks",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Bifshteks",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Біфштекс»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_blood_stone",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Blood_Stone",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Кров каменю»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_cherevo",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Cherevo",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Черево»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_crystal",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Crystal",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Кристал»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_dziga",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Dziga",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Дзиґа»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_electro_battery",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Electro_Battery",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Батарейка»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_fireball",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Fireball",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Вогняна куля»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_flash",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Flash",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Спалах»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_galka",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Galka",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Галька»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_gravy",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Gravy",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Граві»; рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_kapla",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Kapla",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Краплі»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_lira",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Lira",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Ліра»; рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_meatchunk",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_MeatChunk",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Шмат м'яса»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_plesen",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Plesen",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Пліснява»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_rog",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Rog",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Ріг»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_sapfir",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Sapfir",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Сапфір»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_sh_korol",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Sh_Korol",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Щурячий король»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_shell",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Shell",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Шкаралупа»; рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_shokoladka",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Shokoladka",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Шоколадка»; рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_slime",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Slime",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Слиз»; рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_slug",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Slug",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Слиз»; рідкість з опису: «Артефакт широко розповсюджений». Окремий класнейм від ON_Art_Slime із тими самими назвою й описом — у мода справді два класи."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_slyuda",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Slyuda",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Слюда»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_thron",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Thron",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Колючка»; рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "bnd_pak_khabar_t1_vyvert",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Vyvert",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, хабару, тир 1. Сировина — артефакт «Виверт»; рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "bnd_pak_trails_t3_detector_eye_chip",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "WT_Detector_Eye_Chip",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 40.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t3"
+                }
+            ],
+            "RequiredNode": "bnd_reket",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 3. Сировина — чип детектора «Око» (@Radio); рідкість: апгрейд-деталь, рідкісна."
+        },
+        {
+            "Id": "bnd_pak_trails_t3_access_card",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_access_card",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 40.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t3"
+                }
+            ],
+            "RequiredNode": "bnd_reket",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 3. Сировина — карта доступу; рідкість: квестовий/рідкісний носій."
+        },
+        {
+            "Id": "bnd_pak_trails_t3_plansh",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ro_rp_plansh",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 40.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t3"
+                }
+            ],
+            "RequiredNode": "bnd_reket",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 3. Сировина — тактичний планшет; рідкість: рідкісний носій."
+        },
+        {
+            "Id": "bnd_pak_trails_t3_materials_module",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_materials_module",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 40.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t3"
+                }
+            ],
+            "RequiredNode": "bnd_reket",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 3. Сировина — модуль пам'яті; рідкість: рідкісний носій."
+        },
+        {
+            "Id": "bnd_pak_trails_t3_sfp_item_minipda",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Item_MiniPDA",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 40.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t3"
+                }
+            ],
+            "RequiredNode": "bnd_reket",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 3. Сировина — кишеньковий КПК (SFP); рідкість: SFP на сервері не верифіковано. (SFP)"
+        },
+        {
+            "Id": "bnd_pak_trails_t2_dev_pda1",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_dev_pda1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t2"
+                }
+            ],
+            "RequiredNode": "bnd_navodka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 2. Сировина — Зламаний PDA (protocol): робочий носій даних сталкера, дорожчий за флешку, але дешевший за карту доступу й планшет. Батька лишено як кольорову родину: psi_item_dev_pda2 і psi_item_dev_pda3 — той самий КПК (модель item_dev_pda.p3d), відрізняється лише текстура camo, власного displayName вони не мають; разом 3 варіанти."
+        },
+        {
+            "Id": "bnd_pak_trails_t2_mili_maps",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_mili_maps",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t2"
+                }
+            ],
+            "RequiredNode": "bnd_navodka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 2. Сировина — карта Зони; рідкість: середня рідкість."
+        },
+        {
+            "Id": "bnd_pak_trails_t2_sak_flash_driveb",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Sak_flash_driveB",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t2"
+                }
+            ],
+            "RequiredNode": "bnd_navodka",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 2. Сировина — флешка з даними ПСАО «Око» (порожню A не брати); рідкість: середня рідкість."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_anomalysystem_bolt",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "WT_AnomalySystem_Bolt",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — кидальний болт (@Radio); рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_flashdrive1",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_flashdrive1|1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — Флешка (protocol): за описом «носій інформації, що використовує флеш-пам'ять… підключається до сканера» — масовий носій. Точний збіг (|1): нащадки flashdrive2..8 названо окремими правилами того ж тиру 1. Рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_flashdrive2",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_flashdrive2",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — флешка (protocol): власного displayName нема, успадковує «Флешку»; та сама модель item_flashdrive.p3d, інша текстура (combo_0002_co) — кольоровий варіант тієї ж флешки. Рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_flashdrive3",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_flashdrive3",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — флешка (protocol): успадкована «Флешка», та сама модель, текстура combo_0003_co. Рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_flashdrive4",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_flashdrive4",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — флешка (protocol): psi_item_flashdrive4 оголошено як `: psi_item_flashdrive1` з самим лише scope=2 — власного displayName і descriptionShort нема, це та сама «Флешка», та сама модель item_flashdrive.p3d, інша текстура (combo_0004_co). Рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_flashdrive5",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_flashdrive5",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — флешка (protocol): psi_item_flashdrive5 оголошено як `: psi_item_flashdrive1` з самим лише scope=2 — власного displayName і descriptionShort нема, це та сама «Флешка», та сама модель item_flashdrive.p3d, інша текстура (combo_0005_co). Рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_flashdrive6",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_flashdrive6",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — флешка (protocol): psi_item_flashdrive6 оголошено як `: psi_item_flashdrive1` з самим лише scope=2 — власного displayName і descriptionShort нема, це та сама «Флешка», та сама модель item_flashdrive.p3d, інша текстура (combo_0006_co). Рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_flashdrive7",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_flashdrive7",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — флешка (protocol): psi_item_flashdrive7 оголошено як `: psi_item_flashdrive1` з самим лише scope=2 — власного displayName і descriptionShort нема, це та сама «Флешка», та сама модель item_flashdrive.p3d, інша текстура (combo_0007_co). Рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_flashdrive8",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "psi_item_flashdrive8",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — флешка (protocol): psi_item_flashdrive8 оголошено як `: psi_item_flashdrive1` з самим лише scope=2 — власного displayName і descriptionShort нема, це та сама «Флешка», та сама модель item_flashdrive.p3d, інша текстура (combo_0008_co). Рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_mappaper",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ro_rp_mappaper",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — паперовий аркуш мапи (protocol): масовий папір без прив'язки до місця. Батька лишено як кольорову родину: єдиний нащадок ro_rp_mappaper2 власного displayName не має і успадковує ту саму назву; обидва варіанти однаково масові — тир не протікає."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_bloknot",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ro_rp_bloknot",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — блокнот; рідкість: масовий."
+        },
+        {
+            "Id": "bnd_pak_trails_t1_chernarusmap",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Trail",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ChernarusMap|1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_07",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_trails_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Бандитів, стежок, тир 1. Сировина — ванільна мапа (nominal 50 у types.xml); рідкість: ваніль, nominal 50. Точний збіг (|1): ChernarusMap — батько креслень zmp_bp_* і ChernarusMap_Open — catch-all заборонено."
+        }
+    ]
+}

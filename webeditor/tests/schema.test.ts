@@ -268,7 +268,13 @@ describe('порядок полів = порядок оголошення в Enf
       'RequiredTools',
       'Notes',
     ])
-    expect(namesOf(nested(rule, 'InputItem'))).toEqual(['Classname', 'Quantity', 'ConsumeInput', 'Content'])
+    expect(namesOf(nested(rule, 'InputItem'))).toEqual([
+      'Classname',
+      'Quantity',
+      'ConsumeInput',
+      'Content',
+      'RequireFullQuantity',
+    ])
     expect(namesOf(nested(rule, 'Outputs'))).toEqual(['Classname', 'Quantity', 'Chance', 'Content'])
     expect(namesOf(nested(rule, 'Consumables'))).toEqual(['Classname', 'Quantity', 'Content'])
   })
@@ -303,6 +309,7 @@ describe('порядок полів = порядок оголошення в Enf
       'Armbands',
       'TerminalClasses',
       'DeviceClasses',
+      'TreeBackgroundImage',
     ])
   })
 

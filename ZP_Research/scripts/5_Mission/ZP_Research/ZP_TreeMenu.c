@@ -72,6 +72,18 @@ class ZP_TreeMenu extends UIScriptedMenu
     static const int COLOR_RESEARCHING = 0xFF1976D2;
     static const int COLOR_LOCKED      = 0xFF46464B;
     static const int COLOR_LINE        = 0xFF808080;
+    // лінії зв'язків — за статусом НАЩАДКА: куди веде гілка, видно ще до кліку
+    static const int COLOR_LINE_DONE   = 0xFF3E8E42;
+    static const int COLOR_LINE_AVAIL  = 0xFFB89A2E;
+    static const int COLOR_LINE_WORK   = 0xFF3A8FE0;
+    static const int COLOR_LINE_LOCKED = 0xFF3A3A40;
+    // внутрішня панель картки: звичайна й у вибраного вузла (єдина ознака вибору)
+    static const int COLOR_INNER       = 0xFF1A1F24;
+    static const int COLOR_INNER_SEL   = 0xFF2C3A44;
+    // кнопка «Дослідити» за статусом вибраного вузла
+    static const int COLOR_BTN_GO      = 0xFF29612F;
+    static const int COLOR_BTN_WORK    = 0xFF24445F;
+    static const int COLOR_BTN_OFF     = 0xFF2E3338;
     // ширина TreeContent, як вона оголошена в zp_tree.layout (`size 700 2000`)
     static const float TREECONTENT_UNITS = 700.0;
 
@@ -99,6 +111,13 @@ class ZP_TreeMenu extends UIScriptedMenu
     TextWidget m_NodeStatusW;
     TextWidget m_Status;
     TextWidget m_Legend;
+    TextWidget m_NodeMetaW;
+    ProgressBarWidget m_NodeProgressW;
+    Widget m_NodeProgressBgW;
+    TextWidget m_NodeProgressTxtW;
+    ref array<string> m_NodeStatus = new array<string>();   // статус показаного вузла, паралельно m_ShownNodes
+    int m_LastTickSec = -1;                                  // секундний відлік проєкту в панелі деталей
+    float m_UiScale = 1.0;                                   // екранних px на одиницю розмітки (contSW / TREECONTENT_UNITS)
     ref map<string, int> m_Depth = new map<string, int>();      // вузол -> рівень від кореня
     ref map<string, bool> m_Visible = new map<string, bool>();  // вузол -> показувати
     ButtonWidget m_BtnResearch;
@@ -144,7 +163,11 @@ class ZP_TreeMenu extends UIScriptedMenu
         m_Status = TextWidget.Cast(layoutRoot.FindAnyWidget("StatusLine"));
         m_BtnResearch = ButtonWidget.Cast(layoutRoot.FindAnyWidget("BtnResearch"));
         m_BtnClose = ButtonWidget.Cast(layoutRoot.FindAnyWidget("BtnClose"));
-        m_Legend = TextWidget.Cast(layoutRoot.FindAnyWidget("LegendLine"));
+        m_Legend = TextWidget.Cast(layoutRoot.FindAnyWidget("LegendLine"));   // легенда тепер статична в розмітці; віджета може не бути
+        m_NodeMetaW = TextWidget.Cast(layoutRoot.FindAnyWidget("NodeMeta"));
+        m_NodeProgressW = ProgressBarWidget.Cast(layoutRoot.FindAnyWidget("NodeProgress"));
+        m_NodeProgressBgW = layoutRoot.FindAnyWidget("NodeProgressBg");
+        m_NodeProgressTxtW = TextWidget.Cast(layoutRoot.FindAnyWidget("NodeProgressTxt"));
         layoutRoot.Update();   // перерахунок екранних прямокутників (ванільний mapmenu.c:72)
         return layoutRoot;
     }
@@ -211,6 +234,13 @@ class ZP_TreeMenu extends UIScriptedMenu
         }
         if (needRefresh)
             RefreshAll();
+        // Живий відлік проєкту: раз на секунду — прогрес і залишок часу вибраного вузла.
+        int nowSec = ZP_Now.EpochSec();
+        if (nowSec != m_LastTickSec)
+        {
+            m_LastTickSec = nowSec;
+            TickProgress();
+        }
         if (st.m_LastOpCounter != m_SeenOpCounter)
         {
             m_SeenOpCounter = st.m_LastOpCounter;
@@ -530,6 +560,7 @@ class ZP_TreeMenu extends UIScriptedMenu
         m_NodeX.Clear();
         m_NodeY.Clear();
         m_NodeH.Clear();
+        m_NodeStatus.Clear();
         m_SelectedIdx = -1;
 
         ZP_ClientState st = ZP_ClientState.Get();
@@ -589,6 +620,12 @@ class ZP_TreeMenu extends UIScriptedMenu
         m_TreeContent.GetScreenSize(contSW, contSH);
         if (contSW < 100)
             contSW = 900;
+        // Масштаб «одиниця розмітки -> піксель екрана»: TreeContent оголошений на 700 одиниць.
+        // Саме ним множиться "exact text size", тож оцінки ширини тексту беруть його, а не
+        // m_SizeK (той — про Set*/Get*, і на цьому стенді дорівнює 1 при масштабі 0.833).
+        m_UiScale = contSW / TREECONTENT_UNITS;
+        if (m_UiScale < 0.3 || m_UiScale > 4)
+            m_UiScale = 1.0;
         int maxPerRow = 1;
         foreach (int lvlCnt : levelCount)
         {
@@ -701,25 +738,28 @@ class ZP_TreeMenu extends UIScriptedMenu
             if (nameW)
             {
                 EnableWrap(nameW);
-                nameW.SetText(n3.Name);
+                // Слово, ширше за текстову колонку, рушій не переносить, а ріже по межі
+                // картки («Біохімлаборато» на знімку 2026-08-23) — вкорочуємо його з «...»,
+                // решту назви лишаємо переносу рушія.
+                nameW.SetText(FitLongWords(n3.Name, cardWpx * TEXT_COL));
             }
             // Статус НЕ обрізаємо: словник із чотирьох коротких слів, і будь-яке з них
             // вужче за колонку. Зайва підгонка тут лише з'їдала останню літеру
             // («дослідже» замість «досліджено»).
+            // На картці — коротке слово зі словника легенди: «досліджується (44 с)» у вузьку
+            // колонку не влазило й обрізалось на дужці (знімок 2026-08-23); відлік є в панелі деталей.
             if (subW)
-                subW.SetText(StatusText(status2, n3.Id));
+                subW.SetText(CardStatusText(status2));
             ImageWidget iconW = ImageWidget.Cast(nodeWdg.FindAnyWidget("NodeIcon"));
             if (iconW)
             {
-                if (n3.Icon != "")
-                {
-                    iconW.LoadImageFile(0, n3.Icon);
-                    iconW.Show(true);
-                }
-                else
-                {
-                    iconW.Show(false);
-                }
+                // Без іконки в конфігу — іконка статусу з ванільного набору: порожня ніша
+                // читалась як недоробка, а не як «адмін нічого не задав». LoadImageFile
+                // повертає bool — на битому шляху нішу лишаємо порожньою, а не білою.
+                string iconRef = n3.Icon;
+                if (iconRef == "")
+                    iconRef = StatusIcon(status2);
+                iconW.Show(iconW.LoadImageFile(0, iconRef));
             }
             ButtonWidget nodeBtn = ButtonWidget.Cast(nodeWdg);
             if (nodeBtn)
@@ -730,15 +770,233 @@ class ZP_TreeMenu extends UIScriptedMenu
             m_NodeX.Insert(px + cardWpx / 2);   // центр вузла — щоб лінії йшли рівно
             m_NodeY.Insert(py);
             m_NodeH.Insert(cardHpx);
+            m_NodeStatus.Insert(status2);
             shown++;
         }
-        if (m_Legend)
-            m_Legend.SetText("зелений — досліджено · жовтий — доступно · синій — у роботі · сірий — закрито");
+        // Легенда статусів — статичні квадрати й підписи в zp_tree.layout (#str_zp_ui_legend_*).
+    }
+
+    // Іконка за статусом для вузла без власної (усі — з ванільних наборів, перевірено по gui.pbo).
+    static string StatusIcon(string status)
+    {
+        if (status == "completed")
+            return "set:ccgui_enforce image:MarkDone";
+        if (status == "researching")
+            return "set:dayz_gui image:icon_refresh";
+        if (status == "available")
+            return "set:dayz_gui image:icon_plus";
+        return "set:dayz_gui image:icon_lock";
+    }
+
+    protected int LineColor(string status)
+    {
+        if (status == "completed")
+            return COLOR_LINE_DONE;
+        if (status == "available")
+            return COLOR_LINE_AVAIL;
+        if (status == "researching")
+            return COLOR_LINE_WORK;
+        return COLOR_LINE_LOCKED;
+    }
+
+    // Єдина ознака вибраного вузла — світліша внутрішня панель картки. Рамку (колір
+    // кнопки) не чіпаємо: вона каже про статус, і змішувати два сенси в одному кольорі не можна.
+    protected void HighlightSelection()
+    {
+        for (int i = 0; i < m_NodeWidgets.Count(); i++)
+        {
+            Widget card = m_NodeWidgets[i];
+            if (!card)
+                continue;
+            Widget inner = card.FindAnyWidget("NodeInner");
+            if (!inner)
+                continue;
+            if (i == m_SelectedIdx)
+                inner.SetColor(COLOR_INNER_SEL);
+            else
+                inner.SetColor(COLOR_INNER);
+        }
+    }
+
+    // «Категорія · вид Tтир» — так само, як у колонці балів, щоб вартість читалась тією ж мовою.
+    protected string PointTypeLabel(ZP_ClientConfig cfg, string id)
+    {
+        if (cfg)
+        {
+            foreach (ZP_PointType pt : cfg.PointTypes)
+            {
+                if (!pt || pt.Id != id)
+                    continue;
+                string cat = ZP_PointTypesConfig.DimensionName(cfg.PointCategories, pt.Category);
+                string kind = ZP_PointTypesConfig.DimensionName(cfg.PointKinds, pt.Kind);
+                return cat + " · " + kind + " T" + pt.Tier;
+            }
+        }
+        return id;
+    }
+
+    protected string BranchName(ZP_ClientConfig cfg, string branchId)
+    {
+        if (cfg)
+        {
+            foreach (ZP_ClientBranch b : cfg.Branches)
+            {
+                if (b && b.Id == branchId && b.Name != "")
+                    return b.Name;
+            }
+        }
+        return branchId;
+    }
+
+    // Людська назва предмета з конфігу гри (перекладена); немає в конфігу — сам клас.
+    protected string ItemDisplayName(string classname)
+    {
+        if (classname == "")
+            return "";
+        string dn = GetGame().ConfigGetTextOut("CfgVehicles " + classname + " displayName");
+        if (dn == "")
+            return classname;
+        return dn;
+    }
+
+    // "#RRGGBB" -> ARGB; будь-що інше -> fallback. Колір типу балів задає адмін у PointTypes.json.
+    static int ParseHexColor(string hex, int fallback)
+    {
+        string h = hex;
+        if (h.Length() == 7 && h.Get(0) == "#")
+            h = h.Substring(1, 6);
+        if (h.Length() != 6)
+            return fallback;
+        h.ToUpper();
+        string digits = "0123456789ABCDEF";
+        int value = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            int d = digits.IndexOf(h.Get(i));
+            if (d < 0)
+                return fallback;
+            value = value * 16 + d;
+        }
+        int r = (value >> 16) & 255;
+        int g = (value >> 8) & 255;
+        int b = value & 255;
+        return ARGB(255, r, g, b);
+    }
+
+    // Прогрес-бар і залишок часу — лише для вузла в роботі; решті панель ховаємо.
+    protected void UpdateProgress(ZP_ClientNode n, string status)
+    {
+        bool show = false;
+        if (n && status == "researching" && n.ResearchTimeSec > 0)
+            show = true;
+        if (m_NodeProgressBgW)
+            m_NodeProgressBgW.Show(show);
+        if (m_NodeProgressW)
+            m_NodeProgressW.Show(show);
+        if (m_NodeProgressTxtW)
+            m_NodeProgressTxtW.Show(show);
+        if (!show)
+            return;
+        int remain = ZP_ClientState.Get().GetResearchRemaining(n.Id);
+        float total = n.ResearchTimeSec;
+        float frac = 1.0 - remain / total;
+        if (frac < 0)
+            frac = 0;
+        if (frac > 1)
+            frac = 1;
+        if (m_NodeProgressW)
+            m_NodeProgressW.SetCurrent(frac * m_NodeProgressW.GetMax());   // шкала бару — його власна (ванільний inventorygrid.c:615)
+        if (m_NodeProgressTxtW)
+            m_NodeProgressTxtW.SetText("залишилось " + FormatDuration(remain));
+    }
+
+    protected void TickProgress()
+    {
+        if (m_SelectedIdx < 0 || m_SelectedIdx >= m_ShownNodes.Count())
+            return;
+        ZP_ClientNode n = m_ShownNodes[m_SelectedIdx];
+        if (!n)
+            return;
+        string status = ZP_ClientState.Get().GetNodeStatusClient(n);
+        if (status != "researching")
+            return;
+        if (m_NodeStatusW)
+            m_NodeStatusW.SetText(StatusText(status, n.Id));
+        UpdateProgress(n, status);
+    }
+
+    // Кнопка «Дослідити» каже, ЩО станеться при натисканні. Enable(false) свідомо не
+    // використовуємо: вигляд стану Disabled у стилі Colorable не перевірений живцем, а
+    // відмову для недоступного вузла й так дає OnClick.
+    protected void SetResearchButton(string status)
+    {
+        if (!m_BtnResearch)
+            return;
+        if (status == "available")
+        {
+            m_BtnResearch.SetText("#str_zp_ui_btn_research");
+            m_BtnResearch.SetColor(COLOR_BTN_GO);
+        }
+        else if (status == "researching")
+        {
+            m_BtnResearch.SetText("#str_zp_ui_btn_researching");
+            m_BtnResearch.SetColor(COLOR_BTN_WORK);
+        }
+        else if (status == "completed")
+        {
+            m_BtnResearch.SetText("#str_zp_ui_btn_researched");
+            m_BtnResearch.SetColor(COLOR_BTN_OFF);
+        }
+        else if (status == "locked")
+        {
+            m_BtnResearch.SetText("#str_zp_ui_btn_unavailable");
+            m_BtnResearch.SetColor(COLOR_BTN_OFF);
+        }
+        else
+        {
+            m_BtnResearch.SetText("#str_zp_ui_btn_research");
+            m_BtnResearch.SetColor(COLOR_BTN_OFF);
+        }
     }
 
     // Частка ширини картки, віддана під текст (решта — ніша з іконкою зліва). Мусить
     // збігатися з розміткою zp_tree_node.layout: рахувати від ПОВНОЇ ширини не можна.
     static const float TEXT_COL = 0.62;
+
+    // Вкорочує лише ті слова, що не вміщуються в колонку картки; решту лишає переносу рушія.
+    // БЕЗ ЗАМІРІВ ВІДЖЕТОМ, свідомо: три спроби міряти (знімки 2026-08-23) провалились —
+    // переносимий віджет назви не віддає ширину понад свій бокс, невидима лінійка дає нуль,
+    // лінійка іншого кеглю міряє інший шрифт. Оцінка: середній гліф 12 px bold Metron ≈
+    // 0.60 кегля x масштаб екрана (зі знімка: «Стабілізація», 12 літер ≈ 72 px при
+    // 12 x 0.833; з 0.63 і m_SizeK=1 різало й те, що вміщувалось). Довжини й
+    // зрізи — у СИМВОЛАХ UTF-8 (LengthUtf8/SubstringUtf8), бо Length/Substring рахують байти
+    // і різали б кирилицю посеред літери.
+    protected string FitLongWords(string src, float colW)
+    {
+        float glyph = 12 * 0.60 * m_UiScale;
+        if (src == "" || glyph <= 0 || colW < glyph * 5)
+            return src;
+        float mc = Math.Floor(colW / glyph);
+        int maxChars = mc;
+        array<string> words = new array<string>();
+        src.Split(" ", words);
+        string result = "";
+        foreach (string w : words)
+        {
+            string fitted = w;
+            if (w.LengthUtf8() > maxChars)
+            {
+                int keep = maxChars - 3;
+                if (keep < 2)
+                    keep = 2;
+                fitted = w.SubstringUtf8(0, keep) + "...";
+            }
+            if (result != "")
+                result += " ";
+            result += fitted;
+        }
+        return result;
+    }
 
     // Найдовше СЛОВО серед назв, у пікселях. Саме воно задає нижню межу ширини картки:
     // усередині слова рушій не переносить, тож вужча колонка обріже його в будь-якому разі.
@@ -866,6 +1124,18 @@ class ZP_TreeMenu extends UIScriptedMenu
         return "закрито";
     }
 
+    // Короткий статус для картки вузла — ті самі слова, що й у легенді вікна.
+    protected string CardStatusText(string status)
+    {
+        if (status == "completed")
+            return "#str_zp_ui_legend_done";
+        if (status == "researching")
+            return "#str_zp_ui_legend_work";
+        if (status == "available")
+            return "#str_zp_ui_legend_avail";
+        return "#str_zp_ui_legend_locked";
+    }
+
     protected string FormatDuration(int sec)
     {
         if (sec < 0)
@@ -917,7 +1187,10 @@ class ZP_TreeMenu extends UIScriptedMenu
                 float ph = 92;
                 if (pIdx < m_NodeH.Count())
                     ph = m_NodeH[pIdx];
-                m_Canvas.DrawLine(m_NodeX[pIdx], m_NodeY[pIdx] + ph, m_NodeX[i], m_NodeY[i], 2, COLOR_LINE);
+                int lineColor = COLOR_LINE;
+                if (i < m_NodeStatus.Count())
+                    lineColor = LineColor(m_NodeStatus[i]);
+                m_Canvas.DrawLine(m_NodeX[pIdx], m_NodeY[pIdx] + ph, m_NodeX[i], m_NodeY[i], 2, lineColor);
             }
         }
     }
@@ -977,7 +1250,7 @@ class ZP_TreeMenu extends UIScriptedMenu
                     break;
                 TextWidget head = m_PointLines[slot];
                 head.Show(true);
-                head.SetColor(ARGB(255, 150, 210, 255));
+                head.SetColor(ARGB(255, 158, 214, 230));
                 FitText(head, ZP_PointTypesConfig.DimensionName(cfg.PointCategories, cat));
                 slot++;
                 foreach (ZP_PointType pt : cfg.PointTypes)
@@ -992,7 +1265,7 @@ class ZP_TreeMenu extends UIScriptedMenu
                         break;
                     TextWidget lw = m_PointLines[slot];
                     lw.Show(true);
-                    lw.SetColor(ARGB(255, 220, 220, 226));
+                    lw.SetColor(ParseHexColor(pt.Color, ARGB(255, 220, 220, 226)));
                     FitText(lw, ZP_PointTypesConfig.DimensionName(cfg.PointKinds, pt.Kind) + " T" + pt.Tier + ":  " + val);
                     slot++;
                 }
@@ -1002,6 +1275,15 @@ class ZP_TreeMenu extends UIScriptedMenu
                     slot++;
                 }
             }
+        }
+        if (slot == 0 && m_PointLines.Count() > 0)
+        {
+            // Порожня колонка виглядала як зламана; кажемо прямо, що балів ще немає.
+            TextWidget emptyW = m_PointLines[0];
+            emptyW.Show(true);
+            emptyW.SetColor(ARGB(255, 120, 128, 136));
+            emptyW.SetText("#str_zp_ui_points_empty");
+            slot = 1;
         }
         for (int i = slot; i < m_PointLines.Count(); i++)
         {
@@ -1015,47 +1297,80 @@ class ZP_TreeMenu extends UIScriptedMenu
         if (!m_PoolLine)
             return;
         ZP_ClientState st = ZP_ClientState.Get();
-        m_PoolLine.SetText("Фракція: " + st.m_FactionClass);
+        string fname = st.m_FactionName;   // людська назва з конфігу (SyncTree); старий сервер шле порожньо
+        if (fname == "")
+            fname = st.m_FactionClass;
+        m_PoolLine.SetText("Фракція: " + fname);
     }
 
     protected void UpdateDetail()
     {
+        HighlightSelection();
+        ZP_ClientState st = ZP_ClientState.Get();
+        ZP_ClientConfig cfg = st.m_Config;
         if (m_SelectedIdx < 0 || m_SelectedIdx >= m_ShownNodes.Count())
         {
             if (m_NodeNameW)
-                m_NodeNameW.SetText("(оберіть вузол)");
+                m_NodeNameW.SetText("");
+            if (m_NodeMetaW)
+                m_NodeMetaW.SetText("");
             FillLines(m_DescLines, "");
+            if (m_DescLines.Count() > 0)
+                m_DescLines[0].SetText("#str_zp_ui_detail_hint");   // ключ цілим рядком — рушій перекладе
             if (m_NodeCostW)
                 m_NodeCostW.SetText("");
             if (m_NodeStatusW)
                 m_NodeStatusW.SetText("");
+            UpdateProgress(null, "");
+            SetResearchButton("");
             return;
         }
-        ZP_ClientState st = ZP_ClientState.Get();
         ZP_ClientNode n = m_ShownNodes[m_SelectedIdx];
         if (!n)
             return;
         FitText(m_NodeNameW, n.Name);
+        if (m_NodeMetaW)
+        {
+            string meta = BranchName(cfg, n.BranchId);
+            if (n.Tier > 0)
+            {
+                if (meta != "")
+                    meta += "  ·  ";
+                meta += "тир " + n.Tier;
+            }
+            FitText(m_NodeMetaW, meta);
+        }
         FillLines(m_DescLines, n.Description);
+        // Вартість людською мовою: назва типу балів і «є / потрібно» з пулу фракції,
+        // предмети — ігровою назвою. Раніше тут були Id типів і класи — адмінська мова,
+        // не гравцева.
         string cost = "";
         foreach (ZP_KV c : n.Cost)
         {
-            cost += c.K + " x " + c.V + "\n";
+            int have = 0;
+            st.m_PoolPoints.Find(c.K, have);
+            cost += PointTypeLabel(cfg, c.K) + ":  " + c.V + "  (у пулі " + have + ")\n";   // «потрібно (у пулі N)»: «є / потрібно» читалось як дріб 40/5
         }
         foreach (ZP_RuleConsumable ic : n.ItemCost)
         {
-            cost += ic.Classname + " x " + ic.Quantity + "\n";
+            cost += ItemDisplayName(ic.Classname) + "  x " + ic.Quantity;
+            if (ic.Content != "")
+                cost += "  (" + ic.Content + ")";
+            cost += "\n";
         }
         if (n.ResearchTimeSec > 0)
         {
-            cost += "Час: " + FormatDuration(n.ResearchTimeSec) + "\n";
+            cost += "Час проєкту: " + FormatDuration(n.ResearchTimeSec) + "\n";
         }
         if (cost == "")
-            cost = "(безкоштовно)";
+            cost = "безкоштовно";
         if (m_NodeCostW)
             m_NodeCostW.SetText(cost);
+        string status = st.GetNodeStatusClient(n);
         if (m_NodeStatusW)
-            m_NodeStatusW.SetText(StatusText(st.GetNodeStatusClient(n), n.Id));
+            m_NodeStatusW.SetText(StatusText(status, n.Id));
+        UpdateProgress(n, status);
+        SetResearchButton(status);
     }
 
     override bool OnClick(Widget w, int x, int y, int button)
@@ -1072,7 +1387,17 @@ class ZP_TreeMenu extends UIScriptedMenu
                 SetStatus("оберіть вузол");
                 return true;
             }
-            GetRPCManager().SendRPC(ZP_Const.MOD, ZP_Const.RPC_RESEARCH, new Param1<string>(m_ShownNodes[m_SelectedIdx].Id), true, NULL);
+            ZP_ClientNode selN = m_ShownNodes[m_SelectedIdx];
+            if (!selN)
+                return true;
+            string selStatus = ZP_ClientState.Get().GetNodeStatusClient(selN);
+            if (selStatus != "available")
+            {
+                // сервер і так відмовив би; кажемо одразу, чому кнопка не спрацює
+                SetStatus(selN.Name + ": " + StatusText(selStatus, selN.Id));
+                return true;
+            }
+            GetRPCManager().SendRPC(ZP_Const.MOD, ZP_Const.RPC_RESEARCH, new Param1<string>(selN.Id), true, NULL);
             SetStatus("запит дослідження надіслано...");
             return true;
         }

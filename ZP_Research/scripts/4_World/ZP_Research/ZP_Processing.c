@@ -70,6 +70,20 @@ class ZP_Processing
         return 1;
     }
 
+    // «ПОВНИЙ» ПРЕДМЕТ для InputItem.RequireFullQuantity: квантитет на максимумі.
+    // GetQuantityMax() у ItemBase залежить від слота, тож міряємо предмет там, де він
+    // лежить, — у карго приладу. Нуль означає «квантитету немає взагалі» (оптика, кіготь,
+    // шолом): для таких вимога не діє, інакше правило ніколи не зібрало б план.
+    // Поріг зроблено з допуском: quantity — float, і рушій зберігає повний заряд як
+    // значення, яке після round-trip може бути на тисячні менше за max.
+    protected static bool IsFullQuantity(ItemBase ib)
+    {
+        int qmax = ib.GetQuantityMax();
+        if (qmax <= 0)
+            return true;
+        return ib.GetQuantity() >= qmax - 0.001;
+    }
+
 
 
     // перше background-правило цього приладу, ДОЗВОЛЕНЕ гравцю (фракція/RequiredNode),
@@ -228,6 +242,12 @@ class ZP_Processing
                 continue;
             if (!ZP_ProcessingRules.MatchInput(ib.GetType(), ZP_Sample_Base.ContentOf(ib), rule.InputItem.Classname, rule.InputItem.Content))
                 continue;
+            // ПОВНИЙ СТЕК/ЗАРЯД: недобитий фільтр чи поділений стек не годиться (див.
+            // ZP_RuleInput.RequireFullQuantity). Перевірка саме тут, ПІСЛЯ співставлення
+            // класу: інакше повідомлення про брак сировини не відрізняло б «немає такого
+            // класу» від «є, але не повний».
+            if (rule.InputItem.RequireFullQuantity && !IsFullQuantity(ib))
+                continue;
             if (IsNestedConflict(ib, planItems, emptyPlan))
                 continue;
             int avail = AvailOf(ib) - PlannedFor(ib, planItems, planAmounts, emptyPlan, emptyAmounts);
@@ -253,6 +273,8 @@ class ZP_Processing
         if (inRemaining > 0)
         {
             err = "потрібно " + rule.InputItem.Quantity + " x " + rule.InputItem.Classname + " у карго";
+            if (rule.InputItem.RequireFullQuantity)
+                err += " (лише повні: заряд/стек на максимумі)";
             return false;
         }
 
@@ -451,6 +473,7 @@ class ZP_Processing
     {
         EntityAI created = device.GetInventory().CreateInInventory(classname);
         ZP_Sample_Base.ApplyFields(created, content, purity);
+        ZP_Carrier_Base.ApplyState(created, content);   // носій: той самий Content = рядок стану
         return created;
     }
 }

@@ -1,3 +1,6 @@
+// Вікно редактора конфігів (власне вікно мода І вкладка VPP — одна розмітка).
+// Файл ЗГЕНЕРОВАНО (однотипні кнопки), правити можна й руками. Імена віджетів —
+// контракт із ZP_EditorController.Attach; нові елементи оформлення контролер не чіпає.
 FrameWidgetClass ZP_EditorRoot {
  position 0 0
  size 1 1
@@ -17,7 +20,7 @@ FrameWidgetClass ZP_EditorRoot {
    hexactsize 0
    vexactsize 0
    priority 1
-   color 0 0 0 0.6
+   color 0 0 0 0.62
    style rover_sim_colorable
   }
   PanelWidgetClass Dialog {
@@ -33,201 +36,308 @@ FrameWidgetClass ZP_EditorRoot {
    hexactsize 1
    vexactsize 1
    priority 2
-   color 0.06 0.07 0.08 0.98
+   color 0.055 0.065 0.075 0.98
    style rover_sim_colorable
    {
-    TextWidgetClass Title {
-     position 20 12
+    PanelWidgetClass HeaderBar {
+     visible 1
+     ignorepointer 1
+     position 0 0
+     size 1100 50
      hexactpos 1
      vexactpos 1
-     size 700 26
      hexactsize 1
      vexactsize 1
+     color 0.09 0.11 0.13 1
+     priority 1
+     style rover_sim_colorable
+    }
+    PanelWidgetClass HeaderAccent {
+     visible 1
+     ignorepointer 1
+     position 0 50
+     size 1100 2
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.31 0.76 0.85 1
+     priority 2
+     style rover_sim_colorable
+    }
+    ImageWidgetClass TitleIcon {
+     visible 1
+     ignorepointer 1
+     position 20 12
+     size 26 26
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.62 0.84 0.90 1
+     priority 2
+     image0 "set:dayz_gui image:gear"
+     mode additive
+     "src alpha" 1
+    }
+    TextWidgetClass Title {
+     visible 1
+     ignorepointer 1
+     position 56 10
+     size 800 30
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.93 0.95 0.97 1
+     priority 2
      text "#str_zp_ui_editor_title"
+     font "gui/fonts/sdf_MetronBook72"
      "exact text" 1
-     "exact text size" 18
+     "exact text size" 20
      "bold text" 1
-     color 0.85 0.9 0.95 1
+    }
+    PanelWidgetClass TabBar {
+     visible 1
+     ignorepointer 1
+     position 0 52
+     size 1100 34
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.075 0.09 0.105 1
+     priority 1
+     style rover_sim_colorable
     }
     ButtonWidgetClass BtnSecRules {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 20 46
+     position 20 56
+     size 128 26
      hexactpos 1
      vexactpos 1
-     size 128 28
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
      text "#str_zp_ui_sec_rules"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnSecNodes {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 156 46
+     position 156 56
+     size 128 26
      hexactpos 1
      vexactpos 1
-     size 128 28
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
      text "#str_zp_ui_sec_nodes"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnSecTypes {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 292 46
+     position 292 56
+     size 128 26
      hexactpos 1
      vexactpos 1
-     size 128 28
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
      text "#str_zp_ui_sec_pointtypes"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnSecSettings {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 428 46
+     position 428 56
+     size 128 26
      hexactpos 1
      vexactpos 1
-     size 128 28
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
      text "#str_zp_ui_sec_settings"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnSecFactions {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 564 46
+     position 564 56
+     size 128 26
      hexactpos 1
      vexactpos 1
-     size 128 28
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
      text "#str_zp_ui_sec_factions"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnSecData {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 700 46
+     position 700 56
+     size 128 26
      hexactpos 1
      vexactpos 1
-     size 128 28
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
      text "#str_zp_ui_sec_dataitems"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnSecModules {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 836 46
+     position 836 56
+     size 128 26
      hexactpos 1
      vexactpos 1
-     size 128 28
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
      text "#str_zp_ui_sec_modules"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
-    TextListboxWidgetClass ItemList {
-     position 20 84
+    TextWidgetClass ListTitle {
+     visible 1
+     ignorepointer 1
+     position 20 96
+     size 330 18
      hexactpos 1
      vexactpos 1
-     size 330 460
+     hexactsize 1
+     vexactsize 1
+     color 0.62 0.84 0.90 1
+     priority 2
+     text "#str_zp_ui_list_title"
+     font "gui/fonts/sdf_MetronLight24"
+     "exact text" 1
+     "exact text size" 12
+    }
+    TextListboxWidgetClass ItemList {
+     position 20 116
+     hexactpos 1
+     vexactpos 1
+     size 330 432
      hexactsize 1
      vexactsize 1
      colums "Item;100"
-     color 0.12 0.13 0.15 1
-     // "lines" — СКІЛЬКИ РЯДКІВ ВМІЩУЄ ВІКОНЦЕ, а не скільки їх є. Саме звідси береться
-     // висота рядка (висота списку / lines), а з неї — кегль. Без цього ключа рушій бере
-     // своє мале умовчання, і на 460 пікселях виходили рядки під 55 пікселів: у грі це
-     // мало вигляд велетенського тексту, обрізаного на пів слова. Ключ ставлять і ванільні
-     // списки, і сам VPP (vppnotificationdebug.layout:79).
-     lines 20
+     color 0.10 0.115 0.13 1
+     // "lines" — СКІЛЬКИ РЯДКІВ ВМІЩУЄ ВІКОНЦЕ: звідси висота рядка і кегль. Без ключа
+     // рушій бере мале умовчання й малює велетенський обрізаний текст (перевірено живцем).
+     lines 26
      font "gui/fonts/sdf_MetronBook24"
     }
     ButtonWidgetClass BtnNew {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 20 552
+     position 20 556
+     size 160 30
      hexactpos 1
      vexactpos 1
-     size 160 30
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.16 0.33 0.20 1
      text "#str_zp_ui_btn_new"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnDelete {
      visible 1
      ignorepointer 0
+     position 190 556
+     size 160 30
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
      priority 10
      style Colorable
-     color 0.16 0.20 0.24 1
-     position 190 552
+     color 0.38 0.14 0.14 1
+     text "#str_zp_ui_btn_delete"
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
+    }
+    TextWidgetClass FormTitle {
+     visible 1
+     ignorepointer 1
+     position 370 96
+     size 120 18
      hexactpos 1
      vexactpos 1
-     size 160 30
      hexactsize 1
      vexactsize 1
-     text "#str_zp_ui_btn_delete"
+     color 0.62 0.84 0.90 1
+     priority 2
+     text "#str_zp_ui_form_title"
+     font "gui/fonts/sdf_MetronLight24"
      "exact text" 1
-     "exact text size" 14
+     "exact text size" 12
     }
     TextWidgetClass MetaLabel {
-     position 370 84
+     visible 1
+     ignorepointer 1
+     position 496 96
+     size 584 18
      hexactpos 1
      vexactpos 1
-     size 710 20
      hexactsize 1
      vexactsize 1
+     color 0.60 0.75 0.60 1
+     priority 2
      text ""
+     font "gui/fonts/sdf_MetronLight24"
      "exact text" 1
-     "exact text size" 13
-     color 0.6 0.75 0.6 1
+     "exact text size" 11
+    }
+    ButtonWidgetClass BtnJson {
+     visible 1
+     ignorepointer 0
+     position 990 56
+     size 90 26
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
+     text "{ } JSON"
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     MultilineEditBoxWidgetClass JsonEdit {
      visible 0
-     position 370 110
+     position 370 116
      hexactpos 1
      vexactpos 1
-     size 710 430
+     size 710 432
      hexactsize 1
      vexactsize 1
      text ""
@@ -235,26 +345,34 @@ FrameWidgetClass ZP_EditorRoot {
      "exact text size" 13
      color 0.85 0.85 0.8 1
     }
-    // ФОРМА. Полотно всередині прокрутки: рядки розставляє код, тому висота полотна
-    // задається в рантаймі, а не тут.
-    ScrollWidgetClass FormScroll {
-     position 370 110
+    PanelWidgetClass FormBg {
+     visible 1
+     ignorepointer 1
+     position 370 116
+     size 710 432
      hexactpos 1
      vexactpos 1
-     size 710 430
      hexactsize 1
      vexactsize 1
-     // Ключ зветься саме "Scrollbar V" (так у всіх ванільних розмітках); вигаданого
-     // "vertical scroll" рушій не знає, і смуга не з'являлась.
+     color 0.07 0.08 0.095 1
+     priority 1
+     style rover_sim_colorable
+    }
+    // ФОРМА. Полотно всередині прокрутки: рядки розставляє код, висота полотна — в рантаймі.
+    ScrollWidgetClass FormScroll {
+     position 370 116
+     hexactpos 1
+     vexactpos 1
+     size 710 432
+     hexactsize 1
+     vexactsize 1
+     priority 2
+     // Ключ зветься саме "Scrollbar V" (так у всіх ванільних розмітках).
      "Scrollbar V" 1
      "Scrollbar H" 0
      {
-      // СІТКА В ОДНУ КОЛОНКУ, а не панель. Висоту вмісту прокрутка бере з дитини, а
-      // панелі її задавали ми самі — і SetSize по висоті не спрацьовував, тож вміст
-      // назавжди лишався 100 одиниць: прокручувати не було чого, а рядки нижче просто
-      // виходили за вікно. Сітка рахує свою висоту сама (Size To Content V).
-      // Саме WrapSpacer тут не годиться: із «Size To Content H» він розширюється під
-      // вміст і поставив би рядки в один ряд по горизонталі.
+      // СІТКА В ОДНУ КОЛОНКУ, а не панель: висоту вмісту прокрутка бере з дитини, а сітка
+      // рахує її сама (Size To Content V). WrapSpacer поставив би рядки в один ряд.
       GridSpacerWidgetClass FormContent {
        position 0 0
        hexactpos 1
@@ -269,26 +387,8 @@ FrameWidgetClass ZP_EditorRoot {
       }
      }
     }
-    ButtonWidgetClass BtnJson {
-     visible 1
-     ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 1000 80
-     hexactpos 1
-     vexactpos 1
-     size 80 22
-     hexactsize 1
-     vexactsize 1
-     text "JSON"
-     "exact text" 1
-     "exact text size" 13
-    }
-    // ВИБІР КЛАСУ — панель ВСЕРЕДИНІ цього ж вікна, схована до виклику.
-    // Ані окреме вікно, ані діалог: VPPDialogBox ставить своєму кореню SetSort(1024)
-    // і вже одного разу зробив інтерфейс глухим, опинившись невидимим поверх нашого
-    // повноекранного кореня. Панель усередині нічого не перехоплює.
+    // ВИБІР КЛАСУ — панель ВСЕРЕДИНІ цього ж вікна, схована до виклику. Зовнішня панель
+    // акцентного кольору на 1 px більша за внутрішню — це і є рамка.
     PanelWidgetClass PickerPanel {
      visible 0
      ignorepointer 0
@@ -298,44 +398,78 @@ FrameWidgetClass ZP_EditorRoot {
      position 0 0
      hexactpos 1
      vexactpos 1
-     size 520 460
+     size 522 462
      hexactsize 1
      vexactsize 1
-     color 0.08 0.09 0.11 1
+     color 0.31 0.76 0.85 1
      style rover_sim_colorable
      {
-      TextWidgetClass PickerTitle {
-       position 16 12
+      PanelWidgetClass PickerInner {
+       visible 1
+       ignorepointer 1
+       position 1 1
+       size 520 460
        hexactpos 1
        vexactpos 1
-       size 480 22
        hexactsize 1
        vexactsize 1
+       color 0.07 0.085 0.10 1
+       priority 1
+       style rover_sim_colorable
+      }
+      TextWidgetClass PickerTitle {
+       visible 1
+       ignorepointer 1
+       position 16 12
+       size 480 22
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       color 0.93 0.95 0.97 1
+       priority 2
        text "#str_zp_ui_pick_title"
+       font "gui/fonts/sdf_MetronBook72"
        "exact text" 1
        "exact text size" 15
        "bold text" 1
-       color 0.85 0.9 0.95 1
       }
-      // Підкладка під поле пошуку: без неї EditBoxWidget зі стилем Default на темному тлі
-      // не видно ЗОВСІМ, поки в ньому немає фокуса — порожнє місце замість поля вводу.
-      PanelWidgetClass PickerFilterBg {
-       position 14 42
+      PanelWidgetClass PickerAccent {
+       visible 1
+       ignorepointer 1
+       position 16 36
+       size 488 1
        hexactpos 1
        vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       color 0.31 0.76 0.85 1
+       priority 2
+       style rover_sim_colorable
+      }
+      PanelWidgetClass PickerFilterBg {
+       visible 1
+       ignorepointer 1
+       position 14 44
        size 384 28
+       hexactpos 1
+       vexactpos 1
        hexactsize 1
        vexactsize 1
        color 0.13 0.15 0.17 1
+       priority 2
        style rover_sim_colorable
       }
       EditBoxWidgetClass PickerFilter {
-       position 16 44
+       position 16 46
        hexactpos 1
        vexactpos 1
        size 380 24
        hexactsize 1
        vexactsize 1
+       priority 3
+       // Default, не ServerBrowser: у стилі ServerBrowser поле ігнорує "exact text size" і
+       // малює велетенський текст (знімок 2026-08-23); червона плашка фокуса — ціна за кегль.
        style Default
        text ""
        "exact text" 1
@@ -343,149 +477,176 @@ FrameWidgetClass ZP_EditorRoot {
        color 0.9 0.9 0.86 1
       }
       ButtonWidgetClass PickerFind {
-       position 404 44
+       visible 1
+       ignorepointer 0
+       position 404 46
+       size 100 24
        hexactpos 1
        vexactpos 1
-       size 100 24
        hexactsize 1
        vexactsize 1
+       priority 3
        style Colorable
-       color 0.16 0.20 0.24 1
+       color 0.14 0.17 0.20 1
        text "#str_zp_ui_pick_find"
-       "exact text" 1
-       "exact text size" 13
+       font "gui/fonts/sdf_MetronBook24"
+       text_proportion 0.5
       }
       TextListboxWidgetClass PickerList {
-       position 16 78
+       position 16 80
        hexactpos 1
        vexactpos 1
-       size 488 330
+       size 488 328
        hexactsize 1
        vexactsize 1
+       priority 3
        colums "Class;100"
-       color 0.12 0.13 0.15 1
-       lines 22
+       color 0.10 0.115 0.13 1
+       lines 24
        font "gui/fonts/sdf_MetronBook24"
       }
       ButtonWidgetClass PickerOk {
+       visible 1
+       ignorepointer 0
        position 16 420
+       size 200 26
        hexactpos 1
        vexactpos 1
-       size 200 26
        hexactsize 1
        vexactsize 1
+       priority 3
        style Colorable
-       color 0.16 0.26 0.18 1
+       color 0.16 0.33 0.20 1
        text "#str_zp_ui_pick_ok"
-       "exact text" 1
-       "exact text size" 13
+       font "gui/fonts/sdf_MetronBook24"
+       text_proportion 0.5
       }
       ButtonWidgetClass PickerCancel {
+       visible 1
+       ignorepointer 0
        position 304 420
+       size 200 26
        hexactpos 1
        vexactpos 1
-       size 200 26
        hexactsize 1
        vexactsize 1
+       priority 3
        style Colorable
-       color 0.20 0.16 0.16 1
+       color 0.38 0.14 0.14 1
        text "#str_zp_ui_pick_cancel"
-       "exact text" 1
-       "exact text size" 13
+       font "gui/fonts/sdf_MetronBook24"
+       text_proportion 0.5
       }
      }
     }
     ButtonWidgetClass BtnApply {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 370 552
+     position 370 556
+     size 130 30
      hexactpos 1
      vexactpos 1
-     size 130 30
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.16 0.33 0.20 1
      text "#str_zp_ui_btn_apply"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnToggle {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 510 552
+     position 508 556
+     size 150 30
      hexactpos 1
      vexactpos 1
-     size 130 30
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.40 0.30 0.10 1
      text "#str_zp_ui_btn_toggle"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnRefresh {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 650 552
+     position 666 556
+     size 110 30
      hexactpos 1
      vexactpos 1
-     size 130 30
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
      text "#str_zp_ui_btn_refresh"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnReload {
      visible 1
      ignorepointer 0
-     priority 10
-     style Colorable
-     color 0.16 0.20 0.24 1
-     position 790 552
+     position 784 556
+     size 186 30
      hexactpos 1
      vexactpos 1
-     size 160 30
      hexactsize 1
      vexactsize 1
+     priority 10
+     style Colorable
+     color 0.14 0.17 0.20 1
      text "#str_zp_ui_btn_reload"
-     "exact text" 1
-     "exact text size" 14
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
     }
     ButtonWidgetClass BtnClose {
      visible 1
      ignorepointer 0
+     position 978 556
+     size 102 30
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
      priority 10
      style Colorable
-     color 0.16 0.20 0.24 1
-     position 960 552
+     color 0.38 0.14 0.14 1
+     text "#str_zp_ui_btn_close"
+     font "gui/fonts/sdf_MetronBook24"
+     text_proportion 0.5
+    }
+    PanelWidgetClass FooterBar {
+     visible 1
+     ignorepointer 1
+     position 0 596
+     size 1100 44
      hexactpos 1
      vexactpos 1
-     size 120 30
      hexactsize 1
      vexactsize 1
-     text "#str_zp_ui_btn_close"
-     "exact text" 1
-     "exact text size" 14
+     color 0.075 0.09 0.105 1
+     priority 1
+     style rover_sim_colorable
     }
     TextWidgetClass StatusLine {
-     position 20 596
+     visible 1
+     ignorepointer 1
+     position 20 608
+     size 1060 22
      hexactpos 1
      vexactpos 1
-     size 1060 26
      hexactsize 1
      vexactsize 1
+     color 0.9 0.8 0.5 1
+     priority 2
      text ""
+     font "gui/fonts/sdf_MetronBook24"
      "exact text" 1
      "exact text size" 13
-     color 0.9 0.8 0.5 1
     }
    }
   }

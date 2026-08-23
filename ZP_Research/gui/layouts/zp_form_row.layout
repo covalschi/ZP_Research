@@ -1,3 +1,7 @@
+// ШРИФТ ЗАДАНО ЯВНО НА ПІДПИСАХ (Lbl, ValueTxt, кнопки): шрифт умовчання рушія не має
+// української «і», і підписи читались як «Ув мкнено» / «Вм ст зразка». На ПОЛЯХ ВВОДУ
+// шрифту навмисно немає: з ним EditBox ігнорує "exact text size" і малює велетенський
+// текст (обидва факти — знімки 2026-08-23).
 // ОДИН шаблон на всі види рядка форми. Зайве ховається кодом: шість окремих шаблонів
 // розійшлися б у стилі першою ж правкою, а тут вирівнювання й кеглі задані один раз.
 //
@@ -32,6 +36,7 @@ PanelWidgetClass ZP_FormRow {
    hexactsize 1
    vexactsize 1
    text ""
+   font "gui/fonts/sdf_MetronBook24"
    "exact text" 1
    "exact text size" 13
    color 0.70 0.76 0.72 1
@@ -104,6 +109,7 @@ PanelWidgetClass ZP_FormRow {
    hexactsize 1
    vexactsize 1
    text ""
+   font "gui/fonts/sdf_MetronBook24"
    "exact text" 1
    "exact text size" 13
    color 0.92 0.94 0.90 1
@@ -129,6 +135,7 @@ PanelWidgetClass ZP_FormRow {
    style Colorable
    color 0.16 0.28 0.18 1
    text "+"
+   font "gui/fonts/sdf_MetronBook24"
    "exact text" 1
    "exact text size" 13
   }
@@ -143,6 +150,7 @@ PanelWidgetClass ZP_FormRow {
    style Colorable
    color 0.30 0.16 0.16 1
    text "-"
+   font "gui/fonts/sdf_MetronBook24"
    "exact text" 1
    "exact text size" 13
   }

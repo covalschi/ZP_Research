@@ -101,6 +101,9 @@
 | `!zp staticrespawn zps_lab_eco_pack_bio` | повернути прилад, якщо його видалили руками |
 | `!zp spawn ZP_Tool_Optics` | переносний предмет (модуль/інструмент) в інвентар |
 | `!zp spawnground <клас>` / `!zp spawnhere` / `!zp spawnhands` | той самий спавн на землю / під ноги / в руки |
+| `!zp wear <клас нашивки>` | одягнути нашивку прямо в слот Armband (стара видаляється) — перемкнути фракцію без перетягування; `!zp faction` покаже результат |
+| `!zp fs` / `!zp fsm` / `!zp ss` / `!zp col` | короткі аліаси `fillstation` / `fillsample` / `startstation` / `collect`: **рядок чату DayZ обрізається на ~43 символах**, довгі команди до сервера не доходять цілими |
+| фільтр приладу `[клас приладу]` | у `fillstation` / `fillsample` / `startstation` / `collect` / `probe` — клас (IsKindOf) АБО **підрядок імені** без урахування регістру: `!zp fs Compass 1 Pack_Khabar` |
 
 ## Де стоїть стендова лабораторія
 
@@ -291,6 +294,7 @@ Id правил: `stend_<eco|sky>_<pak|analiz>_<bio|anom|elektro>_t<1..3>` (36 �
 | `!zp spawn ZP_Data_09` | НЕ описана — покаже «Біодані 09 (не налаштовано)» |
 | `!zp spawn ZP_Data_35` / `ZP_Data_65` | інші дві групи — перевірка, що моделі різні |
 | `!zp sample ZP_Sample_01 eco_bio_t1 0.9` | зразок ЗАДАНОГО КЛАСУ з вмістом і чистотою (штатно його робить пакувальник) |
+| `!zp carrier <science\|combat\|stalker> <тип балів> <кількість>` | носій дослідження В РУКИ з прихованим рядком стану; далі на своєму терміналі: коротке F — визначити, утримання — здати |
 | `!zp sampleinfo` | приховані поля зразка В РУКАХ (вміст, чистота, id) |
 | `!zp reload` | перечитати конфіги — назви заготовок і зразків мають змінитись без релогу |
 
@@ -428,7 +432,11 @@ pb_osnovy (Т1, 5×bio_field_t1)
 
 ## Картинки
 
-- Фон дерева — `Settings.TreeBackgroundImage` (зараз тестова `gui/textures/dlc_panel_livonia.edds`).
+- Фон дерева — `Factions.json → TreeBackgroundImage` кожної фракції (набір `zone-protocol`
+  возить сім нашивок угруповань: `ZP_Research/gui/textures/tree/tree_bg_<фракція>.paa`).
+  Порожньо в фракції = загальний `Settings.TreeBackgroundImage` (у test-stand це тестова
+  `gui/textures/dlc_panel_livonia.edds`). Перевірка: `!zp wear <нашивка>` → відкрити дерево
+  на терміналі своєї фракції — задник має змінитися.
 - Іконка вузла — поле `Icon` вузла.
 - Після правки файлів: `!zp reload`.
 

@@ -27,7 +27,10 @@ class ZP_Deposit
             return false;                       // знищений термінал не працює
         if (item.IsRuined())
             return false;                       // зруйнована заготовка нічого не варта
-        if (!GetGame().IsKindOf(item.GetType(), "ZP_Data_Base"))
+        // Два види предметів: носій (ZP_Carrier_Base, рядок стану — спека 2026-08-23) і
+        // явна заготовка (ZP_Data_Base, бали з DataItems.json). Гейти термінала спільні.
+        bool isCarrier = GetGame().IsKindOf(item.GetType(), "ZP_Carrier_Base");
+        if (!isCarrier && !GetGame().IsKindOf(item.GetType(), "ZP_Data_Base"))
             return false;
 
         if (GetGame().IsDedicatedServer())
@@ -35,8 +38,14 @@ class ZP_Deposit
             ZP_ConfigService svc = ZP_ConfigService.Get();
             if (!svc)
                 return false;
-            if (!svc.IsTerminalFor(ZP_Factions.GetFactionClass(player), obj.GetType()))
+            string fc = ZP_Factions.GetFactionClass(player);
+            if (!svc.IsTerminalFor(fc, obj.GetType()))
                 return false;
+            if (isCarrier)
+            {
+                string why;
+                return CarrierAccepted(item, fc, svc, why);
+            }
             // НЕОПИСАНА заготовка не здається: балів за неї немає, і мовчазне зникнення
             // предмета виглядало б як крадіжка. Гравець тоді просто відкриє дерево.
             ZP_DataDef def = svc.GetDataItems().Find(item.GetType());
@@ -58,10 +67,34 @@ class ZP_Deposit
         }
         if (!isTerminal)
             return false;
+        if (isCarrier)
+            return true;   // стан носія клієнт не бачить за задумом — останнє слово за сервером
         // Прапорець рахує СЕРВЕР і надсилає готовим: сам клієнт балів не бачить, а без
         // цього його умова розходилася б із серверною — промпт обіцяв би здачу, сервер
         // відмовляв, і підказка дерева була б уже погашена (термінал ставав би мертвим).
         return ZP_DataInfo.IsDepositable(item.GetType());
+    }
+
+    // Сервер: чи приймає термінал фракції цей носій. Дві причини відмови, кожна названа:
+    // порожній/битий стан і невідомий тип балів. СУПЕРТИП НЕ ГЕЙТИТЬСЯ (рішення власника
+    // 2026-08-23): будь-який свій термінал приймає будь-який носій, бали йдуть у пул фракції
+    // того, хто здає — трофейні дані теж чогось варті.
+    static bool CarrierAccepted(ItemBase item, string faction, ZP_ConfigService svc, out string why)
+    {
+        why = "";
+        string ptId;
+        int amount;
+        if (!ZP_CarrierState.Parse(ZP_Carrier_Base.StateOf(item), ptId, amount))
+        {
+            why = "носій порожній — стан не записано";
+            return false;
+        }
+        if (!svc.GetPointTypes().Find(ptId))
+        {
+            why = "носій обіцяє тип балів '" + ptId + "', якого немає в PointTypes.json";
+            return false;
+        }
+        return true;
     }
 
     // Серверне виконання: списання і зарахування НЕРОЗРИВНІ. Спершу читаємо все, що треба,
@@ -78,8 +111,13 @@ class ZP_Deposit
         if (!CanDeposit(player, obj, item))
         {
             msg = "здати цю заготовку тут не можна";
+            string why0;
+            if (GetGame().IsKindOf(item.GetType(), "ZP_Carrier_Base") && !CarrierAccepted(item, ZP_Factions.GetFactionClass(player), ZP_ConfigService.Get(), why0) && why0 != "")
+                msg = why0;
             return false;
         }
+        if (GetGame().IsKindOf(item.GetType(), "ZP_Carrier_Base"))
+            return ZP_DepositCarrier.Run(player, item, msg);
         ZP_DataDef def = ZP_ConfigService.Get().GetDataItems().Find(item.GetType());
         if (!def)
         {
@@ -134,6 +172,33 @@ class ZP_Deposit
     }
 }
 
+// Здача носія: рядок стану -> бали одного типу в пул фракції гравця. Сам носій зникає.
+class ZP_DepositCarrier
+{
+    static bool Run(PlayerBase player, ItemBase item, out string msg)
+    {
+        ZP_ConfigService svc = ZP_ConfigService.Get();
+        string faction = ZP_Factions.GetFactionClass(player);
+        string ptId;
+        int amount;
+        ZP_CarrierState.Parse(ZP_Carrier_Base.StateOf(item), ptId, amount);   // CanDeposit уже перевірив
+        string label = ZP_CarrierState.CarrierLabel(item.GetType());
+        ZP_PointTypesConfig pts = svc.GetPointTypes();
+        ZP_PointType pt = pts.Find(ptId);
+        string human = ptId;
+        if (pt)
+            human = ZP_PointTypesConfig.DimensionName(pts.Categories, pt.Category) + " · " + ZP_PointTypesConfig.DimensionName(pts.Kinds, pt.Kind) + " T" + pt.Tier;
+
+        GetGame().ObjectDelete(item);
+        string gmsg;
+        ZP_FactionDB.Get().GrantPool(faction, ptId, amount, gmsg, false);
+        ZP_FactionDB.Get().Save(faction);
+        msg = "здано «" + label + "»: " + human + " +" + amount + " у пул " + faction;
+        ZP_Log.Dbg("deposit carrier: " + player.GetIdentity().GetPlainId() + " " + item.GetType() + " " + ptId + ":" + amount + " -> " + faction);
+        return true;
+    }
+}
+
 class ZP_ActionDepositCB : ActionContinuousBaseCB
 {
     override void CreateActionComponent()
@@ -184,5 +249,9 @@ class ZP_ActionDeposit : ActionContinuousBase
             return;
         string msg;
         ZP_Deposit.Execute(action_data.m_Player, action_data.m_Target.GetObject(), action_data.m_MainItem, msg);
+        // Відповідь гравцеві — і про успіх, і про відмову: раніше текст із дії губився, і
+        // здача «мовчала», хоч пул мінявся (знайдено при відновленні носіїв 2026-08-23).
+        if (msg != "" && action_data.m_Player)
+            action_data.m_Player.MessageStatus("[ZP] " + msg);
     }
 }

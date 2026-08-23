@@ -38,6 +38,7 @@ interface RuleInputItemRecord {
   Quantity: number
   ConsumeInput: boolean
   Content: string
+  RequireFullQuantity: boolean
 }
 
 interface RuleConsumableRecord {
@@ -795,6 +796,17 @@ export function RuleForm({ project, index, filePath, ruleId, onProjectChange, on
               onCommit={(v) => commit((r) => ((r.InputItem as Record<string, unknown>).ConsumeInput = v))}
             />
             <FieldMessages errors={fieldErrors(errors, 'InputItem.ConsumeInput')} />
+          </div>
+          {/* Повний стек/заряд: діє лише на предмети з квантитетом (фільтри, батарейки,
+              стеки). Для оптики чи кігтя — без наслідків, там квантитету немає взагалі. */}
+          <div className="rule-field">
+            <CheckboxField
+              id="rp-input-fullqty"
+              label="Лише повний стек/заряд (RequireFullQuantity)"
+              checked={rule.InputItem.RequireFullQuantity === true}
+              onCommit={(v) => commit((r) => ((r.InputItem as Record<string, unknown>).RequireFullQuantity = v))}
+            />
+            <FieldMessages errors={fieldErrors(errors, 'InputItem.RequireFullQuantity')} />
           </div>
 
           {/* Content входу -- ЛИШЕ у вільному режимі: у режимі "з потоку" combobox вище

@@ -182,7 +182,7 @@ class ZP_TechTreeConfig
                 return "невідомий клас у ItemCost";
             if (ic.Quantity < 1 || ic.Quantity > 100)
                 return "ItemCost.Quantity поза межами [1..100]";
-            string icContentErr = ZP_ProcessingRules.ValidateContent("ItemCost", ic.Classname, ic.Content);
+            string icContentErr = ZP_ProcessingRules.ValidateContent("ItemCost", ic.Classname, ic.Content, pointTypes);
             if (icContentErr != "")
                 return icContentErr;
         }

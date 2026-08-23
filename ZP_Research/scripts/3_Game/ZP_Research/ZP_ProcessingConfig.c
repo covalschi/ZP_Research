@@ -11,6 +11,16 @@ class ZP_RuleInput
     // класом, як і раніше). Непорожньо = вхід мусить бути ЗРАЗКОМ саме з таким вмістом.
     // Клас при цьому все одно перевіряється: одного вмісту мало, бо вміст є лише у зразка.
     string Content = "";
+    // ПОВНИЙ СТЕК / ПОВНИЙ ЗАРЯД (рішення власника 2026-08-23). Предмети з квантитетом —
+    // фільтри протигаза, батарейки, пляшки, стеки паперу — рахувалися як одна одиниця
+    // незалежно від залишку: майже порожній фільтр давав рівно той самий бал, що й свіжий,
+    // а стек можна було поділити на одиниці й здати кожну окремо. true = предмет береться,
+    // лише коли quantity на максимумі. Предметів БЕЗ квантитету (оптика, кіготь, шолом)
+    // вимога не стосується — інакше такі правила не спрацьовували б ніколи.
+    // Поле нове й дописане В КІНЕЦЬ класу навмисно: JsonFileLoader пише ключі в порядку
+    // оголошення, тож старі конфіги лишаються побайтово сумісними, а відсутній ключ
+    // читається як false.
+    bool RequireFullQuantity = false;
 }
 
 class ZP_RuleOutput
@@ -296,7 +306,7 @@ class ZP_ProcessingRules
             return "немає InputItem.Classname";
         if (r.InputItem.Quantity < 1 || r.InputItem.Quantity > 100)
             return "InputItem.Quantity поза межами [1..100]";
-        string inContentErr = ValidateContent("InputItem", r.InputItem.Classname, r.InputItem.Content);
+        string inContentErr = ValidateContent("InputItem", r.InputItem.Classname, r.InputItem.Content, pointTypes);
         if (inContentErr != "")
             return inContentErr;
         foreach (ZP_RuleConsumable c : r.Consumables)
@@ -305,7 +315,7 @@ class ZP_ProcessingRules
                 return "невідомий Consumable";
             if (c.Quantity < 1 || c.Quantity > 100)
                 return "Consumable.Quantity поза межами [1..100]";
-            string conContentErr = ValidateContent("Consumable", c.Classname, c.Content);
+            string conContentErr = ValidateContent("Consumable", c.Classname, c.Content, pointTypes);
             if (conContentErr != "")
                 return conContentErr;
             // набої розсипом зберігають лік у GetAmmoCount, а не в quantity — списання видалило б
@@ -329,7 +339,7 @@ class ZP_ProcessingRules
                 return "Output.Chance поза межами [0..1]";
             if (o.Quantity < 1 || o.Quantity > 100)
                 return "Output.Quantity поза межами [1..100]";
-            string outContentErr = ValidateContent("Output", o.Classname, o.Content);
+            string outContentErr = ValidateContent("Output", o.Classname, o.Content, pointTypes);
             if (outContentErr != "")
                 return outContentErr;
             // Зразок без вмісту — глухий кут: його не візьме жодне правило з вимогою вмісту,
@@ -362,12 +372,26 @@ class ZP_ProcessingRules
         return GetGame().IsKindOf(StripExact(configured), "ZP_Sample_Base");
     }
 
-    static string ValidateContent(string where, string classname, string content)
+    // Носій дослідження (родина ZP_Carrier_Base, спека 2026-08-23): Content — це РЯДОК СТАНУ
+    // "<Id типу балів>:<кількість>", і для носія він ОБОВ'ЯЗКОВИЙ — носій без стану нічого
+    // не вартий і на терміналі не здається. Перевіряємо тут, бо це єдине місце, де конфіг
+    // бачить і клас, і таблицю типів балів.
+    static bool IsCarrierClass(string configured)
     {
+        return GetGame().IsKindOf(StripExact(configured), "ZP_Carrier_Base");
+    }
+
+    static string ValidateContent(string where, string classname, string content, ZP_PointTypesConfig pointTypes)
+    {
+        bool carrier = IsCarrierClass(classname);
         if (content == "")
+        {
+            if (carrier)
+                return where + ": носій '" + classname + "' без Content — потрібен рядок стану <Id типу балів>:<кількість> (напр. bio_lab_t1:3)";
             return "";
-        if (!IsSampleClass(classname))
-            return where + ": Content задано для '" + classname + "', але вміст мають лише зразки (родина ZP_Sample_Base)";
+        }
+        if (!IsSampleClass(classname) && !carrier)
+            return where + ": Content задано для '" + classname + "', але вміст мають лише зразки (родина ZP_Sample_Base) і носії (родина ZP_Carrier_Base)";
         if (content.Length() > 64)
             return where + ": Content довший за 64 символи";
         // Пробіл на краю невидимий в очі, але робить рядок іншим — правило мовчки перестало б
@@ -376,6 +400,15 @@ class ZP_ProcessingRules
         trimmed.TrimInPlace();
         if (trimmed != content)
             return where + ": Content '" + content + "' має пробіл на початку або в кінці";
+        if (carrier)
+        {
+            string ptId;
+            int amount;
+            if (!ZP_CarrierState.Parse(content, ptId, amount))
+                return where + ": рядок стану носія '" + content + "' має бути <Id типу балів>:<1.." + ZP_CarrierState.MAX_AMOUNT + ">";
+            if (pointTypes && !pointTypes.Find(ptId))
+                return where + ": носій обіцяє тип балів '" + ptId + "', якого немає в PointTypes.json";
+        }
         return "";
     }
 

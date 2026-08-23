@@ -10,7 +10,8 @@
                 "Classname": "Apple",
                 "Quantity": 1,
                 "ConsumeInput": 1,
-                "Content": ""
+                "Content": "",
+                "RequireFullQuantity": 0
             },
             "BasePurityMin": 0.5,
             "BasePurityMax": 0.5,

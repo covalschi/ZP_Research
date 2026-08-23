@@ -1,0 +1,208 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "dty_doktryna",
+        "Name": "Статут Долгу",
+        "Icon": "",
+        "SortOrder": 5,
+        "Factions": [
+            "duty"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "dty_statut",
+            "Name": "Статут Долгу",
+            "Description": "Корінь програми: облік трофейного обвісу й засобів захисту.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t1",
+                    "Amount": 4
+                },
+                {
+                    "Type": "protection_lab_t1",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "dty_prystrilka",
+            "Name": "Пристрілка",
+            "Description": "Догляд за зброєю. Відкриває t2 балістики.",
+            "Icon": "set:dayz_gui image:icon_hammer",
+            "Tier": 2,
+            "Parents": [
+                "dty_statut"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "dty_bronia",
+            "Name": "Підгонка броні",
+            "Description": "Шоломи й балони під бійця. Відкриває t2 захисту.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 2,
+            "Parents": [
+                "dty_statut"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "protection_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "dty_nich",
+            "Name": "Нічне полювання",
+            "Description": "Нічна оптика й важкі глушники. Відкриває t3 балістики. Перехресно: стежки сталкерів.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "dty_prystrilka"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t2",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "dty_ekzo",
+            "Name": "Екзосервіс",
+            "Description": "Модулі екзоскелетів і ребризери. Відкриває t3 захисту. Перехресно: електроніка Вчених.",
+            "Icon": "set:dayz_gui image:icon_refresh",
+            "Tier": 3,
+            "Parents": [
+                "dty_bronia"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "protection_lab_t2",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "dty_vazhkyi_kalibr",
+            "Name": "Важкий калібр",
+            "Description": "Глушники 12,7x55 і оптика під великі калібри — нахил Долгу.",
+            "Icon": "set:dayz_gui image:icon_hammer",
+            "Tier": 4,
+            "Parents": [
+                "dty_nich"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "ballistics_lab_t3",
+                    "Amount": 3
+                },
+                {
+                    "Type": "trails_lab_t1",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [
+                {
+                    "Classname": "Paper",
+                    "Quantity": 2,
+                    "Content": ""
+                }
+            ],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "dty_mutantobii",
+            "Name": "Засоби вбивства мутантів",
+            "Description": "Доктрина винищення мутантів.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 4,
+            "Parents": [
+                "dty_nich",
+                "dty_ekzo"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "protection_lab_t2",
+                    "Amount": 4
+                },
+                {
+                    "Type": "electronics_lab_t2",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "dty_shturm",
+            "Name": "Штурмова доктрина Долгу",
+            "Description": "Капстоун. Перехресно: хабар бандитів.",
+            "Icon": "set:dayz_gui image:iconPill",
+            "Tier": 5,
+            "Parents": [
+                "dty_vazhkyi_kalibr",
+                "dty_mutantobii"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t3",
+                    "Amount": 6
+                },
+                {
+                    "Type": "protection_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "khabar_lab_t2",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 120,
+            "RequiredFactions": []
+        }
+    ]
+}

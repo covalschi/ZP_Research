@@ -1,0 +1,191 @@
+{
+    "ConfigVersion": 1,
+    "Rules": [
+        {
+            "Id": "stand_vanilla_zp_bnd_pack_khabar",
+            "Enabled": 1,
+            "Device": "ZP_Bnd_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Compass",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_06",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bnd_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "bandit"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "ЛИШЕ ДЛЯ СТЕНДА (ваніль + CF): справжня сировина цього пакувальника є тільки в модпаку сервера, тож для живої перевірки приладу підставлено ванільний предмет. На бойовому сервері цей файл НЕ класти в ProcessingRules."
+        },
+        {
+            "Id": "stand_vanilla_zp_eco_pack_anom",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Paper",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "ЛИШЕ ДЛЯ СТЕНДА (ваніль + CF): справжня сировина цього пакувальника є тільки в модпаку сервера, тож для живої перевірки приладу підставлено ванільний предмет. На бойовому сервері цей файл НЕ класти в ProcessingRules."
+        },
+        {
+            "Id": "stand_vanilla_zp_eco_pack_bio",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "RabbitPelt",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "ЛИШЕ ДЛЯ СТЕНДА (ваніль + CF): справжня сировина цього пакувальника є тільки в модпаку сервера, тож для живої перевірки приладу підставлено ванільний предмет. На бойовому сервері цей файл НЕ класти в ProcessingRules."
+        },
+        {
+            "Id": "stand_vanilla_zp_lnr_pack_khabar",
+            "Enabled": 1,
+            "Device": "ZP_Lnr_Pack_Khabar",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Compass",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_08",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "lnr_khabar_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "loner"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "ЛИШЕ ДЛЯ СТЕНДА (ваніль + CF): справжня сировина цього пакувальника є тільки в модпаку сервера, тож для живої перевірки приладу підставлено ванільний предмет. На бойовому сервері цей файл НЕ класти в ProcessingRules."
+        },
+        {
+            "Id": "stand_vanilla_zp_sky_pack_anom",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Paper",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_21",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "ЛИШЕ ДЛЯ СТЕНДА (ваніль + CF): справжня сировина цього пакувальника є тільки в модпаку сервера, тож для живої перевірки приладу підставлено ванільний предмет. На бойовому сервері цей файл НЕ класти в ProcessingRules."
+        },
+        {
+            "Id": "stand_vanilla_zp_sky_pack_bio",
+            "Enabled": 1,
+            "Device": "ZP_Sky_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "RabbitPelt",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 20.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_11",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "sky_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "clearsky"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "ЛИШЕ ДЛЯ СТЕНДА (ваніль + CF): справжня сировина цього пакувальника є тільки в модпаку сервера, тож для живої перевірки приладу підставлено ванільний предмет. На бойовому сервері цей файл НЕ класти в ProcessingRules."
+        }
+    ]
+}

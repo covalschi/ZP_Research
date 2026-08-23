@@ -3,6 +3,7 @@
 // коментарях ruleValidation.ts.
 
 import { describe, test, expect } from 'vitest'
+import { classRoot } from '../src/model/classIndex'
 import { loadClassIndex } from '../src/model/classIndex'
 import type { ClassIndex } from '../src/model/classIndex'
 import {
@@ -395,6 +396,31 @@ describe('ValidateContent (ZP_ProcessingConfig.c:365-379) — три причи�
 
   test('порожній Content — жодної перевірки (ранній вихід сервера :367-368)', () => {
     expect(validateContentMirror('InputItem.Content', 'InputItem', 'Apple', '', idx)).toEqual([])
+  })
+})
+
+// Носій дослідження (спека 2026-08-23): Content — рядок стану "<тип балів>:<кількість>".
+// Тести залежать від того, чи є ZP_Carrier_* в індексі редактора (classindex.json,
+// перегенерований після додавання класів); без них носій для індексу — «поза індексом».
+describe('ValidateContent — носій ZP_Carrier_Base (рядок стану)', () => {
+  const hasCarrier = classRoot(idx, 'ZP_Carrier_Science') !== undefined
+  test.runIf(hasCarrier)('правильний рядок стану — без помилок', () => {
+    expect(validateContentMirror('Outputs[0].Content', 'Output', 'ZP_Carrier_Science', 'bio_lab_t1:3', idx)).toEqual([])
+  })
+  test.runIf(hasCarrier)('носій без Content — alarm', () => {
+    const errs = validateContentMirror('Outputs[0].Content', 'Output', 'ZP_Carrier_Science', '', idx)
+    expect(errs).toHaveLength(1)
+    expect(errs[0].severity).toBe('alarm')
+    expect(errs[0].message).toMatch(/без Content/)
+  })
+  test.runIf(hasCarrier)('битий рядок стану ("bio_lab_t1", "x:0", "a:03", "a:1001") — alarm', () => {
+    for (const bad of ['bio_lab_t1', 'x:0', 'a:03', 'a:1001', 'a b:2']) {
+      const errs = validateContentMirror('Outputs[0].Content', 'Output', 'ZP_Carrier_Combat', bad, idx)
+      expect(errs.some((e) => e.severity === 'alarm' && /рядок стану/.test(e.message))).toBe(true)
+    }
+  })
+  test('зразок без рядка стану — як і раніше, без помилок (носій не змінює зразків)', () => {
+    expect(validateContentMirror('Outputs[0].Content', 'Output', 'ZP_Sample', 'chimera_claw', idx)).toEqual([])
   })
 })
 

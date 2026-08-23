@@ -1,0 +1,203 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "sop_sluzhba",
+        "Name": "Статут СОП",
+        "Icon": "",
+        "SortOrder": 7,
+        "Factions": [
+            "sop"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "sop_statut",
+            "Name": "Статут СОП",
+            "Description": "Корінь програми СОП.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t1",
+                    "Amount": 5
+                },
+                {
+                    "Type": "protection_lab_t1",
+                    "Amount": 5
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sop_strilba",
+            "Name": "Стрілецька підготовка",
+            "Description": "Відкриває t2 балістики.",
+            "Icon": "set:dayz_gui image:icon_hammer",
+            "Tier": 2,
+            "Parents": [
+                "sop_statut"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sop_zakhyst",
+            "Name": "Засоби захисту",
+            "Description": "Відкриває t2 захисту.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 2,
+            "Parents": [
+                "sop_statut"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "protection_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sop_snaiper",
+            "Name": "Снайперська пара",
+            "Description": "Відкриває t3 балістики. Перехресно: стежки сталкерів.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "sop_strilba"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t2",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sop_vazhka_bronia",
+            "Name": "Важка броня",
+            "Description": "Відкриває t3 захисту. Перехресно: електроніка Вчених.",
+            "Icon": "set:dayz_gui image:icon_refresh",
+            "Tier": 3,
+            "Parents": [
+                "sop_zakhyst"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "protection_lab_t2",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sop_polihon",
+            "Name": "Полігон",
+            "Description": "Досить будь-якого з двох напрямків.",
+            "Icon": "set:dayz_gui image:icon_hammer",
+            "Tier": 4,
+            "Parents": [
+                "sop_snaiper",
+                "sop_vazhka_bronia"
+            ],
+            "ParentsMode": "any",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "protection_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "trails_lab_t2",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sop_shturmhrupa",
+            "Name": "Штурмова група",
+            "Description": "Симетричний t3-вузол.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 4,
+            "Parents": [
+                "sop_snaiper",
+                "sop_vazhka_bronia"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t3",
+                    "Amount": 3
+                },
+                {
+                    "Type": "protection_lab_t3",
+                    "Amount": 3
+                },
+                {
+                    "Type": "electronics_lab_t2",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sop_spetsoperatsiia",
+            "Name": "Спецоперація",
+            "Description": "Капстоун СОП. Перехресно: хабар бандитів.",
+            "Icon": "set:dayz_gui image:iconPill",
+            "Tier": 5,
+            "Parents": [
+                "sop_polihon",
+                "sop_shturmhrupa"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "protection_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "khabar_lab_t2",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 120,
+            "RequiredFactions": []
+        }
+    ]
+}

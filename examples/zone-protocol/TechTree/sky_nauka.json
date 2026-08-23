@@ -1,0 +1,257 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "sky_nauka",
+        "Name": "Програма Чистого неба",
+        "Icon": "",
+        "SortOrder": 2,
+        "Factions": [
+            "clearsky"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "sky_osnovy",
+            "Name": "Польова лабораторія",
+            "Description": "Похідна лабораторія Чистого неба: прийом і зберігання проб на краю Зони. Корінь програми.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 5
+                },
+                {
+                    "Type": "anomaly_lab_t1",
+                    "Amount": 4
+                },
+                {
+                    "Type": "electronics_lab_t1",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sky_bio_zbir",
+            "Name": "Польовий відбір проб",
+            "Description": "Забір тканин мутантів у полі. Відкриває частини мутантів середньої небезпеки.",
+            "Icon": "set:dayz_gui image:iconBacteria",
+            "Tier": 2,
+            "Parents": [
+                "sky_osnovy"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [
+                {
+                    "Classname": "Paper",
+                    "Quantity": 2,
+                    "Content": ""
+                }
+            ],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sky_ano_detekt",
+            "Name": "Розвідка аномалій",
+            "Description": "Калібрування детекторів. Відкриває артефакти середньої рідкості.",
+            "Icon": "set:dayz_gui image:icon_refresh",
+            "Tier": 2,
+            "Parents": [
+                "sky_osnovy"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sky_teh_elektro",
+            "Name": "Польова електроніка",
+            "Description": "Ремонт приладів у польових умовах. Відкриває рідшу електроніку.",
+            "Icon": "set:dayz_gui image:icon_hammer",
+            "Tier": 2,
+            "Parents": [
+                "sky_osnovy"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "electronics_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sky_bio_anatom",
+            "Name": "Розтин мутантів",
+            "Description": "Систематизація тканин. Відкриває частини найнебезпечніших мутантів.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "sky_bio_zbir"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t2",
+                    "Amount": 12
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sky_ano_artefakt",
+            "Name": "Каталог артефактів",
+            "Description": "Класифікація артефактів. Відкриває легендарні артефакти.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "sky_ano_detekt"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t2",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 45,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sky_teh_dani",
+            "Name": "Польова обробка даних",
+            "Description": "Аналіз накопичених вимірів. Відкриває рідкісну електроніку.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 3,
+            "Parents": [
+                "sky_teh_elektro"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "electronics_lab_t2",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sky_bio_mutagen",
+            "Name": "Мутагени",
+            "Description": "Виділення активних сполук із тканин. Потрібні маршрутні дані сталкерів про лігва.",
+            "Icon": "set:dayz_gui image:iconPill",
+            "Tier": 4,
+            "Parents": [
+                "sky_bio_anatom"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t2",
+                    "Amount": 8
+                },
+                {
+                    "Type": "bio_lab_t3",
+                    "Amount": 3
+                },
+                {
+                    "Type": "trails_lab_t2",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sky_bio_syrovatka",
+            "Name": "Сироватка",
+            "Description": "Препарат проти псі-впливу на базі тканин і електронних вимірів; ребризери бойових груп дають проби з заражених зон.",
+            "Icon": "set:dayz_gui image:iconBacteria",
+            "Tier": 4,
+            "Parents": [
+                "sky_bio_anatom",
+                "sky_teh_dani"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t3",
+                    "Amount": 2
+                },
+                {
+                    "Type": "electronics_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "protection_lab_t1",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "sky_protokol",
+            "Name": "Протокол Чистого неба",
+            "Description": "Фінальна мета програми: зведена модель біології Зони, аномалій і приладів.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 5,
+            "Parents": [
+                "sky_bio_mutagen",
+                "sky_bio_syrovatka",
+                "sky_ano_artefakt"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t3",
+                    "Amount": 8
+                },
+                {
+                    "Type": "anomaly_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "electronics_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "trails_lab_t3",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 120,
+            "RequiredFactions": []
+        }
+    ]
+}

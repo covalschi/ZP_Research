@@ -303,6 +303,7 @@ class ZP_EditorController
         m_PickerCancel = ButtonWidget.Cast(root.FindAnyWidget("PickerCancel"));
         if (m_Picker)
             m_Picker.Show(false);
+        PaintTabs();
         return true;
     }
 
@@ -1212,6 +1213,30 @@ class ZP_EditorController
             m_Picker.Show(false);
         ApplyMode();
         RebuildList();
+        PaintTabs();
+    }
+
+    // Активна секція — акцентним кольором, решта — графітом. Без цього сім однакових
+    // кнопок не казали адмінові, в якій секції він зараз.
+    protected void PaintTabs()
+    {
+        PaintTab(m_BtnSecRules, ZP_Snap.RULES);
+        PaintTab(m_BtnSecNodes, ZP_Snap.NODES);
+        PaintTab(m_BtnSecTypes, ZP_Snap.POINTTYPES);
+        PaintTab(m_BtnSecSettings, ZP_Snap.SETTINGS);
+        PaintTab(m_BtnSecFactions, ZP_Snap.FACTIONS);
+        PaintTab(m_BtnSecData, ZP_Snap.DATAITEMS);
+        PaintTab(m_BtnSecModules, ZP_Snap.MODULES);
+    }
+
+    protected void PaintTab(ButtonWidget b, int section)
+    {
+        if (!b)
+            return;
+        if (m_Section == section)
+            b.SetColor(ARGB(255, 44, 112, 130));   // акцент, той самий відтінок, що й лінії в розмітці
+        else
+            b.SetColor(ARGB(255, 36, 43, 51));
     }
 
     // фаза 2: шаблон нового елемента в редактор; «Застосувати» створить його (upsert за новим Id)

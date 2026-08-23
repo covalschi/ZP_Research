@@ -1,0 +1,77 @@
+{
+    "ConfigVersion": 1,
+    "Modules": [
+        {
+            "Classname": "ZP_Tool_Optics",
+            "PurityBonus": 0.20000000298023224,
+            "Devices": [
+                "ZP_Microscope",
+                "ZP_Eco_Pack_Bio",
+                "ZP_Eco_Pack_Anom",
+                "ZP_Eco_Pack_Electro",
+                "ZP_Bnd_Pack_Khabar",
+                "ZP_Bnd_Pack_Trail",
+                "ZP_Dty_Pack_Ball",
+                "ZP_Dty_Pack_Prot",
+                "ZP_Frd_Pack_Ball",
+                "ZP_Frd_Pack_Prot",
+                "ZP_Lnr_Pack_Khabar",
+                "ZP_Lnr_Pack_Trail",
+                "ZP_Sky_Pack_Anom",
+                "ZP_Sky_Pack_Bio",
+                "ZP_Sky_Pack_Electro",
+                "ZP_Sop_Pack_Ball",
+                "ZP_Sop_Pack_Prot"
+            ],
+            "Notes": "оптика: рівніший зріз, менше сміття в пробі"
+        },
+        {
+            "Classname": "ZP_Tool_Centrifuge",
+            "PurityBonus": 0.30000001192092896,
+            "Devices": [
+                "ZP_SampleFridge",
+                "ZP_Eco_Pack_Bio",
+                "ZP_Eco_Pack_Anom",
+                "ZP_Eco_Pack_Electro",
+                "ZP_Sky_Pack_Bio",
+                "ZP_Sky_Pack_Anom",
+                "ZP_Sky_Pack_Electro",
+                "ZP_Bnd_Pack_Khabar",
+                "ZP_Bnd_Pack_Trail",
+                "ZP_Dty_Pack_Ball",
+                "ZP_Dty_Pack_Prot",
+                "ZP_Frd_Pack_Ball",
+                "ZP_Frd_Pack_Prot",
+                "ZP_Lnr_Pack_Khabar",
+                "ZP_Lnr_Pack_Trail",
+                "ZP_Sop_Pack_Ball",
+                "ZP_Sop_Pack_Prot"
+            ],
+            "Notes": "центрифуга: відділяє фракції"
+        },
+        {
+            "Classname": "ZP_Tool_Reagents",
+            "PurityBonus": 0.25,
+            "Devices": [
+                "ZP_ChemBench",
+                "ZP_Sky_Pack_Bio",
+                "ZP_Sky_Pack_Anom",
+                "ZP_Sky_Pack_Electro",
+                "ZP_Bnd_Pack_Khabar",
+                "ZP_Bnd_Pack_Trail",
+                "ZP_Dty_Pack_Ball",
+                "ZP_Dty_Pack_Prot",
+                "ZP_Eco_Pack_Anom",
+                "ZP_Eco_Pack_Bio",
+                "ZP_Eco_Pack_Electro",
+                "ZP_Frd_Pack_Ball",
+                "ZP_Frd_Pack_Prot",
+                "ZP_Lnr_Pack_Khabar",
+                "ZP_Lnr_Pack_Trail",
+                "ZP_Sop_Pack_Ball",
+                "ZP_Sop_Pack_Prot"
+            ],
+            "Notes": "реагенти: стабілізують матеріал"
+        }
+    ]
+}

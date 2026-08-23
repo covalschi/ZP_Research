@@ -1,3 +1,8 @@
+// Вікно дерева досліджень. Діалог 1280x720 в одиницях розмітки (рушій множить на UI scale).
+// Імена віджетів читає ZP_TreeMenu.c: TreeContent, TreeCanvas, TreeBgImage, PoolLine,
+// PointLine0..23, NodeName, NodeMeta, NodeDesc0..6, NodeCost, NodeStatus, NodeProgress*,
+// BtnResearch, BtnClose, StatusLine. Файл ЗГЕНЕРОВАНО (повторювані рядки), правити можна
+// й руками — генератор лише зручність. Кольори: графітова основа + науково-блакитний акцент.
 FrameWidgetClass ZP_TreeRoot {
  visible 1
  ignorepointer 1
@@ -12,7 +17,7 @@ FrameWidgetClass ZP_TreeRoot {
   PanelWidgetClass Backdrop {
    visible 1
    ignorepointer 1
-   color 0 0 0 0.6
+   color 0 0 0 0.62
    position 0 0
    size 1 1
    hexactpos 0
@@ -26,7 +31,7 @@ FrameWidgetClass ZP_TreeRoot {
    visible 1
    ignorepointer 1
    clipchildren 1
-   color 0.06 0.07 0.08 0.98
+   color 0.055 0.065 0.075 0.98
    halign center_ref
    valign center_ref
    position 0 0
@@ -41,99 +46,244 @@ FrameWidgetClass ZP_TreeRoot {
     PanelWidgetClass HeaderBar {
      visible 1
      ignorepointer 1
-     color 0.11 0.14 0.17 1
      position 0 0
-     size 1280 56
+     size 1280 64
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     color 0.09 0.11 0.13 1
      priority 1
      style rover_sim_colorable
+    }
+    PanelWidgetClass HeaderAccent {
+     visible 1
+     ignorepointer 1
+     position 0 64
+     size 1280 2
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.31 0.76 0.85 1
+     priority 2
+     style rover_sim_colorable
+    }
+    ImageWidgetClass TitleIcon {
+     visible 1
+     ignorepointer 1
+     position 22 18
+     size 28 28
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.62 0.84 0.90 1
+     priority 2
+     image0 "set:dayz_gui image:gear"
+     mode additive
+     "src alpha" 1
     }
     TextWidgetClass Title {
      visible 1
      ignorepointer 1
-     color 0.6 0.85 1 1
-     position 24 16
-     size 460 26
+     position 60 12
+     size 640 30
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     color 0.93 0.95 0.97 1
      priority 2
      text "#str_zp_ui_tree_title"
-     font "gui/fonts/sdf_MetronBook24"
+     font "gui/fonts/sdf_MetronBook72"
      "exact text" 1
-     "exact text size" 20
+     "exact text size" 22
+     "bold text" 1
     }
     TextWidgetClass PoolLine {
      visible 1
      ignorepointer 1
-     color 0.72 0.85 0.72 1
-     position 500 20
-     size 620 22
+     position 60 42
+     size 640 18
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     color 0.62 0.84 0.90 1
      priority 2
      text ""
-     font "gui/fonts/sdf_MetronBook24"
+     font "gui/fonts/sdf_MetronLight24"
      "exact text" 1
-     "exact text size" 14
+     "exact text size" 13
     }
     ButtonWidgetClass BtnClose {
      visible 1
      ignorepointer 0
-     color 0.42 0.14 0.14 1
-     position 1160 14
-     size 100 28
+     color 0.42 0.15 0.15 1
+     position 1230 16
+     size 32 32
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
      priority 10
      style Colorable
-     text "#str_zp_ui_btn_close"
-     text_proportion 0.55
-     font "gui/fonts/sdf_MetronBook24"
-    }
-    TextWidgetClass LegendLine {
-     visible 1
-     ignorepointer 1
-     color 0.65 0.70 0.76 1
-     position 24 66
-     size 900 20
-     hexactpos 1
-     vexactpos 1
-     hexactsize 1
-     vexactsize 1
-     priority 3
      text ""
-     font "gui/fonts/sdf_MetronBook24"
-     "exact text" 1
-     "exact text size" 13
+     {
+      ImageWidgetClass CloseIcon {
+       visible 1
+       ignorepointer 1
+       color 1 1 1 1
+       position 0 0
+       size 16 16
+       halign center_ref
+       valign center_ref
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       image0 "set:dayz_gui image:icon_x"
+       mode blend
+       "src alpha" 1
+      }
+     }
     }
-    PanelWidgetClass TabBar {
+    PanelWidgetClass LegendBar {
      visible 1
      ignorepointer 1
-     color 0.09 0.11 0.13 1
-     position 0 56
-     size 1280 40
+     position 0 66
+     size 1280 34
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     color 0.075 0.09 0.105 1
      priority 1
      style rover_sim_colorable
+    }
+    PanelWidgetClass LegendDot_done {
+     visible 1
+     ignorepointer 1
+     position 24 78
+     size 10 10
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.18 0.49 0.20 1
+     priority 2
+     style rover_sim_colorable
+    }
+    TextWidgetClass LegendTxt_done {
+     visible 1
+     ignorepointer 1
+     position 40 74
+     size 130 18
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.74 0.78 0.82 1
+     priority 2
+     text "#str_zp_ui_legend_done"
+     font "gui/fonts/sdf_MetronLight24"
+     "exact text" 1
+     "exact text size" 12
+    }
+    PanelWidgetClass LegendDot_avail {
+     visible 1
+     ignorepointer 1
+     position 180 78
+     size 10 10
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.63 0.51 0.13 1
+     priority 2
+     style rover_sim_colorable
+    }
+    TextWidgetClass LegendTxt_avail {
+     visible 1
+     ignorepointer 1
+     position 196 74
+     size 130 18
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.74 0.78 0.82 1
+     priority 2
+     text "#str_zp_ui_legend_avail"
+     font "gui/fonts/sdf_MetronLight24"
+     "exact text" 1
+     "exact text size" 12
+    }
+    PanelWidgetClass LegendDot_work {
+     visible 1
+     ignorepointer 1
+     position 336 78
+     size 10 10
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.10 0.46 0.82 1
+     priority 2
+     style rover_sim_colorable
+    }
+    TextWidgetClass LegendTxt_work {
+     visible 1
+     ignorepointer 1
+     position 352 74
+     size 130 18
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.74 0.78 0.82 1
+     priority 2
+     text "#str_zp_ui_legend_work"
+     font "gui/fonts/sdf_MetronLight24"
+     "exact text" 1
+     "exact text size" 12
+    }
+    PanelWidgetClass LegendDot_locked {
+     visible 1
+     ignorepointer 1
+     position 492 78
+     size 10 10
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.27 0.27 0.30 1
+     priority 2
+     style rover_sim_colorable
+    }
+    TextWidgetClass LegendTxt_locked {
+     visible 1
+     ignorepointer 1
+     position 508 74
+     size 130 18
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.74 0.78 0.82 1
+     priority 2
+     text "#str_zp_ui_legend_locked"
+     font "gui/fonts/sdf_MetronLight24"
+     "exact text" 1
+     "exact text size" 12
     }
     PanelWidgetClass PointsPanel {
      visible 1
      ignorepointer 1
-     color 0.10 0.12 0.14 1
-     position 12 108
-     size 196 560
+     color 0.085 0.10 0.115 1
+     position 12 110
+     size 196 558
      hexactpos 1
      vexactpos 1
      hexactsize 1
@@ -144,29 +294,43 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointsTitle {
        visible 1
        ignorepointer 1
-       color 0.60 0.85 1 1
        position 12 10
        size 172 22
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.93 0.95 0.97 1
        priority 2
        text "#str_zp_ui_points_title"
-       font "gui/fonts/sdf_MetronBook24"
+       font "gui/fonts/sdf_MetronBook72"
        "exact text" 1
        "exact text size" 14
+       "bold text" 1
+      }
+      PanelWidgetClass PointsAccent {
+       visible 1
+       ignorepointer 1
+       position 12 34
+       size 172 1
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       color 0.31 0.76 0.85 1
+       priority 2
+       style rover_sim_colorable
       }
       TextWidgetClass PointLine0 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 38
+       position 12 44
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -176,13 +340,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine1 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 59
+       position 12 65
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -192,13 +356,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine2 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 80
+       position 12 86
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -208,13 +372,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine3 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 101
+       position 12 107
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -224,13 +388,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine4 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 122
+       position 12 128
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -240,13 +404,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine5 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 143
+       position 12 149
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -256,13 +420,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine6 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 164
+       position 12 170
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -272,13 +436,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine7 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 185
+       position 12 191
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -288,13 +452,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine8 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 206
+       position 12 212
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -304,13 +468,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine9 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 227
+       position 12 233
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -320,13 +484,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine10 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 248
+       position 12 254
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -336,13 +500,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine11 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 269
+       position 12 275
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -352,13 +516,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine12 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 290
+       position 12 296
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -368,13 +532,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine13 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 311
+       position 12 317
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -384,13 +548,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine14 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 332
+       position 12 338
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -400,13 +564,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine15 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 353
+       position 12 359
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -416,13 +580,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine16 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 374
+       position 12 380
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -432,13 +596,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine17 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 395
+       position 12 401
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -448,13 +612,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine18 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 416
+       position 12 422
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -464,13 +628,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine19 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 437
+       position 12 443
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -480,13 +644,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine20 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 458
+       position 12 464
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -496,13 +660,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine21 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 479
+       position 12 485
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -512,13 +676,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine22 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 500
+       position 12 506
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -528,13 +692,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass PointLine23 {
        visible 0
        ignorepointer 1
-       color 0.86 0.86 0.90 1
-       position 12 521
+       position 12 527
        size 172 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.86 0.86 0.90 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -546,42 +710,55 @@ FrameWidgetClass ZP_TreeRoot {
     PanelWidgetClass TreeBackPanel {
      visible 1
      ignorepointer 1
-     color 0.08 0.09 0.11 1
-     position 214 108
-     size 700 560
+     position 214 110
+     size 700 558
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     color 0.07 0.08 0.095 1
      priority 1
      style rover_sim_colorable
     }
     ImageWidgetClass TreeBgImage {
      visible 0
      ignorepointer 1
-     position 214 108
-     size 700 560
+     position 214 110
+     size 700 558
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
      priority 2
-     // УВАГА: це значення на картинку НЕ впливає (перевірено живцем разом із SetColor і
-     // SetAlpha з коду) — рушій малює її повністю непрозорою. Лишаємо як було.
+     // На картинку це значення не впливає (перевірено живцем разом із SetColor/SetAlpha):
+     // рушій малює її непрозорою. Адмін обирає спокійне зображення.
      color 1 1 1 0.30
      "stretch mode" stretch_w_h
      "src alpha" 1
     }
-    ScrollWidgetClass TreeScroll {
+    PanelWidgetClass TreeBgDim {
      visible 1
-     ignorepointer 0
-     position 214 108
-     size 700 560
+     ignorepointer 1
+     position 214 110
+     size 700 558
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     color 0 0 0 0.72
      priority 3
+     style rover_sim_colorable
+    }
+    ScrollWidgetClass TreeScroll {
+     visible 1
+     ignorepointer 0
+     position 214 110
+     size 700 558
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 4
      clipchildren 1
      "Scrollbar V" 1
      {
@@ -616,9 +793,9 @@ FrameWidgetClass ZP_TreeRoot {
     PanelWidgetClass DetailPanel {
      visible 1
      ignorepointer 1
-     color 0.10 0.12 0.14 1
-     position 932 108
-     size 332 560
+     color 0.085 0.10 0.115 1
+     position 932 110
+     size 332 558
      hexactpos 1
      vexactpos 1
      hexactsize 1
@@ -626,32 +803,78 @@ FrameWidgetClass ZP_TreeRoot {
      priority 3
      style rover_sim_colorable
      {
+      TextWidgetClass DetailTitle {
+       visible 1
+       ignorepointer 1
+       position 16 10
+       size 300 18
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       color 0.62 0.84 0.90 1
+       priority 2
+       text "#str_zp_ui_detail_title"
+       font "gui/fonts/sdf_MetronLight24"
+       "exact text" 1
+       "exact text size" 12
+      }
+      PanelWidgetClass DetailAccent {
+       visible 1
+       ignorepointer 1
+       position 16 32
+       size 300 1
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       color 0.31 0.76 0.85 1
+       priority 2
+       style rover_sim_colorable
+      }
       TextWidgetClass NodeName {
        visible 1
        ignorepointer 1
-       color 0.92 0.94 0.98 1
-       position 16 14
+       position 16 42
        size 300 26
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.93 0.95 0.97 1
        priority 2
        text ""
-       font "gui/fonts/sdf_MetronBook24"
+       font "gui/fonts/sdf_MetronBook72"
        "exact text" 1
-       "exact text size" 15
+       "exact text size" 16
+       "bold text" 1
+      }
+      TextWidgetClass NodeMeta {
+       visible 1
+       ignorepointer 1
+       position 16 70
+       size 300 16
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       color 0.56 0.62 0.68 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronLight24"
+       "exact text" 1
+       "exact text size" 11
       }
       TextWidgetClass NodeDesc0 {
        visible 1
        ignorepointer 1
-       color 0.74 0.76 0.80 1
-       position 14 46
+       position 14 92
        size 304 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.76 0.78 0.82 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -661,13 +884,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass NodeDesc1 {
        visible 1
        ignorepointer 1
-       color 0.74 0.76 0.80 1
-       position 14 67
+       position 14 113
        size 304 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.76 0.78 0.82 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -677,13 +900,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass NodeDesc2 {
        visible 1
        ignorepointer 1
-       color 0.74 0.76 0.80 1
-       position 14 88
+       position 14 134
        size 304 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.76 0.78 0.82 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -693,13 +916,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass NodeDesc3 {
        visible 1
        ignorepointer 1
-       color 0.74 0.76 0.80 1
-       position 14 109
+       position 14 155
        size 304 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.76 0.78 0.82 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -709,13 +932,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass NodeDesc4 {
        visible 1
        ignorepointer 1
-       color 0.74 0.76 0.80 1
-       position 14 130
+       position 14 176
        size 304 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.76 0.78 0.82 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -725,13 +948,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass NodeDesc5 {
        visible 1
        ignorepointer 1
-       color 0.74 0.76 0.80 1
-       position 14 151
+       position 14 197
        size 304 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.76 0.78 0.82 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -741,13 +964,13 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass NodeDesc6 {
        visible 1
        ignorepointer 1
-       color 0.74 0.76 0.80 1
-       position 14 172
+       position 14 218
        size 304 20
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.76 0.78 0.82 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
@@ -757,26 +980,40 @@ FrameWidgetClass ZP_TreeRoot {
       TextWidgetClass NodeCostTitle {
        visible 1
        ignorepointer 1
-       color 0.80 0.82 0.86 1
-       position 16 206
-       size 300 20
+       position 16 246
+       size 300 18
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.62 0.84 0.90 1
        priority 2
        text "#str_zp_ui_cost_label"
        font "gui/fonts/sdf_MetronBook24"
        "exact text" 1
-       "exact text size" 14
+       "exact text size" 13
+       "bold text" 1
+      }
+      PanelWidgetClass NodeCostAccent {
+       visible 1
+       ignorepointer 1
+       position 16 266
+       size 300 1
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       color 0.31 0.76 0.85 1
+       priority 2
+       style rover_sim_colorable
       }
       MultilineTextWidgetClass NodeCost {
        visible 1
        ignorepointer 1
        clipchildren 1
-       color 0.86 0.78 0.56 1
-       position 14 230
-       size 304 136
+       color 0.88 0.82 0.62 1
+       position 14 272
+       size 304 150
        hexactpos 1
        vexactpos 1
        hexactsize 1
@@ -786,29 +1023,74 @@ FrameWidgetClass ZP_TreeRoot {
        font "gui/fonts/sdf_MetronBook24"
        "exact text" 1
        "exact text size" 13
+       wrap 1
       }
       TextWidgetClass NodeStatus {
        visible 1
        ignorepointer 1
-       color 0.72 0.88 0.72 1
-       position 16 374
-       size 300 24
+       position 16 430
+       size 300 22
        hexactpos 1
        vexactpos 1
        hexactsize 1
        vexactsize 1
+       color 0.74 0.88 0.74 1
        priority 2
        text ""
        font "gui/fonts/sdf_MetronBook24"
        "exact text" 1
-       "exact text size" 15
+       "exact text size" 14
+      }
+      PanelWidgetClass NodeProgressBg {
+       visible 0
+       ignorepointer 1
+       position 16 460
+       size 300 6
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       color 0 0 0 0.55
+       priority 2
+       style rover_sim_colorable
+      }
+      ProgressBarWidgetClass NodeProgress {
+       visible 0
+       ignorepointer 1
+       position 16 460
+       size 300 6
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 3
+       style Default
+       current 0
+       vertical 0
+       flipped 0
+      }
+      TextWidgetClass NodeProgressTxt {
+       visible 0
+       ignorepointer 1
+       position 16 470
+       size 300 16
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       color 0.62 0.74 0.90 1
+       priority 2
+       text ""
+       font "gui/fonts/sdf_MetronLight24"
+       "exact text" 1
+       "exact text size" 11
       }
      }
     }
     ButtonWidgetClass BtnResearch {
      visible 1
      ignorepointer 0
-     color 0.16 0.36 0.20 1
+     color 0.16 0.38 0.20 1
      position 948 618
      size 300 36
      hexactpos 1
@@ -821,21 +1103,34 @@ FrameWidgetClass ZP_TreeRoot {
      text_proportion 0.5
      font "gui/fonts/sdf_MetronBook24"
     }
-    TextWidgetClass StatusLine {
+    PanelWidgetClass FooterBar {
      visible 1
      ignorepointer 1
-     color 0.90 0.82 0.55 1
-     position 20 682
-     size 1240 24
+     position 0 676
+     size 1280 44
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     color 0.075 0.09 0.105 1
+     priority 1
+     style rover_sim_colorable
+    }
+    TextWidgetClass StatusLine {
+     visible 1
+     ignorepointer 1
+     position 20 688
+     size 1240 22
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.90 0.82 0.55 1
      priority 2
      text ""
      font "gui/fonts/sdf_MetronBook24"
      "exact text" 1
-     "exact text size" 14
+     "exact text size" 13
     }
    }
   }

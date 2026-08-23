@@ -1,41 +1,39 @@
-# Line endings are not cosmetic in this repository — two file kinds break outright if they
-# are wrong, and a fresh clone gets whatever `core.autocrlf` the cloner happens to have.
-# So every kind is pinned explicitly.
-
-# DayZ's stringtable parser terminates rows on CRLF. With plain LF the whole file reads as
-# one unterminated header row, not a single key is found, and the game shows raw #str_*
-# keys instead of text. This one MUST be CRLF, on every platform.
+# DayZ-специфіка: парсер stringtable завершує рядки ПО CRLF. Файл із самими LF
+# читається як один незавершений рядок-заголовок — жоден ключ не знаходиться, і в грі
+# видно сирі #str_*. Тому кінці рядків тут фіксуємо явно, а не віддаємо на розсуд
+# core.autocrlf чужої машини.
 *.csv text eol=crlf
 
-# Engine sources kept exactly as they are on disk, so bracket-balance checks and diffs are
-# not noise. PowerShell files must also keep their UTF-8 BOM (Windows PowerShell 5.1 reads
-# a BOM-less script in the system codepage and mangles non-ASCII).
-*.cpp    text eol=crlf
-*.hpp    text eol=crlf
-*.c      text eol=crlf
+# Конфіги, скрипти й лейаути движка тримаємо в тому ж вигляді, в якому вони на диску,
+# щоб перевіряння балансу дужок і діфи не шуміли переносами.
+*.cpp  text eol=crlf
+*.hpp  text eol=crlf
+*.c    text eol=crlf
 *.layout text eol=crlf
-*.ps1    text eol=crlf
+*.ps1  text eol=crlf
 
 *.md   text
 *.json text
 
-# XML: the engine parses it regardless of line endings, but mixed endings drifted between
-# machines before this was pinned. LF is what the index holds.
+# zp_types.xml мода: у робочому дереві були ЗМІШАНІ кінці рядків (частина рядків LF,
+# частина CRLF — слід ручних дописувань), хоча в індексі файл лежить у LF. Без явного
+# правила core.autocrlf=true віддавав би робочій копії CRLF, і формат «плив» би між
+# машинами й правками. XML рушій розбирає незалежно від кінців рядків (на відміну від
+# stringtable.csv, якому CRLF ОБОВ'ЯЗКОВИЙ), тож фіксуємо LF — рівно те, що в git.
 *.xml  text eol=lf
 
-# Example content packs are in the ENGINE'S canonical byte format: UTF-8 without BOM, LF,
-# 4-space indent, no trailing newline. "*.json text" above plus core.autocrlf=true would
-# hand a fresh clone CRLF files, and they would no longer be byte-identical to what the
-# engine itself writes (the editor's writeback check would report every one as changed).
+# Конфіги стенда — байт-канонічний формат рушія (LF, без BOM, без завершального переносу
+# рядка). Правило "*.json text" вище разом із core.autocrlf=true віддало б СВІЖОМУ КЛОНУ
+# CRLF, і стенд перестав би бути байт-ідентичним експорту веб-редактора (writeback --dry
+# показав би «змінено» на всіх файлах). Той самий прийом, що у
+# webeditor/tests/fixtures/.gitattributes для золотих фікстур рушія.
 examples/**/*.json text eol=lf
 
-# (webeditor/tests/fixtures/ has its own rule: those bytes were captured from the engine
-#  and git must not touch them at all.)
-
-# Binaries: no normalisation, no diff attempts
+# Бінарники — без нормалізації і без спроб діфати
 *.pbo    binary
 *.bisign binary
 *.bikey  binary
 *.paa    binary
 *.edds   binary
 *.p3d    binary
+*.skill  binary

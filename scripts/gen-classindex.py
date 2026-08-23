@@ -83,9 +83,13 @@ DEFAULT_CFGCONVERT = Path(
 # Our own built mods: NOT under DayZ\!Workshop, but the live server loads them (see
 # testserver\zp_run.ps1), and ZP_Microscope/ZP_Data_01/ZP_Sample -- mandatory spot-check
 # names from the task brief -- are only ever defined here. Treated as extra sources.
+# Own mods live NEXT TO this repository root (build/build.ps1 packs into <repo>/@ZP_Research).
+# The pre-split absolute E:\dayzmod\@ZP_Research path silently skipped both mods after the
+# 2026-08-19 repo split ("not built (no addons/ directory)"), so the index lost every ZP_ class.
+_REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OWN_MODS = [
-    Path(r"E:\dayzmod\@ZP_Research"),
-    Path(r"E:\dayzmod\@ZP_Research_VPP"),
+    _REPO_ROOT / "@ZP_Research",
+    _REPO_ROOT / "@ZP_Research_VPP",
 ]
 
 # Indices 0/1/2 are the original three roots (unchanged, backward-compatible with the

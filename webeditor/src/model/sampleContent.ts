@@ -33,6 +33,26 @@ export function isSampleClass(index: ClassIndex, classname: string): boolean {
   return isKindOf(index, stripExact(classname), 'ZP_Sample_Base')
 }
 
+// Носій дослідження (спека 2026-08-23): один предмет на супертип (ZP_Carrier_Science /
+// _Combat / _Stalker : ZP_Carrier_Base). Його Content — РЯДОК СТАНУ "<Id типу балів>:<кількість>",
+// прихований від гравця; сервер вимагає його ОБОВ'ЯЗКОВО (ZP_ProcessingConfig.c, ValidateContent,
+// гілка `carrier`) і розбирає строго (ZP_CarrierState.Parse, 3_Game/ZP_CarrierState.c):
+// хвіст — рівно ціле 1..1000, без пробілів, без знаку.
+export function isCarrierClass(index: ClassIndex, classname: string): boolean {
+  return isKindOf(index, stripExact(classname), 'ZP_Carrier_Base')
+}
+
+export const CARRIER_MAX_AMOUNT = 1000
+
+export function parseCarrierState(state: string): { pointType: string; amount: number } | null {
+  const m = /^([^:\s]+):(\d+)$/.exec(state)
+  if (!m) return null
+  const amount = Number(m[2])
+  if (!Number.isInteger(amount) || amount < 1 || amount > CARRIER_MAX_AMOUNT) return null
+  if (String(amount) !== m[2]) return null // "03" сервер відхилить: ToString() != хвіст
+  return { pointType: m[1], amount }
+}
+
 // listSampleFamilyClasses (W2.5 Task 4, вікно «Типовий зразок») — перелік КОНКРЕТНИХ
 // класів родини ZP_Sample_Base у поточному ClassIndex: рівно ті класи, які ValidateItem
 // (ZP_SampleTypesConfig.c:65, `IsKindOf(d.Id, "ZP_Sample_Base")`) прийняв би як Id типу

@@ -1,0 +1,209 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "lnr_shkola",
+        "Name": "Сталкерська школа",
+        "Icon": "",
+        "SortOrder": 4,
+        "Factions": [
+            "loner"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "lnr_shkola",
+            "Name": "Сталкерська школа",
+            "Description": "Корінь: як ходити Зоною і не загинути, як не продешевити з хабаром. Відкриває лінії 1 тиру.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "khabar_lab_t1",
+                    "Amount": 4
+                },
+                {
+                    "Type": "trails_lab_t1",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "lnr_torh",
+            "Name": "Торг із барменом",
+            "Description": "Знаємо ціну рідкісному хабару. RequiredNode для пакування хабару 2 тиру.",
+            "Icon": "set:dayz_gui image:icon_refresh",
+            "Tier": 2,
+            "Parents": [
+                "lnr_shkola"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "khabar_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "lnr_stezhky",
+            "Name": "Розвідка стежок",
+            "Description": "Маркери, карти й чужі КПК складаються в мапу безпечних проходів. RequiredNode для пакування стежок 2 тиру.",
+            "Icon": "set:dayz_gui image:icon_hammer",
+            "Tier": 2,
+            "Parents": [
+                "lnr_shkola"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "trails_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "lnr_kartohrafiia",
+            "Name": "Картографія Зони",
+            "Description": "Глибина лінії стежок: чипи детекторів і планшети. Перехресна — наукові electronics_lab_t1 (читачі носіїв від Вчених). RequiredNode для пакування стежок 3 тиру.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "lnr_stezhky"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "trails_lab_t2",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [
+                {
+                    "Classname": "ChernarusMap",
+                    "Quantity": 1,
+                    "Content": ""
+                }
+            ],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "lnr_ridkisnyi",
+            "Name": "Рідкісний хабар",
+            "Description": "Легендарні артефакти здаються без посередників. RequiredNode для пакування хабару 3 тиру.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "lnr_torh"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "khabar_lab_t2",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 45,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "lnr_providnyk",
+            "Name": "Провідник",
+            "Description": "Водимо новачків і торгівців: стежки плюс товар. Без перехресної вартості.",
+            "Icon": "set:dayz_gui image:iconBacteria",
+            "Tier": 3,
+            "Parents": [
+                "lnr_stezhky",
+                "lnr_torh"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "trails_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "khabar_lab_t2",
+                    "Amount": 4
+                },
+                {
+                    "Type": "electronics_lab_t1",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 45,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "lnr_reid",
+            "Name": "Глибокий рейд",
+            "Description": "Маршрути на Північ. Перехресна — бойові ballistics_lab_t2 (прикриття від Долгу/Волі).",
+            "Icon": "set:dayz_gui image:iconPill",
+            "Tier": 4,
+            "Parents": [
+                "lnr_kartohrafiia",
+                "lnr_providnyk"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "trails_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "trails_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "ballistics_lab_t2",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "lnr_lehenda",
+            "Name": "Легенда Зони",
+            "Description": "Капстоун: знає всі стежки і весь хабар. Перехресна — наукові bio_lab_t2 (антидоти для глибоких рейдів).",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 5,
+            "Parents": [
+                "lnr_reid",
+                "lnr_ridkisnyi"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "trails_lab_t3",
+                    "Amount": 6
+                },
+                {
+                    "Type": "khabar_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "bio_lab_t2",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 120,
+            "RequiredFactions": []
+        }
+    ]
+}

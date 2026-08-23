@@ -30,7 +30,7 @@
 
 import type { ClassIndex } from './classIndex'
 import { classRoot, stripExact } from './classIndex'
-import { isSampleClass } from './sampleContent'
+import { isSampleClass, isCarrierClass, parseCarrierState, CARRIER_MAX_AMOUNT } from './sampleContent'
 
 export type FieldSeverity = 'alarm' | 'warn'
 
@@ -276,8 +276,21 @@ export function validateChance(path: string, chance: number): FieldError[] {
 // існує законний сценарій, у якому мовчання правильне: адмін імпортував ClassIndex БЕЗ
 // нашого мода, і тоді поза індексом опиняються самі ZP_Sample_*.
 export function validateContentMirror(path: string, where: string, classname: string, content: string, index: ClassIndex): FieldError[] {
-  if (content === '') return []
   const cls = stripExact(classname).trim()
+  // Носій (ZP_Carrier_Base): Content ОБОВ'ЯЗКОВИЙ і є рядком стану "<тип балів>:<кількість>"
+  // (ValidateContent, гілка carrier; спека 2026-08-23). Клас поза індексом — не носій
+  // напевно (наші класи в індексі модпака є завжди), тож тут мовчимо.
+  const carrier = cls !== '' && classRoot(index, cls) !== undefined && isCarrierClass(index, cls)
+  if (content === '') {
+    if (!carrier) return []
+    return [
+      {
+        path,
+        severity: 'alarm',
+        message: `сервер відхилить: ${where} носій '${classname}' без Content — потрібен рядок стану <Id типу балів>:<кількість>, напр. bio_lab_t1:3 (ValidateContent, гілка carrier)`,
+      },
+    ]
+  }
   if (cls === '') return [] // порожній клас має власні перевірки; IsKindOf("") зондом не міряли — не вгадуємо
   if (classRoot(index, cls) === undefined) {
     return [
@@ -288,16 +301,23 @@ export function validateContentMirror(path: string, where: string, classname: st
       },
     ]
   }
-  if (!isSampleClass(index, cls)) {
+  if (!isSampleClass(index, cls) && !carrier) {
     return [
       {
         path,
         severity: 'alarm',
-        message: `сервер відхилить: ${where} Content задано для '${classname}', але вміст мають лише зразки родини ZP_Sample_Base (ValidateContent, ZP_ProcessingConfig.c:369-370)`,
+        message: `сервер відхилить: ${where} Content задано для '${classname}', але вміст мають лише зразки родини ZP_Sample_Base і носії родини ZP_Carrier_Base (ValidateContent, ZP_ProcessingConfig.c:369-370)`,
       },
     ]
   }
   const out: FieldError[] = []
+  if (carrier && parseCarrierState(content) === null) {
+    out.push({
+      path,
+      severity: 'alarm',
+      message: `сервер відхилить: ${where} рядок стану носія '${content}' має бути <Id типу балів>:<1..${CARRIER_MAX_AMOUNT}> (ZP_CarrierState.Parse); чи існує такий тип балів, перевіряє лише сервер по PointTypes.json`,
+    })
+  }
   if (new TextEncoder().encode(content).length > 64) {
     out.push({
       path,

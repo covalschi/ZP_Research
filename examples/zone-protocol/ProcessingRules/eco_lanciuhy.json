@@ -1,0 +1,3791 @@
+{
+    "ConfigVersion": 1,
+    "Rules": [
+        {
+            "Id": "eco_pak_bio_t3_mutant_aod_burer_hand",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Burer_hand",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t3"
+                }
+            ],
+            "RequiredNode": "eco_bio_anatom",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t3: бюрер (AoD, protocol; мала «h»). Тир 3 — рука псіоніка: мутант-одинак, який трапляється поодиноко й б'є на дистанції — найдорожча біосировина лінії."
+        },
+        {
+            "Id": "eco_pak_bio_t3_mutant_aod_controller_hand",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Controller_Hand",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t3"
+                }
+            ],
+            "RequiredNode": "eco_bio_anatom",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t3: контролер (AoD, protocol). Тир 3 — рука псіоніка: мутант-одинак, який трапляється поодиноко й підкоряє на дистанції — найдорожча біосировина лінії."
+        },
+        {
+            "Id": "eco_pak_bio_t3_burerhand",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "BurerHand",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t3"
+                }
+            ],
+            "RequiredNode": "eco_bio_anatom",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t3: бюрер (@Radio, 1 на вбивство). Тир 3 — рука псіоніка: один трофей на вбивство мутанта-одинака, який б'є на дистанції — найдорожча біосировина лінії."
+        },
+        {
+            "Id": "eco_pak_bio_t3_mutant_aod_poltergeist_eye",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Poltergeist_eye",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t3"
+                }
+            ],
+            "RequiredNode": "eco_bio_anatom",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t3: око полтергейста (AoD, protocol; мала «e»). Тир 3 — око псіоніка: безтілесний мутант-одинак, якого рідко хто бачить, — внутрішня тканина найдорожчої лінії."
+        },
+        {
+            "Id": "eco_pak_bio_t3_controllerhand",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ControllerHand",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t3"
+                }
+            ],
+            "RequiredNode": "eco_bio_anatom",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t3: рука контролера (@Radio). Тир 3 — рука псіоніка: мутант-одинак, який підкоряє волю на дистанції; парний клас до Mutant_AoD_Controller_Hand з AoD, тир той самий."
+        },
+        {
+            "Id": "eco_pak_bio_t3_wy_bershead",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "WY_BersHEAD",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t3"
+                }
+            ],
+            "RequiredNode": "eco_bio_anatom",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t3: голова берсера (protocol, WeTernal WY_Bers). Тир 3 — голова боса власного паку сервера: мутант-одинак, м'яка тканина голови цінна лише свіжою."
+        },
+        {
+            "Id": "eco_pak_bio_t3_wy_treemanhead",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "WY_TreemanHEAD",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t3"
+                }
+            ],
+            "RequiredNode": "eco_bio_anatom",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t3: голова дереволюда (protocol, WeTernal WY_Treeman). Тир 3 — голова боса власного паку сервера: мутант-одинак, м'яка тканина голови цінна лише свіжою."
+        },
+        {
+            "Id": "eco_pak_bio_t2_mutant_aod_ratwolf_eye",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_RatWolf_Eye",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t2"
+                }
+            ],
+            "RequiredNode": "eco_bio_zbir",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t2: око щуроволка (AoD, protocol). Тир 2 — око щуроволка: зграйний, але помітно агресивніший і живучіший за плоть мутант, тому свіжа внутрішня тканина дорожча за око плоті (t1)."
+        },
+        {
+            "Id": "eco_pak_bio_t2_sfp_catbaun_head",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_CatBaun_Head",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t2"
+                }
+            ],
+            "RequiredNode": "eco_bio_zbir",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t2: голова кота Баюна (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 2 — голова псі-виду: Баюн заманює голосом, його мозок — матеріал лабораторії, а не прилавка. (SFP)"
+        },
+        {
+            "Id": "eco_pak_bio_t2_sfp_catbaun_lapa",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_CatBaun_lapa",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t2"
+                }
+            ],
+            "RequiredNode": "eco_bio_zbir",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t2: лапа кота Баюна (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 2 — лапа кота Баюна: хижак-одинак, помітно небезпечніший за масового чорнобильського кота (t1). (SFP)"
+        },
+        {
+            "Id": "eco_pak_bio_t2_sfp_ratdog_otrezano_lapa",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_ratdog_Otrezano_Lapa",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t2"
+                }
+            ],
+            "RequiredNode": "eco_bio_zbir",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t2: лапа щуроволка (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 2 — щуроволок: той самий вид, що й око Mutant_AoD_RatWolf_Eye у цьому ж тирі — зграйний, але агресивніший і живучіший за плоть. (SFP)"
+        },
+        {
+            "Id": "eco_pak_bio_t2_sfp_tenevnik_eye",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_tenevnik_eye",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t2"
+                }
+            ],
+            "RequiredNode": "eco_bio_zbir",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t2: око тіньовика (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 2 — тіньовик: скритний мутант-одинак; тир за аналогією — виду нема в лорному списку. (SFP)"
+        },
+        {
+            "Id": "eco_pak_bio_t2_sfp_kosterez_lapa_srez",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_kosterez_lapa_srez",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t2"
+                }
+            ],
+            "RequiredNode": "eco_bio_zbir",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t2: кисть костеріза (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 2 — костеріз: великий хижак; щупальця того ж виду віддано воякам, кисть лишається науці; тир за аналогією. (SFP)"
+        },
+        {
+            "Id": "eco_pak_bio_t1_mutant_aod_cat_leg",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Cat_Leg",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: лапа чорнобильського кота (AoD, protocol). Тир 1 — лапа кота: зовнішня кінцівка масового мутанта Зони, базова біосировина — той самий тир, що й чотири лапи кота з @Radio."
+        },
+        {
+            "Id": "eco_pak_bio_t1_mutant_aod_boar_leg",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Boar_Leg",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: кабан (AoD, protocol). Тир 1 — кабан: масовий мутант початкових локацій, нога — базова біосировина."
+        },
+        {
+            "Id": "eco_pak_bio_t1_mutant_aod_fresh_eye",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Fresh_Eye",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: плоть (AoD, protocol). Тир 1 — плоть: найслабший і найчисленніший мутант Зони, око — базова біосировина."
+        },
+        {
+            "Id": "eco_pak_bio_t1_sfp_boar_leg",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_boar_leg",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: кабан, нога (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 1 — кабан: масовий мутант початкових локацій, нога — базова біосировина. (SFP)"
+        },
+        {
+            "Id": "eco_pak_bio_t1_sfp_plot_eye",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Plot_eye",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: плоть, око (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 1 — плоть: найслабший і найчисленніший мутант Зони, око — базова біосировина. (SFP)"
+        },
+        {
+            "Id": "eco_pak_bio_t1_satoshi_skinning_cat_left_hand",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_Cat_Left_Hand",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: ліва передня лапа кота (Radio, модель LeftHand.p3d). Трофей із кота — масового мутанта Зони, базова біосировина."
+        },
+        {
+            "Id": "eco_pak_bio_t1_satoshi_skinning_cat_right_hand",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_Cat_Right_Hand",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: права передня лапа кота (Radio, модель RightHand.p3d). Трофей із кота — масового мутанта Зони, базова біосировина."
+        },
+        {
+            "Id": "eco_pak_bio_t1_satoshi_skinning_cat_left_foot",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_Cat_Left_Foot",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: ліва задня лапа кота (Radio, модель LeftFoot.p3d). Трофей із кота — масового мутанта Зони, базова біосировина."
+        },
+        {
+            "Id": "eco_pak_bio_t1_satoshi_skinning_cat_right_foot",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_Cat_Right_Foot",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: права задня лапа кота (Radio, модель RightFoot.p3d). Трофей із кота — масового мутанта Зони, базова біосировина."
+        },
+        {
+            "Id": "eco_pak_bio_t1_mutant_aod_zombi_hand",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Mutant_AoD_Zombi_Hand",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: рука зомбованого (AoD, protocol; єдиний трофей зомбі). Тир 1 — зомбі: найчисленніший противник Зони, рука — базова біосировина."
+        },
+        {
+            "Id": "eco_pak_bio_t1_satoshi_skinning_boar_claw",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_Boar_Claw",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: кіготь кабана (Radio). Тир 1 — кабан: масовий мутант початкових локацій; кіготь кабана пластину броні не випробує, тому лишається науці — у вояків t1 частин мутантів нема навмисно."
+        },
+        {
+            "Id": "eco_pak_bio_t1_satoshi_skinning_flesh_hoof_1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Satoshi_Skinning_Flesh_Hoof_1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: копито плоті (Radio, displayName «Flesh claw»). Тир 1 — плоть: найслабший і найчисленніший мутант Зони, копито — базова біосировина."
+        },
+        {
+            "Id": "eco_pak_bio_t1_sfp_zombiecivilian_hand",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_ZombieCivilian_hand",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: рука зомбі-цивільного (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 1 — зомбі-цивільний: масовий противник, рука — базова біосировина. (SFP)"
+        },
+        {
+            "Id": "eco_pak_bio_t1_sfp_kislot_narost",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Kislot_Narost",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: кислотний наріст (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 1 — кислот: зомбований мутант початкових локацій, наріст — залозиста тканина, цінна лише свіжою; тир за аналогією. (SFP)"
+        },
+        {
+            "Id": "eco_pak_bio_t1_sfp_muhomor_otrezok",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Muhomor_Otrezok",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_01",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_bio_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, біо t1: лобовий зріз мухомора (SFP; явний клас замість catch-all SFP_Mutant_srez_base). Тир 1 — мухомор: зомбований мутант початкових локацій; тир за аналогією. (SFP)"
+        },
+        {
+            "Id": "eco_analiz_bio_t1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_01",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_bio_t1"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Science",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bio_lab_t1:3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Вчених, біо t1: зразок з міткою eco_bio_t1 → носій bio_lab_t1:3."
+        },
+        {
+            "Id": "eco_analiz_bio_t2",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_01",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_bio_t2"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Science",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bio_lab_t2:2"
+                }
+            ],
+            "RequiredNode": "eco_bio_zbir",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Вчених, біо t2: зразок з міткою eco_bio_t2 → носій bio_lab_t2:2."
+        },
+        {
+            "Id": "eco_analiz_bio_t3",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Bio",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_01",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_bio_t3"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Science",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "bio_lab_t3:1"
+                }
+            ],
+            "RequiredNode": "eco_bio_anatom",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Вчених, біо t3: зразок з міткою eco_bio_t3 → носій bio_lab_t3:1."
+        },
+        {
+            "Id": "eco_pak_anom_t3_on_art_compass",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Compass",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t3"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t3. Сировина — артефакт «Компас»; рідкість з опису: «Артефакт-легенда.»"
+        },
+        {
+            "Id": "eco_pak_anom_t3_on_art_heart_chornobyl",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Heart_Chornobyl",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t3"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t3. Сировина — артефакт «Серце Чорнобиля»; рідкість з опису: «Легендарний та рідкісний артефакт.»"
+        },
+        {
+            "Id": "eco_pak_anom_t3_on_art_alpha_exact",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Alpha|1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t3"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t3. Сировина — артефакт «Альфа-артефакт»; рівня рідкості в описі нема; t3 за унікальністю — «Найперший у світі артефакт. Отриманий у 1995 р. під час Першого Карибського експерименту». Класнейм із суфіксом |1 (точний збіг), щоб зужитий ON_Art_Alpha_Dead (нащадок ON_Art_Alpha) лишався в catch-all t1."
+        },
+        {
+            "Id": "eco_pak_anom_t3_on_art_gipercub",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_GiperCub",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t3"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t3. Сировина — артефакт «Гіперкуб»; рідкість з опису: «Артефакт-легенда.»"
+        },
+        {
+            "Id": "eco_pak_anom_t3_on_art_grz_yag",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Grz_Yag",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t3"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t3. Сировина — артефакт «Грозова ягода»; рідкість з опису: «Артефакт-легенда.»"
+        },
+        {
+            "Id": "eco_pak_anom_t3_on_art_zhidkiy_kamen",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Zhidkiy_Kamen",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t3"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t3. Сировина — артефакт «Рідкий камінь»; рідкість з опису: «Артефакт-легенда.»"
+        },
+        {
+            "Id": "eco_pak_anom_t3_on_art_weird_bolt",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Weird_Bolt",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t3"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t3. Сировина — артефакт «Дивний болт»; рідкість з опису: «Один із легендарних „змінених предметів“, про які сталкери базікають біля вогнища.»"
+        },
+        {
+            "Id": "eco_pak_anom_t3_on_art_weird_gajka",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Weird_Gajka",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t3"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t3. Сировина — артефакт «Дивна гайка»; рідкість з опису: «Один із легендарних „змінених предметів“, про які сталкери базікають біля вогнища.»"
+        },
+        {
+            "Id": "eco_pak_anom_t3_sfp_oskolok_monolit",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFP_Oskolok_monolit",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t3"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t3: Уламок Моноліту (SFP). Тир 3 — лорний t3: частка головного артефакту Зони. Клас лишається з поміткою (SFP): нових класів SFP не додаємо, бо серверна версія мода інша. (SFP)"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_magma",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Magma",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Магма»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_goldfish",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Goldfish",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Золота рибка»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_korona",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Korona",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Корона»; рідкість з опису: «Артефакт трапляється в Зоні нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_arfa",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Arfa",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Арфа»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_bakedbolts",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_BakedBolts",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Брак»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_bitiy_kamen",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Bitiy_Kamen",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Битий камінь»; рідкість з опису: «Артефакт трапляється в Зоні нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_devils_mushroom",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Devils_Mushroom",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Чортів гриб»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_fakel",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Fakel",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Факел»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_flytrap",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Flytrap",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Мухоловка»; рідкість з опису: «Артефакт зустрічається у Зоні нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_greben",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Greben",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Гребінь»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_jumper",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Jumper",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Стрибунець»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_lamp",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Lamp",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Ліхтар»; рідкість з опису: «Артефакт трапляється нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_mertvaya_guba",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Mertvaya_Guba",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Мертва губка»; рівня рідкості в описі нема — це єдиний опис іншого шаблону; t2 за прямо названою цінністю: «має унікальну властивість: він здатний поглинати хімічну шкоду, що робить його цінним для виживання в небезпечних умовах»."
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_morskaya_zvezda",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Morskaya_Zvezda",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Морська зірка»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_myas_zapal",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Myas_Zapal",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Мʼясна запальничка»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_plazma",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Plazma",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Плазма»; рідкість з опису: «Артефакт трапляється в Зоні нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_rubiks_cube",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Rubiks_Cube",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Кубик Рубіка»; рідкість з опису: «Рідкісний артефакт.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_urok_truda",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Urok_Truda",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Урок праці»; рідкість з опису: «Артефакт трапляється нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t2_on_art_zavtrak_turista",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Zavtrak_Turista",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t2. Сировина — артефакт «Сніданок туриста»; рідкість з опису: «Артефакт трапляється в Зоні нечасто.»"
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_alpha_dead",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Alpha_Dead",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Мертвий Альфа-артефакт»: зужита сировина: за описом артефакт «втратив свої властивості та перестав виявляти аномальні ефекти. Тепер це просто камінь» — найдешевший тир. Точний збіг ON_Art_Alpha|1 у t3 лишається, щоб зужитий артефакт не потрапив у t3."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_bifshteks",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Bifshteks",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Біфштекс» (термічні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_blood_stone",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Blood_Stone",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Кров каменю» (гравітаційні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_cherevo",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Cherevo",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Черево» (термічні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_crystal",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Crystal",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Кристал» (термічні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_dziga",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Dziga",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Дзиґа» (термічні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_electro_battery",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Electro_Battery",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Батарейка» (електричні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_fireball",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Fireball",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Вогняна куля» (термічні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_flash",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Flash",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Спалах» (електричні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_galka",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Galka",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Галька» (гравітаційні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_gravy",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Gravy",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Граві» (гравітаційні аномалії); рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_kapla",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Kapla",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Краплі» (термічні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_lira",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Lira",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Ліра» (термічні аномалії); рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_meatchunk",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_MeatChunk",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Шмат м'яса» (кислотні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_plesen",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Plesen",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Пліснява» (кислотні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_rog",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Rog",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Ріг» (кислотні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_sapfir",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Sapfir",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Сапфір» (електричні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_sh_korol",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Sh_Korol",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Щурячий король» (електричні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_shell",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Shell",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Шкаралупа» (кислотні аномалії); рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_shokoladka",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Shokoladka",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Шоколадка» (електричні аномалії); рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_slime",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Slime",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Слиз» (кислотні аномалії); рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_slug",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Slug",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Слиз» (кислотні аномалії); рідкість з опису: «Артефакт широко розповсюджений». Окремий класнейм від ON_Art_Slime із тими самими назвою й описом — у мода справді два класи."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_slyuda",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Slyuda",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Слюда» (кислотні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_thron",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Thron",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Колючка» (кислотні аномалії); рідкість з опису: «Артефакт широко розповсюджений»."
+        },
+        {
+            "Id": "eco_pak_anom_t1_on_art_vyvert",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ON_Art_Vyvert",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_03",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_anomaly_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, аномальний t1. Сировина — артефакт «Виверт» (гравітаційні аномалії); рідкість з опису: «Дуже поширений артефакт»."
+        },
+        {
+            "Id": "eco_analiz_anom_t1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_03",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_anomaly_t1"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Science",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "anomaly_lab_t1:3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Вчених, аномальний t1: зразок з міткою eco_anom_t1 → носій anomaly_lab_t1:3."
+        },
+        {
+            "Id": "eco_analiz_anom_t2",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_03",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_anomaly_t2"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Science",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "anomaly_lab_t2:2"
+                }
+            ],
+            "RequiredNode": "eco_ano_detekt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Вчених, аномальний t2: зразок з міткою eco_anom_t2 → носій anomaly_lab_t2:2."
+        },
+        {
+            "Id": "eco_analiz_anom_t3",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Anom",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_03",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_anomaly_t3"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Science",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "anomaly_lab_t3:1"
+                }
+            ],
+            "RequiredNode": "eco_ano_artefakt",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Вчених, аномальний t3: зразок з міткою eco_anom_t3 → носій anomaly_lab_t3:1."
+        },
+        {
+            "Id": "eco_pak_electro_t3_nvgoggles",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "NVGoggles|1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: Прилад нічного бачення (ваніль). Тир 3 — ванільний ПНБ (nominal 5); точний збіг |1, щоб не ловити модові ПНБ — вони названі окремо нижче."
+        },
+        {
+            "Id": "eco_pak_electro_t3_cawfa_topaz_nvgoggles",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "CAWFA_Topaz_NVGoggles",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: ПНВ-57Е (ProcolPack). Тир 3 — прилад нічного бачення — ПНБ завжди топовий рівень."
+        },
+        {
+            "Id": "eco_pak_electro_t3_dpb_nvg",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "DPB_NVG",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: ПНВ ПСЗ-12 «Булат» (ProcolPack). Тир 3 — ПНБ бойового екзокостюма — топовий рівень."
+        },
+        {
+            "Id": "eco_pak_electro_t3_dpc_nvg",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "DPC_NVG",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: ПНВ ПСЗ-20В «Конвой» (ProcolPack). Тир 3 — ПНБ бойового екзокостюма — топовий рівень."
+        },
+        {
+            "Id": "eco_pak_electro_t3_dsp_builtin_nvg",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "DSP_BuiltIn_NVG",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: ПНБ шолома ССП-100 «Відкриття» (ProcolPack). Тир 3 — вбудований у шолом ССП-100 ПНБ; тир як у решти ПНБ, хоч окремо він може й не лутатися."
+        },
+        {
+            "Id": "eco_pak_electro_t3_sfm_nvgoggles",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFM_NVGoggles",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: Прилад нічного бачення (protocol). Тир 3 — ПНБ мода protocol; префікс SFM_ — за індексом клас належить protocol, мод на сервері є."
+        },
+        {
+            "Id": "eco_pak_electro_t3_remotedetonator",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "RemoteDetonator|1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: Блок дистанційного підриву (ваніль, nominal 5). Тир 3 — радіокерована електроніка підриву; точний збіг |1, бо два ванільні нащадки — це різні предмети (приймач і пульт) і вони названі окремо нижче."
+        },
+        {
+            "Id": "eco_pak_electro_t3_remotedetonatorreceiver",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "RemoteDetonatorReceiver",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: Приймач детонатора (ваніль). Тир 3 — радіоприймач бойової частини комплекту підриву, рівень решти технічної електроніки t3."
+        },
+        {
+            "Id": "eco_pak_electro_t3_remotedetonatortrigger",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "RemoteDetonatorTrigger",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: Пульт дистанційного підриву (ваніль). Тир 3 — передавач комплекту підриву, рівень решти технічної електроніки t3."
+        },
+        {
+            "Id": "eco_pak_electro_t3_battery9v_radioactive",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Battery9V_Radioactive",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: уранова батарея (protocol; нащадок Battery9V — те правило тепер точний збіг Battery9V|1)."
+        },
+        {
+            "Id": "eco_pak_electro_t3_ej_items_notebook",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Ej_Items_notebook",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: Ноутбук (ProcolPack). Тир 3 — робоча обчислювальна машина з накопичувачем: найдорожчий носій даних лінії, рівень NVGoggles і блока підриву."
+        },
+        {
+            "Id": "eco_pak_electro_t3_ej_items_hd",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Ej_Items_hd",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: Жорсткий диск (ProcolPack). Тир 3 — носій даних: цінність не в залізі, а в записаній інформації; рівень NVGoggles і блока підриву."
+        },
+        {
+            "Id": "eco_pak_electro_t3_kuvalda_anpeq15_flashlaser",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Kuvalda_Anpeq15_FlashLaser_Base",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: армійський тактичний блок L3Harris AN/PEQ-15 (ProcolPack): світло плюс видимий та ІЧ лазери, працює в парі з ПНБ — рівень NVGoggles. Батька лишено навмисно: його нащадки Kuvalda_Anpeq15_FlashLaser_Black і _Tan — це один і той самий блок у 2 кольорах, власного displayName вони не мають."
+        },
+        {
+            "Id": "eco_pak_electro_t3_kuvalda_anpeq2_flashlaser",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Kuvalda_Anpeq2_FlashLaser_Base",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 35.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t3"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t3: армійський ІЧ-лазер/освітлювач Insight AN/PEQ-2 (ProcolPack), безкорисний без ПНБ — рівень NVGoggles. Батька лишено навмисно: єдиний нащадок Kuvalda_Anpeq2_FlashLaser_Black — той самий блок в 1 іншому кольорі, власного displayName не має."
+        },
+        {
+            "Id": "eco_pak_electro_t2_universallight",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "UniversalLight|1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: ваніль, nominal 30 у types.xml. Точний збіг (|1): UniversalLight — батько ліхтарів шоломів ПСЗ/ССП і тактичних блоків Kuvalda_* — усі вони тепер названі окремими правилами, catch-all прибрано."
+        },
+        {
+            "Id": "eco_pak_electro_t2_dpb_tactical_light",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "DPB_Tactical_Light",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: ліхтар шолома ПСЗ-12 «Булат» (ProcolPack), слот helmetFlashlight — вузловий модуль спорядження, а не побутовий ліхтарик."
+        },
+        {
+            "Id": "eco_pak_electro_t2_dpc_tactical_light",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "DPC_Tactical_Light",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: тактичний ліхтар шолома ПСЗ-20В «Конвой» (ProcolPack), слот helmetFlashlight — той самий клас речей, що DPB."
+        },
+        {
+            "Id": "eco_pak_electro_t2_dsp_discovery_flashlight",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "DSP_Discovery_Flashlight",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: ліхтар шолома наукового костюма ССП-100 «Діскавері» (ProcolPack), слот helmetFlashlight."
+        },
+        {
+            "Id": "eco_pak_electro_t2_sfm_berilflashliht",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SFM_BerilFlashLiht",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: ліхтар шолома костюма «Беріл-5М» (protocol) — та сама роль, що в DPB/DPC/DSP."
+        },
+        {
+            "Id": "eco_pak_electro_t2_kuvalda_wmx200_flash",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Kuvalda_Wmx200_Flash",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: тактичний ліхтар Insight WMX200 (ProcolPack): підствольний ліхтар без ЛЦУ — рівень ванільного UniversalLight."
+        },
+        {
+            "Id": "eco_pak_electro_t2_kuvalda_tac2_flash",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Kuvalda_Tac2_Flash",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: тактичний ліхтар Steiner LAS/TAC 2 (ProcolPack): ліхтар на зброю — рівень ванільного UniversalLight."
+        },
+        {
+            "Id": "eco_pak_electro_t2_kuvalda_gl21_flash",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Kuvalda_GL21_Flash",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: тактичний ліхтар з ЛЦУ Glock GTL 21 (ProcolPack): ліхтар плюс видимий лазер для пістолета — складніший за простий ліхтар, але це не ІЧ."
+        },
+        {
+            "Id": "eco_pak_electro_t2_kuvalda_x400_flash",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Kuvalda_X400_Flash",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: тактичний ліхтар з ЛЦУ SureFire X400 Ultra (ProcolPack): ліхтар плюс видимий ЛЦУ — той самий рівень, що GL21."
+        },
+        {
+            "Id": "eco_pak_electro_t2_kuvalda_klesh_flash",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Kuvalda_Klesh_Flash",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: тактичний ліхтар Зеніт «Клещ-2ІКС» з ЛЦУ (ProcolPack): попри індекс «ІКС» це блок рівня GL21/X400, а не окремий ІЧ-освітлювач під ПНБ."
+        },
+        {
+            "Id": "eco_pak_electro_t2_kitchentimer",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "KitchenTimer",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: ваніль, nominal 25 у types.xml."
+        },
+        {
+            "Id": "eco_pak_electro_t2_gpsreceiver",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "GPSReceiver",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: ваніль, nominal 25."
+        },
+        {
+            "Id": "eco_pak_electro_t2_megaphone",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Megaphone",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: Мегафон (ваніль). Тир 2 — робоча електроніка з підсилювачем і батареєю, дорожча за ліхтар, але не носій даних. Батька лишено як кольорову родину: єдиний нащадок aod_gear_Megaphone — ретекстур того самого мегафона з dz_aod_retexture.pbo, власного displayName не має."
+        },
+        {
+            "Id": "eco_pak_electro_t2_battery9v_ll",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Battery9V_LL",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t2: довгограюча батарея (protocol; нащадок Battery9V — те правило тепер точний збіг Battery9V|1)."
+        },
+        {
+            "Id": "eco_pak_electro_t1_flashlight",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Flashlight|1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t1: ваніль, nominal 90. Точний збіг (|1): Flashlight — батько детекторів RZ_Anom_Detector*, дозиметра RZ_Rad_geigerjmih, SFP_Mobile_NUKEA тощо — catch-all заборонено."
+        },
+        {
+            "Id": "eco_pak_electro_t1_cablereel",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "CableReel",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t1: ваніль, nominal 80."
+        },
+        {
+            "Id": "eco_pak_electro_t1_sparkplug",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "SparkPlug",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": ""
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t1: ваніль, nominal 60."
+        },
+        {
+            "Id": "eco_pak_electro_t1_battery9v",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Pack_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "Battery9V|1",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "",
+                "RequireFullQuantity": 1
+            },
+            "BasePurityMin": 0.8,
+            "BasePurityMax": 1.0,
+            "TimeSec": 25.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Sample_17",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "eco_electronics_t1"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Пакувальник Вчених, технічний t1: ваніль, nominal 100 — масова сировина. Точний збіг (|1): нащадки Battery9V_LL і Battery9V_Radioactive мають власні правила (t2 і t3), решта — з модів, яких на сервері нема; catch-all прибрано."
+        },
+        {
+            "Id": "eco_analiz_electro_t1",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_17",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_electronics_t1"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Science",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "electronics_lab_t1:3"
+                }
+            ],
+            "RequiredNode": "",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Вчених, технічний t1: зразок з міткою eco_electro_t1 → носій electronics_lab_t1:3."
+        },
+        {
+            "Id": "eco_analiz_electro_t2",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_17",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_electronics_t2"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Science",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "electronics_lab_t2:2"
+                }
+            ],
+            "RequiredNode": "eco_teh_elektro",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Вчених, технічний t2: зразок з міткою eco_electro_t2 → носій electronics_lab_t2:2."
+        },
+        {
+            "Id": "eco_analiz_electro_t3",
+            "Enabled": 1,
+            "Device": "ZP_Eco_Proc_Electro",
+            "Mode": "background",
+            "InputItem": {
+                "Classname": "ZP_Sample_17",
+                "Quantity": 1,
+                "ConsumeInput": 1,
+                "Content": "eco_electronics_t3"
+            },
+            "BasePurityMin": 1.0,
+            "BasePurityMax": 1.0,
+            "TimeSec": 30.0,
+            "Consumables": [],
+            "Outputs": [
+                {
+                    "Classname": "ZP_Carrier_Science",
+                    "Quantity": 1,
+                    "Chance": 1.0,
+                    "Content": "electronics_lab_t3:1"
+                }
+            ],
+            "RequiredNode": "eco_teh_dani",
+            "RequiredFactions": [
+                "ecolog"
+            ],
+            "RequiredWorn": [],
+            "RequiredTools": [],
+            "Notes": "Аналізатор Вчених, технічний t3: зразок з міткою eco_electro_t3 → носій electronics_lab_t3:1."
+        }
+    ]
+}

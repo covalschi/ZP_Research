@@ -1,0 +1,31 @@
+# Portable profile for dayz-agentic-modding-mcp. Machine paths live in
+# dayz-mcp.local.toml, which is not committed.
+
+[project]
+name = "zp-research"
+
+[build]
+mods = ["ZP_Research", "ZP_Research_VPP"]
+
+[expect]
+# The mod prints this once every config has been read.
+ready_line   = "configs loaded"
+# The stand's known-good baseline: one warning about an armband class that only
+# exists in the server's modpack, plus four each about factions that own no
+# terminals and no devices.
+max_warnings = 9
+forbid       = ["Bad type", "Can't compile", "NULL pointer to instance"]
+error_regex  = ["SCRIPT\\s+\\(E\\).*ZP_"]
+noise        = []
+
+# Counters carried by the ready line. The server does not know these names; it
+# parses whatever it finds and compares with what is declared here.
+[expect.counters]
+factions    = 7
+pointTypes  = 24
+rules       = 43
+treeNodes   = 16
+dataItems   = 22
+modules     = 3
+sampleTypes = 6
+adminIds    = 1

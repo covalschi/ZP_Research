@@ -35,6 +35,8 @@ export interface FactionRow {
   armbands: string[]
   terminals: string[]
   devices: string[]
+  // Задник вікна дерева цієї фракції; порожньо = загальний Settings.TreeBackgroundImage.
+  treeBackgroundImage: string
   // Шляхи ЛОКАЛЬНІ до запису (Id, DisplayName, Armbands[0], TerminalClasses, …) — деталь-
   // панель фільтрує їх fieldErrors-ами без повторного розбору префіксів.
   problems: FieldError[]
@@ -101,6 +103,7 @@ export function buildFactionRows(doc: unknown, index: ClassIndex): FactionRowsRe
       armbands: strArr(f?.Armbands),
       terminals: strArr(f?.TerminalClasses),
       devices: strArr(f?.DeviceClasses),
+      treeBackgroundImage: f ? str(f.TreeBackgroundImage) : '',
       problems,
       tone: 'ok',
     }

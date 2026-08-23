@@ -1,38 +1,49 @@
-# --- build output -------------------------------------------------------------
-# Signed mod folders produced by build/build.ps1
+# --- секрети: ніколи не комітити ---
+# Приватний ключ підпису PBO. Витік = будь-хто підпише мод вашим ключем.
+*.biprivatekey
+*.pfx
+
+# --- результати збірки (відтворюються з build\build.ps1) ---
 /@ZP_Research/
 /@ZP_Research_VPP/
 *.pbo
 *.pbo.*.bisign
+*.bisign
 
-# Private signing key MUST NEVER be committed (only the public .bikey is tracked)
-*.biprivatekey
-*.pfx
-
-# --- web editor ---------------------------------------------------------------
+# --- веб-редактор конфігів ---
 webeditor/node_modules/
 webeditor/.vite/
 webeditor/coverage/
-# webeditor/dist/index.html IS tracked on purpose: it is the shippable single-file build
+# webeditor/dist/index.html трекається НАВМИСНО: це і є однофайлова збірка редактора
 
-# --- local / tooling ----------------------------------------------------------
+# --- тимчасове й локальне ---
 *.log
 *.rpt
 *.RPT
-.DS_Store
+*.ADM
+*.mdmp
 Thumbs.db
+desktop.ini
+.DS_Store
 .vscode/
 .idea/
+__pycache__/
+*.pyc
 
-# temporary profile folder created by build/client-compile-check.ps1
+# тимчасовий профіль build\client-compile-check.ps1
 .compile-check-profile/
 
-# testenv: generated locally, never committed
+# --- testenv: усе, що народжується локально ---
 testenv/serverDZ.cfg
 testenv/profiles/
 testenv/clientprofile/
 testenv/server_pid.txt
 
-# python
-__pycache__/
-*.pyc
+# машинная половина профиля dayz-mcp — только локально
+dayz-mcp.local.toml
+
+# рабочий каталог dayz-mcp (журналы заданий) — только локально
+.dayz-mcp/
+
+# Проміжні PNG задників дерева: у мод їде тільки .paa (див. gui/textures/tree/SOURCES.md)
+build/tree-bg-out/

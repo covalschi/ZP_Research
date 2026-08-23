@@ -1,0 +1,257 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "eco_nauka",
+        "Name": "Програма Вчених",
+        "Icon": "",
+        "SortOrder": 1,
+        "Factions": [
+            "ecolog"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "eco_osnovy",
+            "Name": "Лабораторні основи",
+            "Description": "Протоколи прийому, маркування й зберігання проб у лабораторії Вчених. Корінь програми.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t1",
+                    "Amount": 5
+                },
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 4
+                },
+                {
+                    "Type": "electronics_lab_t1",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "eco_ano_detekt",
+            "Name": "Детекція аномалій",
+            "Description": "Калібрування детекторів під поля Зони. Відкриває переробку артефактів середньої рідкості.",
+            "Icon": "set:dayz_gui image:icon_refresh",
+            "Tier": 2,
+            "Parents": [
+                "eco_osnovy"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "eco_bio_zbir",
+            "Name": "Відбір біозразків",
+            "Description": "Правильний забір тканин мутантів без псування матеріалу. Відкриває частини мутантів середньої небезпеки.",
+            "Icon": "set:dayz_gui image:iconBacteria",
+            "Tier": 2,
+            "Parents": [
+                "eco_osnovy"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [
+                {
+                    "Classname": "Paper",
+                    "Quantity": 2,
+                    "Content": ""
+                }
+            ],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "eco_teh_elektro",
+            "Name": "Лабораторна електроніка",
+            "Description": "Ремонт і калібрування приладів. Відкриває переробку рідшої електроніки.",
+            "Icon": "set:dayz_gui image:icon_hammer",
+            "Tier": 2,
+            "Parents": [
+                "eco_osnovy"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "electronics_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "eco_ano_artefakt",
+            "Name": "Природа артефактів",
+            "Description": "Класифікація артефактів за породжуючою аномалією. Відкриває легендарні артефакти.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "eco_ano_detekt"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t2",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "eco_bio_anatom",
+            "Name": "Анатомія мутантів",
+            "Description": "Систематизація будови тканин. Відкриває частини найнебезпечніших мутантів.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 3,
+            "Parents": [
+                "eco_bio_zbir"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "bio_lab_t2",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 45,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "eco_teh_dani",
+            "Name": "Обробка даних",
+            "Description": "Серверне зберігання й аналіз вимірів. Відкриває рідкісну електроніку.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 3,
+            "Parents": [
+                "eco_teh_elektro"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "electronics_lab_t2",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "eco_ano_stabil",
+            "Name": "Стабілізація артефактів",
+            "Description": "Безпечне зберігання нестабільних артефактів. Потрібен хабар зі сталкерських ринків для порівняльних серій.",
+            "Icon": "set:dayz_gui image:iconPill",
+            "Tier": 4,
+            "Parents": [
+                "eco_ano_artefakt"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t2",
+                    "Amount": 8
+                },
+                {
+                    "Type": "anomaly_lab_t3",
+                    "Amount": 3
+                },
+                {
+                    "Type": "khabar_lab_t2",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "eco_ano_kontur",
+            "Name": "Контур аномалії",
+            "Description": "Електронна модель аномального поля на базі артефактів і даних сталкерського хабару.",
+            "Icon": "set:dayz_gui image:icon_refresh",
+            "Tier": 4,
+            "Parents": [
+                "eco_ano_artefakt",
+                "eco_teh_dani"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t3",
+                    "Amount": 2
+                },
+                {
+                    "Type": "electronics_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "khabar_lab_t1",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "eco_protokol",
+            "Name": "Протокол Зони",
+            "Description": "Фінальна мета програми Вчених: зведена модель аномалій, мутантів і приладів.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 5,
+            "Parents": [
+                "eco_ano_stabil",
+                "eco_ano_kontur",
+                "eco_bio_anatom"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "anomaly_lab_t3",
+                    "Amount": 6
+                },
+                {
+                    "Type": "bio_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "electronics_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "khabar_lab_t3",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 120,
+            "RequiredFactions": []
+        }
+    ]
+}

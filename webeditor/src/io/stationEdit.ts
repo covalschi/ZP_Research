@@ -79,7 +79,13 @@ function stubRule(id: string, device: string, inputClassname: string, inputConte
     Enabled: false, // Step 1: інертність заготовки — штатний механізм рушія (див. шапку файлу)
     Device: device,
     Mode: 'background',
-    InputItem: { Classname: inputClassname, Quantity: 1, ConsumeInput: true, Content: inputContent },
+    InputItem: {
+      Classname: inputClassname,
+      Quantity: 1,
+      ConsumeInput: true,
+      Content: inputContent,
+      RequireFullQuantity: false,
+    },
     BasePurityMin: 0.5,
     BasePurityMax: 0.5,
     TimeSec: 10,

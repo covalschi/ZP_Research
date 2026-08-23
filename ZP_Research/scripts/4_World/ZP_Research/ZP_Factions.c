@@ -50,6 +50,8 @@ class ZP_Factions
         ZP_FactionData d = ZP_FactionDB.Get().Load(fc);
         ZP_TreeSync ts = new ZP_TreeSync();
         ts.FactionClass = fc;
+        ts.FactionName = GetDisplayName(fc);
+        ts.FactionSupertype = ZP_ConfigService.Get().GetFactions().SupertypeOf(fc);
         foreach (string n : d.CompletedNodes)
         {
             ts.CompletedNodes.Insert(n);

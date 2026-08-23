@@ -6,6 +6,8 @@ class ZP_ClientState
     ref ZP_ClientConfig m_Config;
     bool m_ConfigReceived;
     string m_FactionClass;
+    string m_FactionName;   // назва фракції для UI (з SyncTree); порожньо = показувати клас
+    string m_FactionSupertype; // супертип фракції (з SyncTree); поки лише інформаційно
     ref array<string> m_CompletedNodes = new array<string>();
 
     // M3.5: адмін-снапшот для редактора (секція -> JSON) + лічильники для опитування меню
@@ -121,6 +123,8 @@ class ZP_ClientState
             return;
         }
         m_FactionClass = p.param1.FactionClass;
+        m_FactionName = p.param1.FactionName;
+        m_FactionSupertype = p.param1.FactionSupertype;
         m_CompletedNodes.Clear();
         foreach (string n : p.param1.CompletedNodes)
         {

@@ -8,7 +8,10 @@
 param(
     [int]$WaitSeconds = 90,
     [string]$DayzRoot,
-    [string]$Profiles
+    [string]$Profiles,
+    # Чужі моди, які теж мають компілюватись у цій перевірці (шлях або кілька через ';').
+    # Наприклад @AKM_Forte — він живе у власному репозиторії, і цей мод про нього не знає.
+    [string]$ExtraMods
 )
 
 $RepoRoot = Split-Path -Parent $PSScriptRoot
@@ -54,6 +57,7 @@ $profiles = $Profiles
 # зелене, не глянувши на половину клієнтського коду. Саме так проґавили падіння
 # «Bad type 'ZP_EditorController'» — воно виявилось аж на буті з VPP.
 $mods     = "$dayz\!Workshop\@CF;$dayz\!Workshop\@VPPAdminTools;$RepoRoot\@ZP_Research;$RepoRoot\@ZP_Research_VPP"
+if ($ExtraMods) { $mods = "$mods;$ExtraMods" }
 
 # НЕ вбивати всі DayZDiag_x64: під тим самим ім'ям працює і тестовий СЕРВЕР, і клієнт
 # користувача — гуртова зупинка роняла живу сесію посеред тесту. Зупиняємо лише свій

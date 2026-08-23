@@ -28,7 +28,11 @@ class ZP_ActionCollectResult : ActionInteractBase
         if (dev.ZP_GetState() != ZP_Device_Base.ZP_STATE_DONE)
             return false;
         if (GetGame().IsDedicatedServer())
-            return ZP_ConfigService.Get().IsDeviceFor(ZP_Factions.GetFactionClass(player), dev.GetType());
+        {
+            // окремим рядком — пастка компілятора, розписана в ZP_MissionServer.InvokeOnConnect
+            string srvFaction = ZP_Factions.GetFactionClass(player);
+            return ZP_ConfigService.Get().IsDeviceFor(srvFaction, dev.GetType());
+        }
         return ZP_ClientState.Get().ClientDeviceAllowed(dev.GetType());
     }
 

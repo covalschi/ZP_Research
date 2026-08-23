@@ -10,7 +10,8 @@
                 "Classname": "Apple",
                 "Quantity": 1,
                 "ConsumeInput": 1,
-                "Content": ""
+                "Content": "",
+                "RequireFullQuantity": 0
             },
             "BasePurityMin": 0.4000000059604645,
             "BasePurityMax": 0.800000011920929,
@@ -39,7 +40,8 @@
                 "Classname": "Rag",
                 "Quantity": 1,
                 "ConsumeInput": 1,
-                "Content": ""
+                "Content": "",
+                "RequireFullQuantity": 0
             },
             "BasePurityMin": 0.5,
             "BasePurityMax": 0.5,
@@ -68,7 +70,8 @@
                 "Classname": "ZP_Sample",
                 "Quantity": 1,
                 "ConsumeInput": 1,
-                "Content": "chimera_claw"
+                "Content": "chimera_claw",
+                "RequireFullQuantity": 0
             },
             "BasePurityMin": 0.5,
             "BasePurityMax": 0.5,
@@ -97,7 +100,8 @@
                 "Classname": "ZP_Sample",
                 "Quantity": 1,
                 "ConsumeInput": 1,
-                "Content": "bloodsucker_gland"
+                "Content": "bloodsucker_gland",
+                "RequireFullQuantity": 0
             },
             "BasePurityMin": 0.5,
             "BasePurityMax": 0.5,

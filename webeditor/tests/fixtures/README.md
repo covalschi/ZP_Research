@@ -27,6 +27,23 @@ Captured 2026-08-06. Purpose: byte-exact comparison targets for the canonical se
 Boot-to-files time: well under the 8-minute budget — the poll loop found the files on its
 very first check window.
 
+## Update 2026-08-23 — `ZP_RuleInput.RequireFullQuantity`
+
+A new field was appended to `ZP_RuleInput` (owner decision: only a full stack / full charge
+counts as an input), so the engine now writes one extra key inside every `InputItem`.
+
+* `gold/ProcessingRules/demo.json` was **re-captured the same way as in 2026-08-06**: the
+  stand's `profiles\ZP_Research\` folder was moved aside, the server booted once (so
+  `SetDefaults()` + `Save()` wrote brand-new files), the file was copied here, and the
+  folder was restored. The only difference from the previous capture is the new key:
+  `"RequireFullQuantity": 0` right after `"Content"`. The other seven gold files came out
+  **byte-identical** to the 2026-08-06 capture — a free re-validation of the whole set.
+* `live/chain.json` was written by an OLDER build of the mod, which had no such field, so
+  it could not be re-captured. The key was inserted by hand into its four `InputItem`
+  blocks, in exactly the position and spelling the engine had just produced in
+  `demo.json`; nothing else in the file was touched. Its byte round-trip therefore still
+  proves the serializer, but this one file is no longer "copied as-is".
+
 ## Where each fixture came from
 
 | File | Source | Why |

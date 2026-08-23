@@ -1,3 +1,8 @@
+// Картка вузла дерева. ГЕОМЕТРІЯ ДІТЕЙ — ПРОПОРЦІЙНА І НЕ МІНЯЄТЬСЯ: код дерева
+// калібрує розмір картки по вмісту й розраховує колонку тексту від TEXT_COL = 0.62
+// (ZP_TreeMenu.c), тож позиції 0.35 / 0.62 тут і константа в коді — одне ціле.
+// Рамка картки (колір самої кнопки) фарбується за статусом із коду; внутрішня
+// панель темна, а у ВИБРАНОГО вузла — світліша (ZP_TreeMenu.HighlightSelection).
 ButtonWidgetClass NodeBtn {
  visible 1
  ignorepointer 0
@@ -14,7 +19,7 @@ ButtonWidgetClass NodeBtn {
   PanelWidgetClass NodeInner {
    visible 1
    ignorepointer 1
-   color 0.16 0.18 0.21 1
+   color 0.10 0.12 0.14 1
    position 0.008 0.02
    size 0.984 0.96
    hexactpos 0
@@ -27,7 +32,7 @@ ButtonWidgetClass NodeBtn {
   PanelWidgetClass NodeIconFrame {
    visible 1
    ignorepointer 1
-   color 0.27 0.30 0.34 1
+   color 0.16 0.19 0.22 1
    position 0.026 0.09
    size 0.30 0.82
    hexactpos 0
@@ -37,9 +42,12 @@ ButtonWidgetClass NodeBtn {
    priority 2
    style rover_sim_colorable
   }
+  // Іконка з конфігу вузла АБО іконка статусу (lock / plus / refresh / done), якщо
+  // адмін іконки не задав — порожня ніша читалась як недоробка.
   ImageWidgetClass NodeIcon {
    visible 0
    ignorepointer 1
+   color 1 1 1 1
    position 0.036 0.115
    size 0.28 0.77
    hexactpos 0
@@ -47,17 +55,25 @@ ButtonWidgetClass NodeBtn {
    hexactsize 0
    vexactsize 0
    priority 3
+   // ADDITIVE, як у ванільного HUD для gear/icon_refresh: у blend ці гліфи
+   // малювались білими квадратами (перевірено знімком 2026-08-23), а іконки з
+   // непрозорим чорним тлом (iconSkull, Flags 3) — чорними плашками. Додавання
+   // робить чорне прозорим, тож на темній ніші лишається лише сам гліф.
+   mode additive
+   // Ніша вища за ширину (0.30 x 0.82 картки), і stretch_w_h тягнув гліф по вертикалі —
+   // «шестерня» виглядала каністрою (знімок 2026-08-23). fixaspect inside вписує картинку
+   // в нішу, зберігаючи пропорції (ваніль: 67 вживань inside, 433 fixwidth).
+   fixaspect inside
    "stretch mode" stretch_w_h
    "src alpha" 1
   }
   // ОДИН переносимий віджет замість двох рядків уручну. Перенос вмикає код
   // (SetLineBreakingOverride), і рушій сам вирішує, де ламати назву — тому підпис більше
-  // не залежить від того, чи вгадали ми ширину при вимірюванні. Два фіксовані рядки
-  // різали все довше двох: «Мутагенні сполуки» ставало «Мутагенн сполуки».
+  // не залежить від того, чи вгадали ми ширину при вимірюванні.
   MultilineTextWidgetClass NodeName {
    visible 1
    ignorepointer 1
-   color 0.97 0.97 0.97 1
+   color 0.96 0.97 0.98 1
    position 0.35 0.08
    size 0.62 0.56
    hexactpos 0
@@ -71,16 +87,14 @@ ButtonWidgetClass NodeBtn {
    "exact text size" 12
    "bold text" 1
    // ПЕРЕНОС ВМИКАЄ САМЕ ЦЕЙ КЛЮЧ. Одного SetLineBreakingOverride із коду мало: без
-   // «wrap 1» віджет лишається однорядковим і просто обрізає назву — що й було видно
-   // («Основи польове» замість «Основи польових досліджень»). Ключ стоїть у всіх
-   // ванільних переносимих написах.
+   // «wrap 1» віджет лишається однорядковим і просто обрізає назву.
    wrap 1
    "text valign" top
   }
   TextWidgetClass NodeSub {
    visible 1
    ignorepointer 1
-   color 0.88 0.88 0.88 1
+   color 0.72 0.76 0.80 1
    position 0.35 0.68
    size 0.60 0.25
    hexactpos 0
@@ -89,7 +103,7 @@ ButtonWidgetClass NodeBtn {
    vexactsize 0
    priority 4
    text ""
-   font "gui/fonts/sdf_MetronBook24"
+   font "gui/fonts/sdf_MetronLight24"
    "exact text" 1
    "exact text size" 12
   }

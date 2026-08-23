@@ -61,3 +61,10 @@ matching at runtime, not loading.
   an alarm. It is a test tree; the final balance will be different.
 - `ZP_Data_31` is named "Бойові дані" but carries an anomaly-group model — leftover naming,
   no functional effect.
+
+## Дві розстановки приладів
+
+- `StaticDevices.json` — повний стенд розробки: 51 запис (лабораторія, термінали та
+  залишки капстоуна).
+- `StaticDevices.lab-only.json` — підрізана до 14 записів: 12 приладів лабораторії
+  та 2 термінали. Для чистої машини беріть цю: перейменуйте на `StaticDevices.json`.

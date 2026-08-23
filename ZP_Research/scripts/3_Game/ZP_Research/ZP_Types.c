@@ -73,6 +73,8 @@ class ZP_ClientSampleType
 class ZP_TreeSync
 {
     string FactionClass;
+    string FactionName;     // людська назва фракції з конфігу (UI); порожньо = показати клас
+    string FactionSupertype; // science|combat|stalker — синхронізується для UI/майбутніх гейтів; здачу НЕ обмежує (рішення 2026-08-23)
     ref array<string> CompletedNodes = new array<string>();
     // M4 UI: активні проєкти (паралельні масиви) + пул фракції для шапки дерева
     ref array<string> ResearchingNodes = new array<string>();

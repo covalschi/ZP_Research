@@ -13,7 +13,8 @@
                 "armband_ecologist"
             ],
             "TerminalClasses": [],
-            "DeviceClasses": []
+            "DeviceClasses": [],
+            "TreeBackgroundImage": ""
         },
         {
             "Id": "clearsky",
@@ -26,7 +27,8 @@
                 "armband_clearsky"
             ],
             "TerminalClasses": [],
-            "DeviceClasses": []
+            "DeviceClasses": [],
+            "TreeBackgroundImage": ""
         },
         {
             "Id": "duty",
@@ -39,7 +41,8 @@
                 "armband_duty"
             ],
             "TerminalClasses": [],
-            "DeviceClasses": []
+            "DeviceClasses": [],
+            "TreeBackgroundImage": ""
         },
         {
             "Id": "freedom",
@@ -52,7 +55,8 @@
                 "armband_freedom"
             ],
             "TerminalClasses": [],
-            "DeviceClasses": []
+            "DeviceClasses": [],
+            "TreeBackgroundImage": ""
         },
         {
             "Id": "sop",
@@ -65,7 +69,8 @@
                 "Ex_Shevrons_sop_ua"
             ],
             "TerminalClasses": [],
-            "DeviceClasses": []
+            "DeviceClasses": [],
+            "TreeBackgroundImage": ""
         },
         {
             "Id": "bandit",
@@ -78,7 +83,8 @@
                 "armband_bandit"
             ],
             "TerminalClasses": [],
-            "DeviceClasses": []
+            "DeviceClasses": [],
+            "TreeBackgroundImage": ""
         },
         {
             "Id": "loner",
@@ -91,7 +97,8 @@
                 "armband_loner"
             ],
             "TerminalClasses": [],
-            "DeviceClasses": []
+            "DeviceClasses": [],
+            "TreeBackgroundImage": ""
         }
     ]
 }

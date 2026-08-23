@@ -51,7 +51,7 @@ describe('parseConfig: відсутній ключ -> нуль свого тип
     expect(r.BasePurityMax).toBe(0)
     expect(r.TimeSec).toBe(0)
     expect(r.Mode).toBe('')
-    expect(r.InputItem).toEqual({ Classname: '', Quantity: 0, ConsumeInput: false, Content: '' })
+    expect(r.InputItem).toEqual({ Classname: '', Quantity: 0, ConsumeInput: false, Content: '', RequireFullQuantity: false })
     expect(warnings.length).toBeGreaterThan(0)
     expect(warnings.some((w) => w.path === 'Rules[0].Enabled')).toBe(true)
     expect(warnings.some((w) => w.message.includes('ключ відсутній'))).toBe(true)
@@ -290,7 +290,7 @@ describe('parseConfig: не падає на неочікуваній формі 
         '{"ConfigVersion":1,"Rules":[{"Id":"x","InputItem":null}]}',
       )
       const r = (value as any).Rules[0]
-      expect(r.InputItem).toEqual({ Classname: '', Quantity: 1, ConsumeInput: true, Content: '' })
+      expect(r.InputItem).toEqual({ Classname: '', Quantity: 1, ConsumeInput: true, Content: '', RequireFullQuantity: false })
       const w = warnings.find((x) => x.path === 'Rules[0].InputItem')
       expect(w).toBeDefined()
       expect(w!.severity).toBeUndefined()
@@ -304,7 +304,7 @@ describe('parseConfig: не падає на неочікуваній формі 
         '{"ConfigVersion":1,"Rules":[{"Id":"x","InputItem":[]}]}',
       )
       const r = (value as any).Rules[0]
-      expect(r.InputItem).toEqual({ Classname: '', Quantity: 1, ConsumeInput: true, Content: '' })
+      expect(r.InputItem).toEqual({ Classname: '', Quantity: 1, ConsumeInput: true, Content: '', RequireFullQuantity: false })
       expect(warnings.some((w) => w.path === 'Rules[0].InputItem')).toBe(true)
     }).not.toThrow()
   })

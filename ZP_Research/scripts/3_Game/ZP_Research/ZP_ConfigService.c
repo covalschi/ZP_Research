@@ -1766,7 +1766,12 @@ class ZP_ConfigService
             }
         }
         cc.TreeVisibilityDepth = m_Settings.TreeVisibilityDepth;
+        // Задник: свій у фракції, інакше загальний. Клієнт отримує ЛИШЕ свій — чужі шляхи
+        // йому ні до чого, а зайвий рядок у синку конфігу коштує місця в RPC.
         cc.TreeBackgroundImage = m_Settings.TreeBackgroundImage;
+        ZP_FactionDef bgDef = m_Factions.Find(factionClass);
+        if (bgDef && bgDef.TreeBackgroundImage != "")
+            cc.TreeBackgroundImage = bgDef.TreeBackgroundImage;
         return cc;
     }
 

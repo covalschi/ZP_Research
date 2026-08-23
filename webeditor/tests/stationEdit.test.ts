@@ -165,7 +165,13 @@ describe('createStubRules: заготовки з масового додаван
     expect(stub.Enabled).toBe(false)
     expect(stub.Device).toBe('ZP_SampleFridge')
     expect(stub.Mode).toBe('background')
-    expect(stub.InputItem).toEqual({ Classname: 'Apple', Quantity: 1, ConsumeInput: true, Content: '' })
+    expect(stub.InputItem).toEqual({
+      Classname: 'Apple',
+      Quantity: 1,
+      ConsumeInput: true,
+      Content: '',
+      RequireFullQuantity: false,
+    })
     expect(stub.BasePurityMin).toBe(0.5)
     expect(stub.BasePurityMax).toBe(0.5)
     expect(stub.TimeSec).toBe(10)
@@ -317,7 +323,13 @@ describe('linkOutputToStation: «Куди піде результат»', () => 
     const analyzer = doc.Rules[1]
     expect(analyzer.Enabled).toBe(false) // та сама Step 1-семантика, що createStubRules
     expect(analyzer.Device).toBe('ZP_Microscope')
-    expect(analyzer.InputItem).toEqual({ Classname: 'ZP_Sample', Quantity: 1, ConsumeInput: true, Content: 'chimera_claw' })
+    expect(analyzer.InputItem).toEqual({
+      Classname: 'ZP_Sample',
+      Quantity: 1,
+      ConsumeInput: true,
+      Content: 'chimera_claw',
+      RequireFullQuantity: false,
+    })
     expect(analyzer.Outputs).toEqual([])
   })
 
@@ -449,7 +461,13 @@ describe('linkOutputToStation: будує ланку #2->#3 (не лише пе�
     const stub = doc.Rules[2]
     expect(stub.Device).toBe('ZP_ChemBench')
     expect(stub.Enabled).toBe(false) // Step 1-семантика заготовки, та сама, що й для ланки #1->#2
-    expect(stub.InputItem).toEqual({ Classname: 'ZP_Interm_Ore', Quantity: 1, ConsumeInput: true, Content: '' }) // ЯКРАЗ вихід 'analyze', не 'pack'
+    expect(stub.InputItem).toEqual({
+      Classname: 'ZP_Interm_Ore',
+      Quantity: 1,
+      ConsumeInput: true,
+      Content: '',
+      RequireFullQuantity: false,
+    }) // ЯКРАЗ вихід 'analyze', не 'pack'
   })
 
   test('добудова заготовки (applyRuleEdit, той самий примітив, що RuleForm) завершує ланцюг: 0 розривів, destinations через усі три станки', () => {

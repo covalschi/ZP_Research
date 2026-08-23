@@ -60,9 +60,11 @@ export const POINT_TYPES_SCHEMA: ObjectSchema = {
 
 // ---- ZP_ProcessingConfig.c -------------------------------------------------------------
 
+// RequireFullQuantity дописано В КІНЕЦЬ, бо порядок полів схеми = порядок оголошення в
+// Enforce-класі ZP_RuleInput, а рушій пише ключі саме в ньому (2026-08-23).
 const RULE_INPUT_SCHEMA: ObjectSchema = {
   name: 'ZP_RuleInput',
-  fields: [s('Classname'), i('Quantity', 1), b('ConsumeInput', true), s('Content')],
+  fields: [s('Classname'), i('Quantity', 1), b('ConsumeInput', true), s('Content'), b('RequireFullQuantity', false)],
 }
 
 const RULE_OUTPUT_SCHEMA: ObjectSchema = {
@@ -147,6 +149,8 @@ export const TECH_TREE_SCHEMA: ObjectSchema = {
 
 // ---- ZP_FactionsConfig.c -----------------------------------------------------------------
 
+// TreeBackgroundImage дописано В КІНЕЦЬ (2026-08-23): порядок полів схеми = порядок
+// оголошення в Enforce-класі ZP_FactionDef, а рушій пише ключі саме в ньому.
 const FACTION_DEF_SCHEMA: ObjectSchema = {
   name: 'ZP_FactionDef',
   fields: [
@@ -156,6 +160,7 @@ const FACTION_DEF_SCHEMA: ObjectSchema = {
     sarr('Armbands'),
     sarr('TerminalClasses'),
     sarr('DeviceClasses'),
+    s('TreeBackgroundImage'),
   ],
 }
 

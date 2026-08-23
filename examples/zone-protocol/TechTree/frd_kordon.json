@@ -1,0 +1,202 @@
+{
+    "ConfigVersion": 1,
+    "Branch": {
+        "Id": "frd_kordon",
+        "Name": "Вільний статут Волі",
+        "Icon": "",
+        "SortOrder": 6,
+        "Factions": [
+            "freedom"
+        ]
+    },
+    "Nodes": [
+        {
+            "Id": "frd_volia",
+            "Name": "Вільний статут",
+            "Description": "Корінь програми Волі.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 1,
+            "Parents": [],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t1",
+                    "Amount": 4
+                },
+                {
+                    "Type": "protection_lab_t1",
+                    "Amount": 4
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "frd_zbroiar",
+            "Name": "Зброярня Волі",
+            "Description": "Натовський обвіс. Відкриває t2 балістики.",
+            "Icon": "set:dayz_gui image:icon_hammer",
+            "Tier": 2,
+            "Parents": [
+                "frd_volia"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "frd_khimzakhyst",
+            "Name": "Хімзахист",
+            "Description": "Фільтри, маски, балони. Відкриває t2 захисту.",
+            "Icon": "set:dayz_gui image:iconBacteria",
+            "Tier": 2,
+            "Parents": [
+                "frd_volia"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "protection_lab_t1",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 0,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "frd_teplo",
+            "Name": "Тепловізори",
+            "Description": "Теплова й цифрова нічна оптика. Відкриває t3 балістики. Перехресно: електроніка Вчених.",
+            "Icon": "set:dayz_gui image:icon_refresh",
+            "Tier": 3,
+            "Parents": [
+                "frd_zbroiar"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "ballistics_lab_t2",
+                    "Amount": 8
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "frd_rebryzer",
+            "Name": "Ребризери",
+            "Description": "Автономне дихання. Відкриває t3 захисту. Перехресно: біологія Вчених.",
+            "Icon": "set:dayz_gui image:iconBacteria",
+            "Tier": 3,
+            "Parents": [
+                "frd_khimzakhyst"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "protection_lab_t2",
+                    "Amount": 10
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 60,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "frd_ekzo_moduli",
+            "Name": "Модулі екзоскелета",
+            "Description": "Акумулятори, протигази екзо — нахил Волі в захист.",
+            "Icon": "set:dayz_gui image:gear",
+            "Tier": 4,
+            "Parents": [
+                "frd_rebryzer"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "protection_lab_t2",
+                    "Amount": 6
+                },
+                {
+                    "Type": "protection_lab_t3",
+                    "Amount": 3
+                },
+                {
+                    "Type": "bio_lab_t1",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "frd_anomalna_bronia",
+            "Name": "Броня проти аномалій",
+            "Description": "Захист t3 плюс балістика прикриття.",
+            "Icon": "set:dayz_gui image:iconSkull",
+            "Tier": 4,
+            "Parents": [
+                "frd_rebryzer",
+                "frd_teplo"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "protection_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "ballistics_lab_t2",
+                    "Amount": 4
+                },
+                {
+                    "Type": "electronics_lab_t2",
+                    "Amount": 3
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 90,
+            "RequiredFactions": []
+        },
+        {
+            "Id": "frd_fortetsia",
+            "Name": "Фортеця Волі",
+            "Description": "Капстоун. Перехресно: хабар бандитів.",
+            "Icon": "set:dayz_gui image:iconPill",
+            "Tier": 5,
+            "Parents": [
+                "frd_ekzo_moduli",
+                "frd_anomalna_bronia"
+            ],
+            "ParentsMode": "all",
+            "Cost": [
+                {
+                    "Type": "protection_lab_t3",
+                    "Amount": 6
+                },
+                {
+                    "Type": "ballistics_lab_t3",
+                    "Amount": 4
+                },
+                {
+                    "Type": "khabar_lab_t2",
+                    "Amount": 2
+                }
+            ],
+            "ItemCost": [],
+            "ResearchTimeSec": 120,
+            "RequiredFactions": []
+        }
+    ]
+}

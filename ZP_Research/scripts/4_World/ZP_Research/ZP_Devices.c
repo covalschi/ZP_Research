@@ -937,3 +937,107 @@ class ZP_Sky_Pack_Electro : ZP_Device_StaticBase
 class ZP_Sky_Proc_Electro : ZP_Device_StaticBase
 {
 }
+
+// ================= СТАНКИ П'ЯТИ ФРАКЦІЙ ZONE PROTOCOL (2026-08-23) =================
+//
+// Бандити (Bnd), Нейтрали (Lnr): khabar/trails; Долг (Dty), Воля (Frd), СОП (Sop):
+// ballistics/protection. Пакувальник (Pack) / переробник (Proc) на категорію + термінал
+// фракції (Долг здає на наявний ZP_ServerRack). Ті самі порожні двійники, що й вище:
+// без них конфіг-клас мовчки став би ItemBase. Термінали — той самий скрипт-клас, що
+// ZP_LabComputer/ZP_ServerRack (ZP_Device_StaticBase): термінал — це одночасно станція
+// (DeviceClasses) і місце здачі носія (TerminalClasses, Factions.json).
+class ZP_Bnd_Pack_Khabar : ZP_Device_StaticBase
+{
+}
+
+class ZP_Bnd_Proc_Khabar : ZP_Device_StaticBase
+{
+}
+
+class ZP_Bnd_Pack_Trail : ZP_Device_StaticBase
+{
+}
+
+class ZP_Bnd_Proc_Trail : ZP_Device_StaticBase
+{
+}
+
+class ZP_Bnd_Terminal : ZP_Device_StaticBase
+{
+}
+
+class ZP_Lnr_Pack_Khabar : ZP_Device_StaticBase
+{
+}
+
+class ZP_Lnr_Proc_Khabar : ZP_Device_StaticBase
+{
+}
+
+class ZP_Lnr_Pack_Trail : ZP_Device_StaticBase
+{
+}
+
+class ZP_Lnr_Proc_Trail : ZP_Device_StaticBase
+{
+}
+
+class ZP_Lnr_Terminal : ZP_Device_StaticBase
+{
+}
+
+class ZP_Dty_Pack_Ball : ZP_Device_StaticBase
+{
+}
+
+class ZP_Dty_Proc_Ball : ZP_Device_StaticBase
+{
+}
+
+class ZP_Dty_Pack_Prot : ZP_Device_StaticBase
+{
+}
+
+class ZP_Dty_Proc_Prot : ZP_Device_StaticBase
+{
+}
+
+class ZP_Frd_Pack_Ball : ZP_Device_StaticBase
+{
+}
+
+class ZP_Frd_Proc_Ball : ZP_Device_StaticBase
+{
+}
+
+class ZP_Frd_Pack_Prot : ZP_Device_StaticBase
+{
+}
+
+class ZP_Frd_Proc_Prot : ZP_Device_StaticBase
+{
+}
+
+class ZP_Frd_Terminal : ZP_Device_StaticBase
+{
+}
+
+class ZP_Sop_Pack_Ball : ZP_Device_StaticBase
+{
+}
+
+class ZP_Sop_Proc_Ball : ZP_Device_StaticBase
+{
+}
+
+class ZP_Sop_Pack_Prot : ZP_Device_StaticBase
+{
+}
+
+class ZP_Sop_Proc_Prot : ZP_Device_StaticBase
+{
+}
+
+class ZP_Sop_Terminal : ZP_Device_StaticBase
+{
+}

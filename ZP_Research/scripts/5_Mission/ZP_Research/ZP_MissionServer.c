@@ -55,7 +55,9 @@ modded class MissionServer
             PlayerBase cpb = PlayerBase.Cast(cm);
             if (!cpb || !cpb.GetIdentity())
                 continue;
-            ZP_ConfigService.Get().SyncTo(cpb.GetIdentity(), ZP_Factions.GetFactionClass(cpb));
+            // окремим рядком — та сама пастка, що в InvokeOnConnect нижче
+            string changedFaction = ZP_Factions.GetFactionClass(cpb);
+            ZP_ConfigService.Get().SyncTo(cpb.GetIdentity(), changedFaction);
             // І СТАН ДЕРЕВА ТЕЖ. Фракція приїжджає на клієнт саме цим синком, а не конфігом,
             // тож без нього правка Factions.json або DefaultFaction не доходила до гравця
             // взагалі: сервер уже рахував його вченим, а вікно дерева показувало 'default'
@@ -95,7 +97,15 @@ modded class MissionServer
         // На цей момент нашивка може бути ще не вдягнена (спорядження вантажиться пізніше),
         // тож перший синк іде за тим, що резолвиться зараз — типово за фракцією за
         // замовчуванням. Щойно нашивку вдягнуть, EEItemAttached пересинкає (ZP_Factions).
-        ZP_ConfigService.Get().SyncTo(identity, ZP_Factions.GetFactionClass(player));
+        // ПАСТКА КОМПІЛЯТОРА, спіймана живим конектом клієнта. Виклик методу НА
+        // РЕЗУЛЬТАТІ статичного Get(), у якого серед аргументів є ще один СКРИПТОВИЙ
+        // виклик, губить сам об'єкт: VM кидає «NULL pointer to instance» рівно на цьому
+        // рядку, хоча жоден операнд не порожній, і синк конфігу мовчки не відбувається.
+        // Зміряно на стенді: досить винести в локальну БУДЬ-ЯКУ з двох половин, а
+        // нативний виклик в аргументі (GetIdentity(), GetType()) пастку НЕ вмикає.
+        // Тому резолв фракції завжди йде окремим рядком — тут і в решті таких місць.
+        string connectFaction = ZP_Factions.GetFactionClass(player);
+        ZP_ConfigService.Get().SyncTo(identity, connectFaction);
         ZP_Factions.SyncTreeTo(player);
         // ВІДКЛАДЕНИЙ ПЕРЕСИНК. При завантаженні персонажа нашивка ВІДНОВЛЮЄТЬСЯ вже
         // вдягненою, а не вдягається, тож подія EEItemAttached, на якій тримається наш

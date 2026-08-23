@@ -241,6 +241,23 @@ function FactionPanel({ project, row, duplicate, supertypeOptions, classOptionsS
           />
           <FieldMessages errors={fieldErrors(row.problems, 'DeviceClasses')} />
         </div>
+
+        {/* Задник вікна дерева цієї фракції. Рушій НЕ приглушує цю картинку (перевірено
+            живцем), тож файл має бути темним сам по собі, інакше підписи вузлів потонуть. */}
+        <div>
+          <TextField
+            id="fx-treebg"
+            label="Задник дерева (TreeBackgroundImage)"
+            value={row.treeBackgroundImage}
+            onCommit={(v) => commit((f) => (f.TreeBackgroundImage = v))}
+          />
+          <p className="hint">
+            Шлях усередині PBO, напр. <code>ZP_Research/gui/textures/tree/tree_bg_duty.paa</code>.
+            Порожньо = загальний <code>Settings.TreeBackgroundImage</code>. Картинку рушій не
+            приглушує — беріть темну.
+          </p>
+          <FieldMessages errors={fieldErrors(row.problems, 'TreeBackgroundImage')} />
+        </div>
       </fieldset>
 
       {!duplicate && (

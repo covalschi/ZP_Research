@@ -124,7 +124,9 @@ class ZP_AdminBridge
         // фракція резолвиться від ГРАВЦЯ, а не з запиту: інакше модифікований клієнт
         // попросив би собі конфіг чужої фракції
         PlayerBase syncPb = FindPlayerByIdentity(sender);
-        ZP_ConfigService.Get().SyncTo(sender, ZP_Factions.GetFactionClass(syncPb));
+        // окремим рядком — пастка компілятора, розписана в ZP_MissionServer.InvokeOnConnect
+        string syncFaction = ZP_Factions.GetFactionClass(syncPb);
+        ZP_ConfigService.Get().SyncTo(sender, syncFaction);
     }
 
     // M3.5: повний (необрізаний) знімок конфігів для редактора — ЛИШЕ адмінам

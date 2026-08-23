@@ -360,6 +360,47 @@ class CfgVehicles
     class ZP_Data_90 : ZP_Data_Base { scope = 2; displayName = "$STR_zp_data_90"; descriptionShort = "$STR_zp_data_90_desc"; model = "\dz\gear\tools\electronicCase.p3d"; hiddenSelections[] = {}; hiddenSelectionsTextures[] = {}; };
     // >>> ZP_DATA_GENERATED
 
+    // НОСІЙ ДОСЛІДЖЕННЯ — один предмет на СУПЕРТИП (спека 2026-08-23, відновлення M8
+    // «носій скритий наполовину»): видно лише супертип, а категорія/вид/тир/бали сховані в
+    // рядку стану (ZP_CarrierState, 3_Game), який читає термінал. Назва й опис — СТАТИЧНІ
+    // ключі stringtable навмисно: предмет мусить називатись однаково незалежно від вмісту.
+    //
+    // Одна модель (досьє Book_kniga: 147 ванільних класів ділять її зі 146 обкладинками),
+    // три процедурні кольори — канон ванілі (FirefighterAxe_Black/_Green, 88 блоків у
+    // 1.29): рядок "#(argb,8,8,3)color(R,G,B,A,CO)" замість шляху до текстури, R,G,B,A — 0..1.
+    // Усередині супертипу носії однакові: категорія й тир кольором НЕ передаються.
+    class ZP_Carrier_Base : Inventory_Base
+    {
+        scope = 0;
+        displayName = "$STR_zp_carrier_unknown";
+        descriptionShort = "$STR_zp_carrier_desc";
+        model = "\DZ\gear\books\Book_kniga.p3d";
+        itemSize[] = {2, 2};
+        weight = 300;
+        spawnDamageRange[] = {0, 0};
+        rotationFlags = 1;
+        hiddenSelections[] = {"camoGround"};
+        hiddenSelectionsTextures[] = {"dz\gear\books\data\book_kniga_co.paa"};
+    };
+    class ZP_Carrier_Science : ZP_Carrier_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_carrier_science";
+        hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(0.22,0.55,0.78,1,CO)"};
+    };
+    class ZP_Carrier_Combat : ZP_Carrier_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_carrier_combat";
+        hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(0.62,0.16,0.14,1,CO)"};
+    };
+    class ZP_Carrier_Stalker : ZP_Carrier_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_carrier_stalker";
+        hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(0.72,0.50,0.16,1,CO)"};
+    };
+
     class ZP_StaticDevice_Base : Inventory_Base
     {
         scope = 0;
@@ -461,6 +502,9 @@ class CfgVehicles
             };
         };
     };
+
+    // Банка «АКМ Форте» ПЕРЕЇХАЛА в окремий мод @AKM_Forte (рішення власника 2026-08-13):
+    // клас AKM_Forte_Jar, модель akm_jar.p3d, дії обмазатись/з'їсти/нагодувати — усе там.
 
     // Польовий науковий кейс — переносний набір / транспорт зразків T1
     class ZP_FieldCase : ScientificBriefcase
@@ -599,6 +643,9 @@ class CfgVehicles
     // spawnDamageRange, physLayer=item_large, carveNavmesh, слоти інструментів і
     // незламність приходять з ZP_StaticDevice_Base — тут лише те, чим прилади різняться.
 
+    // КАРГО ПАКУВАЛЬНИКІВ — 10x10 (рішення власника 2026-08-23). Було 6x4: у нього не
+    // влазили великі входи модпака (балони СЕВА, шоломи з кріпленнями, ноутбуки, рації),
+    // і правило мовчки не збирало план. Аналізатори лишаються 4x4: їхній вхід — зразок 1x1.
     // ---- Вчені (ecolog) ----
 
     // Пакувальник біоматеріалу: медичний стіл-каталка (1.06 x 1.02 x 0.54)
@@ -610,7 +657,7 @@ class CfgVehicles
         model = "\DZ\structures\furniture\medical\medical_table\medical_table.p3d";
         weight = 45000;
         itemSize[] = {4, 4};
-        itemsCargoSize[] = {6, 4};
+        itemsCargoSize[] = {10, 10};
         rotatable = 1;
     };
 
@@ -636,7 +683,7 @@ class CfgVehicles
         model = "\DZ\structures\furniture\School_equipment\lab_bench.p3d";
         weight = 60000;
         itemSize[] = {7, 4};
-        itemsCargoSize[] = {6, 4};
+        itemsCargoSize[] = {10, 10};
         rotatable = 1;
     };
 
@@ -662,7 +709,7 @@ class CfgVehicles
         model = "\DZ\structures\furniture\School_equipment\class_case_a_open.p3d";
         weight = 50000;
         itemSize[] = {4, 5};
-        itemsCargoSize[] = {6, 4};
+        itemsCargoSize[] = {10, 10};
         rotatable = 1;
     };
 
@@ -691,7 +738,7 @@ class CfgVehicles
         model = "\DZ\structures\furniture\generalstore\icebox.p3d";
         weight = 55000;
         itemSize[] = {8, 5};
-        itemsCargoSize[] = {6, 4};
+        itemsCargoSize[] = {10, 10};
         rotatable = 1;
     };
 
@@ -717,7 +764,7 @@ class CfgVehicles
         model = "\DZ\structures\furniture\Cases\locker\locker_closed_v1.p3d";
         weight = 50000;
         itemSize[] = {2, 8};
-        itemsCargoSize[] = {6, 4};
+        itemsCargoSize[] = {10, 10};
         rotatable = 1;
     };
 
@@ -744,7 +791,7 @@ class CfgVehicles
         model = "\DZ\structures\furniture\Tables\office_desk\Desk_Office.p3d";
         weight = 50000;
         itemSize[] = {7, 3};
-        itemsCargoSize[] = {6, 4};
+        itemsCargoSize[] = {10, 10};
         rotatable = 1;
     };
 
@@ -760,4 +807,331 @@ class CfgVehicles
         itemsCargoSize[] = {4, 4};
         rotatable = 1;
     };
+
+    // ---- Бандити (bandit) ----
+
+    // Пакувальник хабару Бандитів: магазинний ларь-морозильник (1.95 x 1.24 x 0.95)
+    class ZP_Bnd_Pack_Khabar : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_bnd_pack_khabar";
+        descriptionShort = "$STR_zp_bnd_pack_khabar_desc";
+        model = "\DZ\structures\furniture\generalstore\icebox.p3d";
+        weight = 55000;
+        itemSize[] = {8, 5};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор хабару Бандитів: магазинні підлогові ваги (0.41 x 0.97 x 0.80)
+    class ZP_Bnd_Proc_Khabar : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_bnd_proc_khabar";
+        descriptionShort = "$STR_zp_bnd_proc_khabar_desc";
+        model = "\DZ\structures\furniture\generalstore\scale.p3d";
+        weight = 30000;
+        itemSize[] = {2, 4};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+    // Пакувальник стежок Бандитів: конторський стіл (1.81 x 0.84 x 0.86)
+    class ZP_Bnd_Pack_Trail : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_bnd_pack_trail";
+        descriptionShort = "$STR_zp_bnd_pack_trail_desc";
+        model = "\DZ\structures\furniture\Tables\office_desk\Desk_Office.p3d";
+        weight = 50000;
+        itemSize[] = {7, 3};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор стежок Бандитів: свердлильний верстат (0.76 x 0.83 x 0.41; без View/FireGeometry — тимчасово)
+    class ZP_Bnd_Proc_Trail : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_bnd_proc_trail";
+        descriptionShort = "$STR_zp_bnd_proc_trail_desc";
+        model = "\DZ\structures\furniture\Various\Drill.p3d";
+        weight = 40000;
+        itemSize[] = {3, 3};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+    // Термінал Бандитів: радарний пульт (донор ZP_LabComputer)
+    class ZP_Bnd_Terminal : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_bnd_terminal";
+        descriptionShort = "$STR_zp_bnd_terminal_desc";
+        model = "\DZ\structures\furniture\radar_equipment\radar_panel.p3d";
+        weight = 70000;
+        itemSize[] = {8, 6};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+
+    // ---- Нейтрали (loner) ----
+
+    // Пакувальник хабару Нейтралів: металева шафка (0.40 x 1.90 x 0.55)
+    class ZP_Lnr_Pack_Khabar : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_lnr_pack_khabar";
+        descriptionShort = "$STR_zp_lnr_pack_khabar_desc";
+        model = "\DZ\structures\furniture\Cases\locker\locker_closed_v1.p3d";
+        weight = 50000;
+        itemSize[] = {2, 8};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор хабару Нейтралів: пральна машина (0.81 x 1.19 x 0.65)
+    class ZP_Lnr_Proc_Khabar : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_lnr_proc_khabar";
+        descriptionShort = "$STR_zp_lnr_proc_khabar_desc";
+        model = "\DZ\structures\furniture\Eletrical_appliances\washing_machine\washing_machine.p3d";
+        weight = 60000;
+        itemSize[] = {3, 5};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+    // Пакувальник стежок Нейтралів: відкрита шкільна шафа (0.92 x 1.18 x 0.94)
+    class ZP_Lnr_Pack_Trail : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_lnr_pack_trail";
+        descriptionShort = "$STR_zp_lnr_pack_trail_desc";
+        model = "\DZ\structures\furniture\School_equipment\class_case_a_open.p3d";
+        weight = 50000;
+        itemSize[] = {4, 5};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор стежок Нейтралів: одиночна радарна стійка (0.77 x 1.99 x 0.66)
+    class ZP_Lnr_Proc_Trail : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_lnr_proc_trail";
+        descriptionShort = "$STR_zp_lnr_proc_trail_desc";
+        model = "\DZ\structures\furniture\radar_equipment\radar_rack.p3d";
+        weight = 90000;
+        itemSize[] = {3, 8};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+    // Термінал Нейтралів: лабораторна лава як барна стійка (1.70 x 0.95 x 0.77)
+    class ZP_Lnr_Terminal : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_lnr_terminal";
+        descriptionShort = "$STR_zp_lnr_terminal_desc";
+        model = "\DZ\structures\furniture\School_equipment\lab_bench.p3d";
+        weight = 60000;
+        itemSize[] = {7, 4};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+
+    // ---- Долг (duty) ----
+
+    // Пакувальник балістики Долгу: лабораторна лава (1.70 x 0.95 x 0.77)
+    class ZP_Dty_Pack_Ball : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_dty_pack_ball";
+        descriptionShort = "$STR_zp_dty_pack_ball_desc";
+        model = "\DZ\structures\furniture\School_equipment\lab_bench.p3d";
+        weight = 60000;
+        itemSize[] = {7, 4};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор балістики Долгу: радарний пульт (габарити зняти на стенді)
+    class ZP_Dty_Proc_Ball : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_dty_proc_ball";
+        descriptionShort = "$STR_zp_dty_proc_ball_desc";
+        model = "\DZ\structures\furniture\radar_equipment\radar_panel.p3d";
+        weight = 70000;
+        itemSize[] = {3, 5};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+    // Пакувальник захисту Долгу: пральна машина (0.81 x 1.19 x 0.65)
+    class ZP_Dty_Pack_Prot : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_dty_pack_prot";
+        descriptionShort = "$STR_zp_dty_pack_prot_desc";
+        model = "\DZ\structures\furniture\Eletrical_appliances\washing_machine\washing_machine.p3d";
+        weight = 60000;
+        itemSize[] = {3, 5};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор захисту Долгу: одиночна радарна стійка (0.77 x 1.99 x 0.66)
+    class ZP_Dty_Proc_Prot : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_dty_proc_prot";
+        descriptionShort = "$STR_zp_dty_proc_prot_desc";
+        model = "\DZ\structures\furniture\radar_equipment\radar_rack.p3d";
+        weight = 90000;
+        itemSize[] = {3, 8};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+
+    // ---- Воля (freedom) ----
+
+    // Пакувальник балістики Волі: офісний стіл (1.81 x 0.84 x 0.86)
+    class ZP_Frd_Pack_Ball : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_frd_pack_ball";
+        descriptionShort = "$STR_zp_frd_pack_ball_desc";
+        model = "\DZ\structures\furniture\Tables\office_desk\Desk_Office.p3d";
+        weight = 50000;
+        itemSize[] = {7, 3};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор балістики Волі: свердлильний верстат (0.76 x 0.83 x 0.41; без ViewGeometry)
+    class ZP_Frd_Proc_Ball : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_frd_proc_ball";
+        descriptionShort = "$STR_zp_frd_proc_ball_desc";
+        model = "\DZ\structures\furniture\Various\Drill.p3d";
+        weight = 40000;
+        itemSize[] = {3, 3};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+    // Пакувальник захисту Волі: магазинний ларь (1.95 x 1.24 x 0.95)
+    class ZP_Frd_Pack_Prot : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_frd_pack_prot";
+        descriptionShort = "$STR_zp_frd_pack_prot_desc";
+        model = "\DZ\structures\furniture\generalstore\icebox.p3d";
+        weight = 55000;
+        itemSize[] = {8, 5};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор захисту Волі: підлогові ваги (0.41 x 0.97 x 0.80)
+    class ZP_Frd_Proc_Prot : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_frd_proc_prot";
+        descriptionShort = "$STR_zp_frd_proc_prot_desc";
+        model = "\DZ\structures\furniture\generalstore\scale.p3d";
+        weight = 30000;
+        itemSize[] = {2, 4};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+    // Термінал Волі: ванільний ПК (шлях із device-assets §1; габарити зняти на стенді)
+    class ZP_Frd_Terminal : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_frd_terminal";
+        descriptionShort = "$STR_zp_frd_terminal_desc";
+        model = "\DZ\structures\furniture\Eletrical_appliances\pc\PC.p3d";
+        weight = 40000;
+        itemSize[] = {3, 3};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+
+    // ---- СОП (sop) ----
+
+    // Пакувальник балістики СОП: відкрита шафа (0.92 x 1.18 x 0.94)
+    class ZP_Sop_Pack_Ball : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_sop_pack_ball";
+        descriptionShort = "$STR_zp_sop_pack_ball_desc";
+        model = "\DZ\structures\furniture\School_equipment\class_case_a_open.p3d";
+        weight = 50000;
+        itemSize[] = {4, 5};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор балістики СОП: радарна електроніка (шлях із device-assets §1; габарити зняти на стенді)
+    class ZP_Sop_Proc_Ball : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_sop_proc_ball";
+        descriptionShort = "$STR_zp_sop_proc_ball_desc";
+        model = "\DZ\structures\furniture\radar_equipment\radar_electronics.p3d";
+        weight = 70000;
+        itemSize[] = {3, 6};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+    // Пакувальник захисту СОП: закритий локер (0.40 x 1.90 x 0.55)
+    class ZP_Sop_Pack_Prot : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_sop_pack_prot";
+        descriptionShort = "$STR_zp_sop_pack_prot_desc";
+        model = "\DZ\structures\furniture\Cases\locker\locker_closed_v1.p3d";
+        weight = 50000;
+        itemSize[] = {2, 8};
+        itemsCargoSize[] = {10, 10};
+        rotatable = 1;
+    };
+
+    // Аналізатор захисту СОП: електроплита (0.50 x 0.85 x 0.62)
+    class ZP_Sop_Proc_Prot : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_sop_proc_prot";
+        descriptionShort = "$STR_zp_sop_proc_prot_desc";
+        model = "\DZ\structures\furniture\kitchen\Kitchenstove_Elec\Kitchenstove_Elec.p3d";
+        weight = 45000;
+        itemSize[] = {2, 3};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
+    // Термінал СОП: монітор на стійці (0.71 x 1.57 x 1.24)
+    class ZP_Sop_Terminal : ZP_StaticDevice_Base
+    {
+        scope = 2;
+        displayName = "$STR_zp_sop_terminal";
+        descriptionShort = "$STR_zp_sop_terminal_desc";
+        model = "\DZ\structures\furniture\medical\patient_monitor\patient_monitor.p3d";
+        weight = 40000;
+        itemSize[] = {3, 6};
+        itemsCargoSize[] = {4, 4};
+        rotatable = 1;
+    };
+
 };

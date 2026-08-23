@@ -15,6 +15,7 @@ modded class ActionConstructor
         actions.Insert(ZP_ActionCollectResult);
         actions.Insert(ZP_ActionOpenTree);
         actions.Insert(ZP_ActionDeposit);
+        actions.Insert(ZP_ActionIdentify);
     }
 }
 
@@ -27,5 +28,6 @@ modded class PlayerBase
         AddAction(ZP_ActionCollectResult, InputActionMap);
         AddAction(ZP_ActionOpenTree, InputActionMap);
         AddAction(ZP_ActionDeposit, InputActionMap);
+        AddAction(ZP_ActionIdentify, InputActionMap);
     }
 }

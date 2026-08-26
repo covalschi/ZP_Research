@@ -471,38 +471,6 @@ class CfgVehicles
         };
     };
 
-    // Культуральна чашка КП-3 — контейнер-переносник bio/ecolog (арт-бібл. №13).
-    // ПЕРША ВЛАСНА МОДЕЛЬ мода (Blender → a3ob → binarize, ODOL v55): трасер конвеєра.
-    // Стани вмісту — hide-анімації з model.cfg: zp_state_full (типово ПОКАЗАНО),
-    // zp_state_broken (типово СХОВАНО). Перемикання зі скрипту:
-    // SetAnimationPhase("zp_hide_full"/"zp_hide_broken", 0|1).
-    class ZP_Cont_Eco_Bio_Petri : Inventory_Base
-    {
-        scope = 2;
-        displayName = "$STR_zp_cont_eco_bio_petri";
-        descriptionShort = "$STR_zp_cont_eco_bio_petri_desc";
-        model = "\ZP_Research\data\models\zp_eco_bio_petri.p3d";
-        weight = 350;
-        itemSize[] = {2, 2};
-        rotatable = 1;
-        spawnDamageRange[] = {0, 0};
-        class AnimationSources
-        {
-            class zp_state_full
-            {
-                source = "user";
-                initPhase = 0;
-                animPeriod = 0.01;
-            };
-            class zp_state_broken
-            {
-                source = "user";
-                initPhase = 1;
-                animPeriod = 0.01;
-            };
-        };
-    };
-
     // Банка «АКМ Форте» ПЕРЕЇХАЛА в окремий мод @AKM_Forte (рішення власника 2026-08-13):
     // клас AKM_Forte_Jar, модель akm_jar.p3d, дії обмазатись/з'їсти/нагодувати — усе там.
 

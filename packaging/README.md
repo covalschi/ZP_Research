@@ -23,3 +23,7 @@ carries:
 |---|---|
 | ZP_Research (3802266917) | Mod, Mechanics, Equipment |
 | ZP_Research_VPP (3802267228) | Mod, Mechanics |
+
+`packaging/<Mod>.workshop.png` is the preview image the item's page shows: 1024x512 PNG, under
+1 MB, sent with `workshop_publish("<Mod>", preview="packaging/<Mod>.workshop.png", content=False)`
+-- like the listing text, beside the folder so it never ships as a file of the mod.

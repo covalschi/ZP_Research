@@ -1,0 +1,41 @@
+[h1]ZP_Research[/h1]
+A server-side research framework for DayZ that turns scavenged loot into research points and spends them on a faction technology tree. The mod ships no content: every chain, point type, faction and tree node is admin-defined JSON. Built for the [UA] STALKER: Zone Protocol server; the tree and its balance are yours to define.
+
+[b]What it does[/b]
+[list]
+[*]Processing stations: static in-world devices with cargo. Put raw materials in; the station runs a timed cycle in the background (it survives server restarts) and produces a sample or a finished data blank.
+[*]Samples, blanks and carriers: a sample carries hidden fields (content, purity) read by machines; a data blank is an ordinary item whose name tells the player what it is; a carrier keeps its point type and amount hidden until it is identified at a terminal.
+[*]Purity: a base roll times input quality plus module bonuses; the next station multiplies its output chance by it.
+[*]Points and the tree: blanks and carriers are deposited at a faction terminal; points live in a faction pool; tree nodes cost points and optionally items, research is instant or a timed project, and nodes gate processing rules, so the tree really unlocks production.
+[*]Faction isolation: factions are recognised by armband; terminals and devices belong to factions, and nobody reads another faction's tree or uses its stations.
+[*]Admin surface: all configuration is JSON under the server profile, hot-reloadable with !zp reload, editable in game with !zp editor, and with a self-contained WYSIWYG web editor (one HTML file) that draws chains and the tree as graphs and mirrors the server's own validation before you restart.
+[*]Three ready-made content packs in the repository: a minimal loop, the author's test stand, and the full Zone Protocol set (7 factions, 7 trees, 1087 rules).
+[/list]
+[b]Requires[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1559212036]Community Framework[/url].
+[b]Companion[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3802267228]ZP_Research_VPP[/url], the optional VPP Admin Tools tab with the admin permission gate.
+[b]Source code[/b] [url=https://github.com/covalschi/ZP_Research]github.com/covalschi/ZP_Research[/url]
+
+[b]Licence[/b]
+Repacking into your own server pack is allowed. Licence: MIT (see LICENSE and NOTICE in the repository).
+
+[hr][/hr]
+
+[h1]ZP_Research (українською)[/h1]
+Серверний фреймворк досліджень для DayZ, який перетворює зібраний лут на бали досліджень і витрачає їх на дерево технологій фракції. Мод не містить контенту: кожен ланцюг, тип балів, фракцію та вузол дерева задає адміністратор у JSON. Створено для сервера [UA] STALKER: Zone Protocol; дерево і його баланс визначаєте ви.
+
+[b]Що робить[/b]
+[list]
+[*]Станції переробки: статичні пристрої у світі з карго. Кладете сировину; станція проганяє цикл у фоні (він переживає рестарти сервера) і видає зразок або готову заготовку даних.
+[*]Зразки, заготовки й носії: зразок несе приховані поля (вміст, чистота), які читають машини; заготовка даних — звичайний предмет, назва якого каже гравцеві, що це; носій тримає тип і кількість балів прихованими, доки його не ідентифікують на терміналі.
+[*]Чистота: базовий кидок, помножений на якість сировини, плюс бонуси модулів; наступна станція множить на неї шанс свого виходу.
+[*]Бали й дерево: заготовки й носії здаються на фракційному терміналі; бали живуть у пулі фракції; вузли дерева коштують балів і, за бажанням, предметів, дослідження миттєве або тривале, а вузли відкривають правила переробки, тож дерево справді відкриває виробництво.
+[*]Ізоляція фракцій: фракцію впізнають за нашивкою; термінали й пристрої належать фракціям, і ніхто не читає чужого дерева й не користується чужими станціями.
+[*]Адмінський бік: уся конфігурація в JSON у профілі сервера, перезавантажується командою !zp reload, правиться в грі через !zp editor і в самодостатньому WYSIWYG-вебредакторі (один HTML-файл), який малює ланцюги й дерево як графи і дзеркалить перевірку сервера ще до рестарту.
+[*]Три готові набори контенту в репозиторії: мінімальний цикл, тестовий стенд автора і повний набір Zone Protocol (7 фракцій, 7 дерев, 1087 правил).
+[/list]
+[b]Потребує[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1559212036]Community Framework[/url].
+[b]Склейка[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3802267228]ZP_Research_VPP[/url], необов'язкова вкладка VPP Admin Tools з адмінськими правами.
+[b]Вихідний код[/b] [url=https://github.com/covalschi/ZP_Research]github.com/covalschi/ZP_Research[/url]
+
+[b]Ліцензія[/b]
+Перепакування у власний серверний пак дозволене. Ліцензія: MIT (див. LICENSE і NOTICE у репозиторії).

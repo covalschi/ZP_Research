@@ -25,16 +25,20 @@ timestamp, not by a timer), and produces an intermediate **sample** or a finishe
 blank**.
 
 **Two-entity chain.** A *sample* is one class with hidden fields (`Content`, `Purity`) —
-read by machines, invisible to players. A *data blank* is an ordinary item class whose name
-tells the player what it is. Machines read the hidden field; humans read the name.
+read by machines, invisible to players. The chain's output is either a **data blank** (an
+ordinary item class whose name tells the player what it is) or a **carrier** — one shared
+item per faction supertype (`ZP_Carrier_Science`, `ZP_Carrier_Combat`, `ZP_Carrier_Stalker`)
+whose point type and amount stay hidden in a state string until identified at a terminal.
+Machines read the hidden fields; humans read the blank's name or identify the carrier first.
 
 **Purity.** Sample purity = base roll × input quality + module bonuses; a downstream
 station multiplies its output chance by it. Purity modules are attachments in device slots.
 
-**Points and the tree.** Blanks are deposited at a faction terminal for points. Points live
-in a **faction pool** (the mod stores nothing about individual players). Tree nodes cost
-points and optionally items; research can be instant or a timed project. Nodes gate
-processing rules (`RequiredNode`), so the tree actually unlocks production.
+**Points and the tree.** Blanks and carriers are deposited at a faction terminal for
+points. Points live in a **faction pool** (the mod stores nothing about individual
+players). Tree nodes cost points and optionally items; research can be instant or a timed
+project. Nodes gate processing rules (`RequiredNode`), so the tree actually unlocks
+production.
 
 **Faction isolation.** Factions are recognised by armband class. Terminals and devices
 belong to factions: *no own terminals — no terminals at all*, so one faction cannot read
@@ -42,6 +46,9 @@ another's tree or use its stations.
 
 **Admin surface.** All configuration is JSON under `$profile:ZP_Research\`, hot-reloadable
 with `!zp reload`; every edit goes through one transactional server contract with backups.
+Besides hand-editing JSON and the web editor below, admins can edit rules, tree nodes,
+point types, settings, factions and blanks from an in-game menu (`!zp editor`) — the same
+UI `ZP_Research_VPP` adds as a tab inside VPP AdminTools.
 
 ## The web editor
 
@@ -73,7 +80,8 @@ webeditor/          the config editor (Vite + React + TS); dist/index.html is th
 build/              PBO build + signing, script compile check, class generators
 testenv/            local test server: config, launchers, profile
 examples/           ready-made content packs (the mod itself ships none)
-scripts/            class-index generator (reads modpack PBOs)
+scripts/            class-index generator (reads modpack PBOs), tree-background generator
+assets/             source emblems for the tree-background generator
 keys/               public .bikey for signature verification
 docs/               setup + testing guide, admin guide, cheat-sheet, tech-tree design
 ```
@@ -130,7 +138,7 @@ editor tab compiles only when VPP is loaded.
 ```bash
 cd webeditor
 npm install
-npm test        # 1119 unit tests
+npm test        # 1120 tests pass (3 skipped)
 npm run build   # produces the single-file dist/index.html
 ```
 
@@ -139,7 +147,8 @@ npm run build   # produces the single-file dist/index.html
 ### Class index
 
 Live-search dropdowns are backed by `webeditor/src/data/classindex.json` — a snapshot of
-every class in a modpack (33 000+ classes from 22 mods on the author's server). To make one
+every class in a modpack (44 043 classes from 30 mods on the author's server, last
+regenerated 2026-08-23). To make one
 for **your** modpack, open the editor and use its **class importer**: pick your `!Workshop`
 folder and it reads the PBOs in the browser — no Python, no game installation, a few seconds
 with caching.
@@ -161,15 +170,28 @@ The repository has everything needed to stand up a local test server:
 Full walkthrough — installs, the traps that fail *silently*, and a checkpoint for every
 stage: **[docs/testing-on-another-machine.md](docs/testing-on-another-machine.md)**.
 
-Since the mod ships no content, two ready-made content packs live in
-[`examples/`](examples/): `minimal` (shortest complete loop, zero-warning boot) and
-`test-stand` (the author's full test bed — 12 devices, 18 chains, three tree branches).
+Since the mod ships no content, three ready-made content packs live in
+[`examples/`](examples/): `minimal` (shortest complete loop, zero-warning boot),
+`test-stand` (the author's full test bed — 12 devices, 18 chains, three tree branches), and
+`zone-protocol` (the full [UA] Stalker: Zone Protocol AI set — 7 factions, 7 trees, 1087
+rarity-tiered rules).
+
+## Workshop
+
+- [ZP_Research](https://steamcommunity.com/sharedfiles/filedetails/?id=3802266917)
+- [ZP_Research_VPP](https://steamcommunity.com/sharedfiles/filedetails/?id=3802267228)
 
 ## Requirements
 
+**`ZP_Research`** requires:
 - DayZ server 1.29+
 - [Community Framework](https://github.com/Jacob-Mango/DayZ-CommunityFramework) (CF)
-- optional: VPPAdminTools (for the permission gate)
+
+**`ZP_Research_VPP`** is optional and additionally requires:
+- `ZP_Research` itself — it is a tab for the base mod, not a standalone mod
+- [VPPAdminTools](https://github.com/VanillaPlusPlus/VPP-Admin-Tools) — hard dependency;
+  load `@ZP_Research_VPP` only together with it, or the game refuses to start (see
+  "Building the mod" above)
 
 ## Language
 

@@ -1,5 +1,13 @@
 # ZP_Research — research tree framework for DayZ
 
+> **Moved.** Development continues as **OpenZone Research** on the OpenZone core:
+> [github.com/covalschi/openzone-research](https://github.com/covalschi/openzone-research)
+> (Workshop: [OpenZone Research](https://steamcommunity.com/sharedfiles/filedetails/?id=3804762416),
+> [OpenZone Research VPP](https://steamcommunity.com/sharedfiles/filedetails/?id=3804762616)).
+> The game rules are the same, the code is new; nothing carries over from a ZP_Research
+> server, and the ZP example packs convert with `scripts/convert-zp-examples.py` there.
+> This repository stays as the reference implementation and receives no new features.
+
 A server-side framework that turns scavenged loot into **research points** and spends them
 on a **faction technology tree**. Built for the STALKER-style RP server
 *[UA] Stalker: Zone Protocol AI*, but the mod itself ships **no content** — every chain,
